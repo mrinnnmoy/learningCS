@@ -131,8 +131,12 @@
                 int x = 10;
                 int *ptr = &x; // ptr stores address of x
                 int *ptr1 = &ptr; // ptr1 stores address of ptr
-                cout<< *ptr1; // Prints address of x
-                cout<< **ptr1; // Prints value of x
+                
+                cout << "Value of x: " << x << endl;
+                cout << "Address of x: " << &x << endl;
+
+                cout << "Value of x using pointer: " << *ptr << endl;
+                cout << "Address stored in ptr: " << ptr << endl;
 
 <hr />
 
