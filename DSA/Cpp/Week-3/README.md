@@ -10,6 +10,8 @@
 
     For example: `f(n) = f(n-1) + f(n-2)` is an example of recursion.
 
+    [Example](./Practise/code1.cpp)
+
 - **Visual Representation (Recursion Tree).**
 
                     fib(6)
