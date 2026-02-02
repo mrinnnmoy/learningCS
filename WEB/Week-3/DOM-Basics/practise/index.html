@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-Practise</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Static/Dynamic HTML -->
+    <h1>Hi there! Todo App.</h1>
+
+    <div id="todo">
+      <ul>
+        <div id="todo-1">
+          <li>Visit Class</li>
+          <button onclick="deleteTodo(1)">Delete</button>
+        </div>
+        <div id="todo-2">
+          <li>Have Lunch</li>
+          <button onclick="deleteTodo(2)">Delete</button>
+        </div>
+        <div id="todo-3">
+          <li>Play Football</li>
+          <button onclick="deleteTodo(3)">Delete</button>
+        </div>
+        <div id="todo-4">
+          <li>Complete Homework</li>
+          <button onclick="deleteTodo(4)">Delete</button>
+        </div>
+      </ul>
+    </div>
+    
+    <div>
+      <input type="text" name="" id="inputBox" />
+      <button type="button" onclick="addTodo()">Add Todo</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
