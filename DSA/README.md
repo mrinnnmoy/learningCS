@@ -16,4 +16,6 @@
 
     - [Week 3](./Cpp/Week-3/) (Intro to Recursion, Divide & Conquer, How to think recursively, Backtracking.)
 
+    - [Week 4](./Cpp/Week-4/) (Introduction to Binary Search, Binary search in action, complexity analysis, lower-bound like searches.)
+
 - JAVA. 
