@@ -19,4 +19,4 @@
 - Week 4.
 
     - [Node.js, Bun & JS runtimes](./Week-4/Part-1/) (Intro to NodeJS, Intro to Bun, Starting a NodeJS project, npm, Internal & External packages).
-    - [Intro to HTTP](./Week-4/Part-2/) (Need for HTTP, Request Response model, DOmain name/IP, Ports, Methods, Response, Status codes, Body, Routes, Headers, Clients, Writing HTTP code in js).
+    - [Intro to HTTP](./Week-4/Part-2/) (Need for HTTP, Request Response model, DOmain name/IP, Ports, Methods, Response, Status codes, Body, Routes, Headers, Clients).
