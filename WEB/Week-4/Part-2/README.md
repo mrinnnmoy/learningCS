@@ -210,3 +210,18 @@ You can send a request from various `clients` , Postman being one of them.
 
 **Postman**
 ![postman-img](https://petal-estimate-4e9.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2Fc9111143-d8d4-4747-87f0-e473d4cacf73%2FScreenshot_2024-08-25_at_7.30.12_PM.png?table=block&id=f9fb51b4-6a2d-423f-9161-f74e7d53c766&spaceId=085e8ad8-528e-47d7-8922-a23dc4016453&width=950&userId=&cache=v2)
+
+<hr />
+
+## **Writing HTTP code in JS.**
+
+**Hint**: Try using [**express**](http://npmjs.com/package/express).
+
+[Solution](./practise/)
+
+<hr />
+
+## **Assignment.**
+
+1. Try to code an in memory todo app.
+2. Try to code a filesystem based todo app.

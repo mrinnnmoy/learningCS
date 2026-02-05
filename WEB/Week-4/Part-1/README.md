@@ -203,12 +203,14 @@ The `package-lock.json` records the exact versions of all dependencies and their
 
 - **Problem #1**
 
-    Create a `command line interface` that lets the user specify a file path and the nodejs process counts the number of words inside it.
+    Create a `command line interface` that lets the user specify a file path and the nodejs process counts the number of lines inside the file.
 
     **Hint**: Use this library, [commander](https://www.npmjs.com/package/commander).
 
         Input - node index.js /Users/kirat/file.txt
-        Output - You have 10 words in this file
+        Output - There are 10 lines in this file.
+
+    [**Solution**](./Assignment/code1/)
 
 - **Problem #2**
 
@@ -221,3 +223,5 @@ The `package-lock.json` records the exact versions of all dependencies and their
     - mark a todo as done
 
     Store all the data in files, `todos.json`.
+
+    [**Solution**](./Assignment/code2/)
