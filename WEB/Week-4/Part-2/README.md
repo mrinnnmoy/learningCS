@@ -217,7 +217,22 @@ You can send a request from various `clients` , Postman being one of them.
 
 **Hint**: Try using [**express**](http://npmjs.com/package/express).
 
-[Solution](./practise/)
+1. Write a simple Express.js server in Node.js with endpoints that return plain text responses.
+
+    [Solution](./practise/code1/)
+
+2. Create a simple HTTP server that reads a number from the query parameter and returns the sum of all integers from 1 up to that number.
+
+    [Solution](./practise/code2)
+
+3. Create an in-memory hospital, with 4 routes,
+
+- GET : User can check how many kidneys they have and their health
+- POST : User can add a new kidney
+- PUT : User can replace a kidney, make it healthy
+- DELETE : User can remove a kidney
+
+    [Solution](./practise/code3)
 
 <hr />
 
