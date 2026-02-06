@@ -227,12 +227,12 @@ You can send a request from various `clients` , Postman being one of them.
 
 3. Create an in-memory hospital, with 4 routes,
 
-- GET : User can check how many kidneys they have and their health
-- POST : User can add a new kidney
-- PUT : User can replace a kidney, make it healthy
-- DELETE : User can remove a kidney
+    - GET : User can check how many kidneys they have and their health
+    - POST : User can add a new kidney
+    - PUT : User can replace a kidney, make it healthy
+    - DELETE : User can remove a kidney
 
-    [Solution](./practise/code3)
+        [Solution](./practise/code3)
 
 <hr />
 
