@@ -18,4 +18,6 @@
 
     - [Week 4](./Cpp/Week-4/) (Introduction to Binary Search, Binary search in action, complexity analysis, lower-bound like searches.)
 
+    - [Week 5](./Cpp/Week-5/) (Intro to Linked Lists, Performing various operations using LLs, Problems on Linked Lists, Introduction to Doubly Linked List, Adding/Removing a node in a DLL)
+
 - JAVA. 
