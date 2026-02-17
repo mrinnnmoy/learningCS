@@ -46,6 +46,12 @@
 
 ## [Week-5](./Week-5/README.md) : **Arrays & 2-D Arrays.**
 
+- Introduction to Arrays,
+- Traversing Arrays,
+- Vectors (Dynamic Arrays in C++),
+- Prefix & Prefix Sum Technique,
+- 2-D Arrays.
+
 ## [Week-6](./Week-6/README.md) : **Strings.**
 
 ## [Week-7](./Week-7/README.md) : **Sets & Maps.**
