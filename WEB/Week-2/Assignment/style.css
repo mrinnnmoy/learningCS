@@ -1,0 +1,109 @@
+/* Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #E6EEFA;
+    background-color: #0D1117;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Global Variables. */
+:root {
+    --container-width: 1200px;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+
+    --primary-color: #0D1117;
+    --secondary-color: #2580FE;
+    --primary-text-color: #9FB1C6;
+}
+
+/* Layout System */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+}
+
+.section {
+    padding: var(--spacing-md) 0;
+}
+
+/* Flexible grid utility */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* Flexible flex utility */
+.flex {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+span {
+    font-size: 0.75rem;
+}
+
+/* Components */
+
+
+
+/* Media Queries */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
