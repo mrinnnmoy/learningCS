@@ -54,6 +54,17 @@
 
 ## [Week-6](./Week-6/README.md) : **Strings.**
 
+- Introduction to String,
+- `std::string` vs C-Style Strings,
+- String Input Method,
+- String Namespace,
+- Basic String Operations,
+- String Concatenation,
+- Important STLString Functions,
+- Substring Extraction,
+- Numbers & Strings,
+- Escape Characters.
+
 ## [Week-7](./Week-7/README.md) : **Sets & Maps.**
 
 ## [Week-8](./Week-8/README.md) : **Sorting & Searching.**
