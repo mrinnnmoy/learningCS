@@ -76,18 +76,21 @@
 
 -> **Assignment (Not done)**
 
-## [Week-6]() : **NodeJS Runtime & Architecture.**
+## [Week-6](./Week-6/README.md) : **NodeJS Runtime & Architecture.**
 
-- Node vs Browser JS,
-- CommonJS vs ES Modules,
-- `require` vs `import`,
-- FileSystem module,
-- Environment variables,
-- Process object,
-- Intro to BunJS,
-- Project structure basics,
-- Package.json understanding,
-- NPM scripts.
+- Introduction to NodeJS,
+- NodeJS Architecture,
+- NodeJS vs BrowserJS,
+- Module System in NodeJS,
+- The Process Object,
+- Environment Variables,
+- NPM (Node Package Manager),
+- Understanding package.json,
+- NPM Scripts,
+- Project Structure Basics,
+- Intro to BunJS.
+
+-> **Assignment (Not done)**
 
 ## [Week-7]() : **HTTP Deep Dive & Express.js.**
 
