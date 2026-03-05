@@ -566,6 +566,6 @@ The CSS `@media` rule is used to add media queries to your style sheet.
 
 ## Assignment.
 
-Build a fully responsive [VS Code](https://code.visualstudio.com/) website using only HTML & CSS. No frameworks, No JavaScript.
+Build a fully responsive [Git](https://git-scm.com/) website using only HTML & CSS. No frameworks, No JavaScript.
 
-[Solution](./Assignment/)
+[Solution](./Assignment/index.html)

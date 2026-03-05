@@ -1,62 +1,204 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Visual Studio Code - The open source AI code editor.</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon-img -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
 
-    <!-- CSS file -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav>
-      <div class="nav-left">
-        <img src="./assets/favicon/favicon-32x32.png" alt="logo" />
-        <span>Visual Studio Code</span>
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="./style.css" />
+  <title>Git</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <img src="./assets/git-logo-text.png" alt="git-logo-text" />
+    </div>
+
+    <!-- Navbar Text -->
+    <div class="navbar-text">
+      <h3>--distributed-even-if-your-workflow-isnt</h3>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="searchbar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <p>Type / to search entire site...</p>
+    </div>
+
+    <!-- Theme icon -->
+    <div class="theme-icon">
+      <i class="fa-regular fa-sun"></i>
+    </div>
+  </div>
+
+  <!-- Home -->
+  <section class="home">
+
+    <!-- Left -->
+    <div class="home-left">
+      <p>
+        Git is a
+        <span>free and open source</span>
+        distributed version control system designed to
+        handle everything from small to very large
+        projects with speed and efficiency.
+      </p>
+
+      <p>
+        Git is
+        <span>lightning fast</span>
+        and has a huge ecosystem of
+        <span>GUIs</span>,
+        <span>hosting services</span>
+        and
+        <span>command-line tools</span>.
+      </p>
+    </div>
+
+    <!-- Right -->
+    <div class="home-right">
+      <img src="./assets/home-icon.png" alt="home-icon">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+
+    <!-- Left Side -->
+    <div class="about-left">
+
+      <!-- ABOUT -->
+      <div class="about-point">
+        <i class="fa-regular fa-circle-info"></i>
+        <div class="about-point-details">
+          <span>About</span>
+          <p>
+            Git's performance and ecosystem
+          </p>
+        </div>
       </div>
-      <div class="navLinks">
-        <ul>
-          <a href="">Docs</a>
-          <a href="">Updates</a>
-          <a href="">Blog</a>
-          <a href="">API</a>
-          <a href="">Extensions</a>
-          <a href="">MCP</a>
-          <a href="">FAQ</a>
-          <a href="">Events</a>
-          <a href="" class="">Download</a>
-        </ul>
-      </div>
-      <div class="nav-right">
-        <!-- search-icon -->
-        <!-- theme-toggle -->
-        <!-- menu-hamburger-icon -->
-      </div>
-    </nav>
 
-    <!-- Home -->
-    <section class="hero"></section>
-  </body>
+      <!-- LEARN -->
+      <div class="about-point">
+        <i class="fa-solid fa-lightbulb"></i>
+        <div class="about-point-details">
+          <span>Learn</span>
+          <p>
+            Pro Git book, videos, tutorials
+            and cheat sheet
+          </p>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="about-point">
+        <i class="fa-solid fa-screwdriver"></i>
+        <div class="about-point-details">
+          <span>Tools</span>
+          <p>
+            Command line tools, GUIs and
+            hosting services
+          </p>
+        </div>
+      </div>
+
+      <!-- REFERENCE -->
+      <div class="about-point">
+        <i class="fa-solid fa-book"></i>
+        <div class="about-point-details">
+          <span>Reference</span>
+          <p>
+            Git's reference documentation
+          </p>
+        </div>
+      </div>
+
+      <!-- INSTALL -->
+      <div class="about-point">
+        <i class="fa-solid fa-download"></i>
+        <div class="about-point-details">
+          <span>Install</span>
+          <p>
+            Binary releases for all major
+            platforms
+          </p>
+        </div>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="about-point">
+        <i class="fa-solid fa-bug"></i>
+        <div class="about-point-details">
+          <span>Community</span>
+          <p>
+            Get involved! Bug reporting,
+            mailing list, chat, development
+            and more
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="about-right">
+
+      <!-- Top -->
+      <div class="top">
+        <img src="./assets/git-logo.png" alt="git-logo">
+        <div class="version-info">
+          <p>Latest source release</p>
+          <h3>2.54.0</h3>
+          <div class="version-note">
+            <span>Release Notes</span>
+            <p>(2026-04-20)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="bottom">
+        <button>Install for Windows</button>
+        <button>GitHub Repository</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <!-- Left -->
+    <div class="footer-left">
+      <i class="fa-solid fa-link"></i>
+      <div class="footer-left-details">
+        <h3>About this site</h3>
+        <p>Patches, suggestions and comments are welcome.</p>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="footer right">
+      <p>Git is a memeber of
+      <h3>Software Freedom Conservancy</h3>
+      </p>
+    </div>
+  </footer>
+
+</body>
+
 </html>

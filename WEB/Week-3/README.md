@@ -4,7 +4,7 @@
 
 Node.js is a free, open source tool that lets you run JavaScript outside the web browser.
 
-Node.js uses and event-driven, non-blocking model. That can handle many connections at once without waiting for one to finish before starting another.
+Node.js uses an event-driven, non-blocking model. That can handle many connections at once without waiting for one to finish before starting another.
 
 Built on Chrome's V8 JavaScript engine, making it great for real-time apps and high traffic websites.
 
@@ -104,7 +104,7 @@ Here's a simple JS program, that you can test on your computer:
         return x + y;
         }
 
-        sum(5,6);
+        console.log(sum(5,6));
 
 3.  Now open terminal and run "node index.js". You will be able to see the output as **11**.
 
@@ -566,7 +566,7 @@ And to run the function, you call it by using its name followed by parenthesis.
         return `Hello World`;
     }
 
-    greet();
+    console.log(greet());
 
 ### Return Statement.
 
@@ -1075,7 +1075,7 @@ You can activate debugging in your browser with `F12` and select **Console** in 
 
     [Solution](./Assignment/code1.js)
 
-2.  Create and inventory system for a small store, where each profuct shoul be an object like:
+2.  Create and inventory system for a small store, where each product should be an object like:
 
         {
             id: 1,
@@ -1084,7 +1084,7 @@ You can activate debugging in your browser with `F12` and select **Console** in 
             quantity: 3
         }
 
-    Create an array of atleast 5 products and:
+    Create an array of atleast 5 products to:
     - calculate total inventory value (price \* Quantity for each item)
     - Find most expensive product & product with lowest stock.
     - create a new array that contains only products that have quantity < 5.

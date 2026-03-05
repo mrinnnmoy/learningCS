@@ -4,7 +4,7 @@
 
 ### What is a Shells?
 
-A shell is a tex-based interface that lets you talk to your computer.
+A shell is a text-based interface that lets you talk to your computer.
 
 There are different shells, but **Bash** (Bourne Again SHell) is the most popular because it's powerful and easy to use.
 

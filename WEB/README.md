@@ -25,8 +25,6 @@
 - Media Queries,
 - DevTools for Layout Debugging.
 
--> **Assignment (No done)**
-
 ## [Week-3](./Week-3/README.md) : **JavaScript Basics.**
 
 - Installing NodeJS,
@@ -46,8 +44,6 @@
 - Closure (Basics)
 - Debugging basics.
 
--> **Assignment (Not done)**
-
 ## [Week-4](./Week-4/README.md) : **DOM Manipulation.**
 
 - Understanding DOM,
@@ -58,8 +54,6 @@
 - Form Handling & Validation,
 - JavaScript JSON,
 - LocalStorage.
-
--> **Assignment (Not done)**
 
 ## [Week-5](./Week-5/README.md) : **Asynchronous JavaScript.**
 
@@ -74,8 +68,6 @@
 - Axios vs Fetch,
 - Practical Patterns.
 
--> **Assignment (Not done)**
-
 ## [Week-6](./Week-6/README.md) : **NodeJS Runtime & Architecture.**
 
 - Introduction to NodeJS,
@@ -89,8 +81,6 @@
 - NPM Scripts,
 - Project Structure Basics,
 - Intro to BunJS.
-
--> **Assignment (Not done)**
 
 ## [Week-7]() : **Env vars & config management.**
 

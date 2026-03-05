@@ -27,7 +27,7 @@ Each part of the document are nodes in the tree:
 
 The DOM API (Application programming Interface) is a set of Methods and Properties that allow JavaScript to change the content, structure and style of any elements.
 
-An API works an an action that you can do on an HTML element.
+An API works as an action that you can do on an HTML element.
 
 An API Property is a value that you can access on an HTML element.
 
@@ -172,7 +172,7 @@ Below are some examples of how you can use the document object to access HTML:
         </div>
 
         <script>
-        const elmnt = document.getElementById("p1"); elmnt.remove();
+        const elmnt = document.getElementById("p1"); element.remove();
         </script>
 
     - The HTML document contains a `<div>` element with two child nodes (two `<p>` elements):
@@ -395,7 +395,7 @@ Here's an example:
         }
     }
 
-The function can be called when the form in sbumitted:
+The function can be called when the form in submitted:
 
     <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
         Name: <input type="text" name="fname">
@@ -474,7 +474,7 @@ The data is not deleted when the browser is closed and are available for future 
 
 ### Storing data.
 
-When storing data, the data has to be a certain format, and regardless of where you choose to store it, text is always one of the legal formats.
+When storing data, the data has to be a certain format and regardless of where you choose to store it, text is always one of the legal formats.
 
 JSON makes it possible to store JavaScript objects as text.
 
@@ -504,7 +504,7 @@ If you parse the JSON string with a JavaScript program, you can access the data 
    - store the current count in `localStorage`
    - when page reloads, restore the previous value.
 
-   [Solution](./Assignment/code1.js)
+   [Solution](./Assignment/code1/index.html)
 
 2. Build a fully functional To-Do List,
    - input field + add button
@@ -520,7 +520,7 @@ If you parse the JSON string with a JavaScript program, you can access the data 
    - Mark task as completed (toggle class)
    - Use event bubbling intelligently
 
-   [Solution](./Assignment/code2.js)
+   [Solution](./Assignment/code2/index.html)
 
 3. Build a Notes application.
    1. **Add Notes** :
@@ -561,4 +561,4 @@ If you parse the JSON string with a JavaScript program, you can access the data 
       - Show validation message
       - Clear form after submit
 
-   [Solution](./Assignment/code3.js)
+   [Solution](./Assignment/code3/index.html)

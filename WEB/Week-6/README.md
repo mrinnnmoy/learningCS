@@ -778,7 +778,7 @@ There are several ways to set environment variables for your Node.js application
 
 NPM is a package manager for Node.js packages, or modules if you like.
 
-www.npmjs.com hosts thousands of free packages to download and use.
+[npmjs.com](www.npmjs.com) hosts thousands of free packages to download and use.
 
 The NPM program is installed on your computer when you install Node.js
 
@@ -874,7 +874,7 @@ To remove a package that you no longer need, you can use the uninstall command:
 
 ### What is Dependency management?
 
-Dependency management is the process of tracking, installing, updating, and removing the external packages your application depends on.
+Dependency management is the process of tracking, installing, updating and removing the external packages your application depends on.
 
 It helps ensure your applications remains stable, secure, and maintainable over time.
 
@@ -1234,7 +1234,7 @@ BunJS has multiple advantages that make it a great choice for executing JavaScri
     For example :
 
         // Input
-        node greet.js Mrinmoy`
+        node greet.js Mrinmoy
 
         //Output
         Hello Mrinmoy, welcome to NodeJS!
@@ -1243,7 +1243,7 @@ BunJS has multiple advantages that make it a great choice for executing JavaScri
         Current Directory: /users/mrinmoy/project
         Process ID: 12345
 
-    [Solution]()
+    [Solution](./Assignment/code1.js)
 
 2.  Build a File Manager CLI.
 
@@ -1262,7 +1262,7 @@ BunJS has multiple advantages that make it a great choice for executing JavaScri
         Learning NodeJS
         File deleted.
 
-    [Solution]()
+    [Solution](./Assignment/code2.js)
 
 3.  Build a Mini Configuration-based app.
 
@@ -1320,4 +1320,4 @@ BunJS has multiple advantages that make it a great choice for executing JavaScri
           Environment
           Current Directory
 
-    [Solution]()
+    [Solution](./Assignment/code3/)

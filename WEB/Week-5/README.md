@@ -181,7 +181,7 @@ In this example:
 
     The indentation increases with each level, making the code difficult to follow.
 
-2.  **Error Handling in Mested Callbacks**.
+2.  **Error Handling in Nested Callbacks**.
 
     Handling errors in nested callbacks is complex, as you must check for errors at each level manually.
 
@@ -554,7 +554,7 @@ Here's how a Promises example looks like,
         myDisplayer(value);
     });
 
-The same flow with `asycn` and `await` is easier to read.
+The same flow with `async` and `await` is easier to read.
 
     // Function to run the three functions in steps
     async function run() {
@@ -1058,7 +1058,7 @@ Key techniques include using loading spinners during requests, bundling concurre
       - Cancels old requests
       - Updates UI cleanly
 
-    [Solution](./Assignment/code2.js)
+    [Solution](./Assignment/code2/index.html)
 
 3.  Create 5 fake async tasks:
 

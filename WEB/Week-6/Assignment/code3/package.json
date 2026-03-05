@@ -1,0 +1,14 @@
+{
+  "name": "node-config-app",
+  "version": "1.0.0",
+  "description": "Mini Configuration Based Node App",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "info": "node src/info.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
