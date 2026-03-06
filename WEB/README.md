@@ -82,7 +82,16 @@
 - Project Structure Basics,
 - Intro to BunJS.
 
-## [Week-7]() : **Env vars & config management.**
+## [Week-7](./Week-7/README.md) : **Env Vars & Config Management.**
+
+- Environment Variables (The Basics),
+- `.env` Files,
+- `.gitignore` & Secret Safety,
+- Multiple Environment Configs,
+- Config Management Patterns,
+- Validation with `zod` or `envalid`,
+- Env Vars in Different Contexts,
+- Security Best Practices.
 
 ## [Week-8]() : **HTTP Deep Dive & Express.js.**
 

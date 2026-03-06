@@ -1,0 +1,3 @@
+node_modules/
+
+# Make sure you also add `.env` here as well.

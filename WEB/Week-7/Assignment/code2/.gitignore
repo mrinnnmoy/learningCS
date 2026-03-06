@@ -1,0 +1,7 @@
+node_modules
+
+# Make sure you normally add `.env` to the list as well.
+
+# But if you want to keep template files in Git, you can instead use:
+# .env*
+# !.env.example
