@@ -93,19 +93,22 @@
 - Env Vars in Different Contexts,
 - Security Best Practices.
 
-## [Week-8]() : **HTTP Deep Dive & Express.js.**
+## [Week-8](./Week-8/README.md) : **HTTP Deep Dive & Express.js.**
 
-- HTTP request/response cycle,
-- Methods (GET, POST, PUT, DELETE),
-- Status codes,
-- Headers & query params,
-- REST architecture,
-- Express basics,
-- Middleware (basics -> advanced),
+- HTTP Fundamentals,
+- HTTP Request Structure,
+- HTTP Response Structure,
+- HTTP Methods,
+- HTTP Status Codes,
+- HTTP Headers Deep Dive,
+- Query Params, Path Params & Request Body,
+- REST Architecture,
+- Express.js Basics,
+- Middleware (Basics to Advanced),
 - CORS,
 - POSTMAN,
 - Logging,
-- Error handling patterns.
+- Error Handling.
 
 ## [Week-9]() : **REST API design principles.**
 
