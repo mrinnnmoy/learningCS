@@ -110,7 +110,22 @@
 - Logging,
 - Error Handling.
 
-## [Week-9]() : **REST API design principles.**
+## [Week-9](./Week-9/README.md) : **REST API design principles.**
+
+- What is REST API Design,
+- Resource Modeling,
+- URL Design & Naming Conventions,
+- HTTP Methods,
+- Request & Response Design,
+- API Versioning,
+- Filtering, Sorting, Searching & Pagination,
+- Error Response Design,
+- Status Codes,
+- HATEOAS,
+- API Documentation Standards,
+- Idempotency in Practice,
+- API Rate Limiting,
+- API Security Design Principles.
 
 ## [Week-10]() : **Error handling & logging.**
 
