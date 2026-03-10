@@ -203,15 +203,13 @@ C++ operators are classified into 6 types on the basis of type of operation they
 1.  **Arithmetic Operators.**
 
     Arithmetic operators are used to perform arithmetic or mathematical operations on the operands.
-
-    For example, '+' is used for addition.
-    - **Addition** : +, Adds two operands
-    - **Subtraction** : -, Subtracts second operand from the first
-    - **Multiplication** : \*, Multiplies two operands
-    - **Division** : /, Divides first operand by the second operand
-    - **Modulo Operation** : %, Returns the remainder of an integer division
-    - **Increment** : ++, Increases the value of operand by 1
-    - **Decrement** : --, Decreases the value of operand by 1
+    - **Addition** (+) : Adds two operands
+    - **Subtraction** (-) : Subtracts second operand from the first
+    - **Multiplication** (\*) : Multiplies two operands
+    - **Division** (/) : Divides first operand by the second operand
+    - **Modulo Operation** (%) : Returns the remainder of an integer division
+    - **Increment** (++) : Increases the value of operand by 1
+    - **Decrement** (--) : Decreases the value of operand by 1
 
             #include <iostream>
             using namespace std;
@@ -255,12 +253,12 @@ C++ operators are classified into 6 types on the basis of type of operation they
 2.  **Relational Operators.**
 
     Relational operators are used for the comparison of the values of two operands.
-    - **Is Equal To** : ==, Checks if both operands are equal
-    - **Greater Than** : >, Checks if the first operand is greater than the second operand
-    - **Greater Than or Equal To** : >=, Checks if the first operand is greater than or equal to the second operand
-    - **Less Than** : <, Checks if the first operand is lesser than the second operand
-    - **Less Than or Equal To** : <=, Checks if the first operand is lesser than or equal to the second operand
-    - **Not Equal To** : !=, Checks if both operands are not equal
+    - **Is Equal To** (==) : Checks if both operands are equal
+    - **Greater Than** (>) : Checks if the first operand is greater than the second operand
+    - **Greater Than or Equal To** (>=) : Checks if the first operand is greater than or equal to the second operand
+    - **Less Than** (<) : Checks if the first operand is lesser than the second operand
+    - **Less Than or Equal To** (<=) : Checks if the first operand is lesser than or equal to the second operand
+    - **Not Equal To** (!=) : Checks if both operands are not equal
 
             #include <iostream>
             using namespace std;
@@ -302,9 +300,9 @@ C++ operators are classified into 6 types on the basis of type of operation they
     Logical operators are used to combine two or more conditions or constraints or to complement the evaluation of the original condition in consideration.
 
     The result returns a Boolean value, i.e., true or false.
-    - **Logical AND** : &&, Returns true only if all the operands are true or non-zero
-    - **Logical OR** : ||, Returns true if either of the operands is true or non-zero
-    - **Logical NOT** : !, Returns true if the operand is false or zero
+    - **Logical AND** (&&) : Returns true only if all the operands are true or non-zero
+    - **Logical OR** (||) : Returns true if either of the operands is true or non-zero
+    - **Logical NOT** (!) : Returns true if the operand is false or zero
 
             #include <iostream>
             using namespace std;
@@ -334,12 +332,12 @@ C++ operators are classified into 6 types on the basis of type of operation they
     Bitwise operators works on bit-level.
 
     So, compiler first converts to bit-level and then the calculation is performed on the operands.
-    - **Binary AND** : &, Copies a bit to the result if it exists in both operands
-    - **Binary OR** : |, Copies a bit to the result if it exists in any of the operands
-    - **Binary XOR** : ^, Copies the bit to the result if it is present in either of the operands but not both
-    - **Left Shift** : <<, Shifts the value to the left by the number of bits specified by the right operand
-    - **Right Shift** : >>, Shifts the value to the right by the number of bits specified by the right operand
-    - **One's Complement** : ~, Changes binary digits 1 to 0 and 0 to 1
+    - **Binary AND** (&) : Copies a bit to the result if it exists in both operands
+    - **Binary OR** (|) : Copies a bit to the result if it exists in any of the operands
+    - **Binary XOR** (^) : Copies the bit to the result if it is present in either of the operands but not both
+    - **Left Shift** (<<) : Shifts the value to the left by the number of bits specified by the right operand
+    - **Right Shift** (>>) : Shifts the value to the right by the number of bits specified by the right operand
+    - **One's Complement** (~) : Changes binary digits 1 to 0 and 0 to 1
 
     **Note**: Only char and int data types can be used with Bitwise Operators.
 
@@ -383,11 +381,11 @@ C++ operators are classified into 6 types on the basis of type of operation they
     Assignment operators are used to assign value to a variable.
 
     We assign the value of right operand into left operand according to which assignment operator we use.
-    - **Assignment** : =, Assigns the value on the right to the variable on the left
-    - **Add and Assignment** : +=, Adds the right operand to the left operand and assigns the result to the left operand
-    - **Subtract and Assignment** : -=, Subtracts the right operand from the left operand and assigns the result to the left operand
-    - **Multiply and Assignment** : \*=, Multiplies the left operand by the right operand and assigns the result to the left operand
-    - **Divide and Assignment** : /=, Divides the left operand by the right operand and assigns the result to the left operand
+    - **Assignment** (=) : Assigns the value on the right to the variable on the left
+    - **Add and Assignment** (+=) : Adds the right operand to the left operand and assigns the result to the left operand
+    - **Subtract and Assignment** (-=) : Subtracts the right operand from the left operand and assigns the result to the left operand
+    - **Multiply and Assignment** (\*=) : Multiplies the left operand by the right operand and assigns the result to the left operand
+    - **Divide and Assignment** (/=) : Divides the left operand by the right operand and assigns the result to the left operand
 
             #include <iosteam>
             using namespace std;
@@ -420,7 +418,7 @@ C++ operators are classified into 6 types on the basis of type of operation they
             a *= b is 24
             a /= b is 6
 
-6.  **Ternary or COnditional Operators.**
+6.  **Ternary or Conditional Operators.**
 
     Conditional operator returns the value, based on the condition.
 
@@ -461,11 +459,13 @@ In C++, data is read and written using streams, which are sequences of bytes.
 - **Input stream** : Data flows from a device (like the keyboard) to the computer’s memory.
 - **Output stream** : Data flows from memory to an output device (like the screen).
 - These streams are defined in the `<iostream>` header file.
-- The most common stream objects are - "`cin`": for taking input and "`cout`": for displaying output.
+- The most common stream objects are,
+    - `cin` : for taking input and
+    - `cout` : for displaying output.
 
-### Standard Output Stream - cout.
+### Standard Output Stream - `cout`.
 
-- cout is an instance of the ostream class used to display output on the screen.
+- `cout` is an instance of the ostream class used to display output on the screen.
 - Data is sent to cout using the insertion operator <<.
 
         #include <iostream>
@@ -479,9 +479,9 @@ In C++, data is read and written using streams, which are sequences of bytes.
 
         // Output : Hello World.
 
-### Standard Input Stream - cin.
+### Standard Input Stream - `cin`.
 
-- cin is an instance of the istream class used to read input from the keyboard.
+- `cin` is an instance of the istream class used to read input from the keyboard.
 - The extraction operator >> is used with cin to get data from the input stream and store it in a variable.
 
         #include <iostream>
@@ -878,9 +878,11 @@ In such cases, loops come into play, allowing users to repeatedly execute a bloc
 
 ## Functions.
 
-A function is a reusable block of code that performs a specific task. It divides a program into smaller logical units, improves readability, and makes code easier to maintain. A function can accept parameters, execute statements, and optionally return a value.
+A function is a reusable block of code that performs a specific task. It divides a program into smaller logical units, improves readability, and makes code easier to maintain.
 
-- A function Allows you to write a piece of logic once and reuse it wherever needed in the program.
+A function can accept parameters, execute statements, and optionally return a value.
+
+- A function allows you to write a piece of logic once and reuse it wherever needed in the program.
 - This helps keep your code clean, organized, easier to understand and manage.
 
         #include <iostream>
@@ -943,12 +945,12 @@ A function is used by calling its name followed by parentheses, passing required
     void greet() {
         cout << "Welcome to C++ Programming!" << endl;
     }
+    
     int multiply(int a, int b) {
         return a * b;
     }
     ​
     int main() {
-
         greet();
         int result = multiply(4, 5);
         cout << "Multiplication result: " << result << endl;

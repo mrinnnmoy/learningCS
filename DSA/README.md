@@ -67,6 +67,17 @@
 
 ## [Week-7](./Week-7/README.md) : **Sets & Maps.**
 
+- Introduction to Containers,
+- `set` (Ordered Set),
+- `unordered_set`,
+- `map` (Ordered Map),
+- `unordered_map`,
+- Frequency Maps,
+- set vs maps (difference),
+- Iterators,
+- Algorithms with Iterators,
+- Time Complexity Comparison.
+
 ## [Week-8](./Week-8/README.md) : **Sorting & Searching.**
 
 ## [Week-9](./Week-9/README.md) : **Two Pointers.**
