@@ -80,6 +80,18 @@
 
 ## [Week-8](./Week-8/README.md) : **Sorting & Searching.**
 
+- Introduction to Algorithms,
+- Sorting Algorithms,
+- Custom Comparator,
+- Stable vs Unstable Sorting,
+- Bubble Sort,
+- Merge Sort,
+- Quick Sort,
+- Searching Algorithm,
+- Binary Search,
+- Modifying Algorithms,
+- Search Space Thinking.
+
 ## [Week-9](./Week-9/README.md) : **Two Pointers.**
 
 ## [Week-10](./Week-10/README.md) : **Prefix Sums & Sliding window.**
