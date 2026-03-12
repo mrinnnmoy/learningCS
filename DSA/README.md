@@ -105,6 +105,13 @@
 
 ## [Week-10](./Week-10/README.md) : **Prefix Sums & Sliding window.**
 
+- Introduction,
+- Prefix Sum (1D),
+- Prefix Sum (2D),
+- Range Queries using Prefix Sum,
+- Sliding Window Technique,
+- Time Complexity.
+
 ## [Week-11](./Week-11/README.md) : **Bit Manipulation.**
 
 ## [Week-12](./Week-12/README.md) : **Number theory basics.**
