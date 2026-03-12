@@ -94,6 +94,15 @@
 
 ## [Week-9](./Week-9/README.md) : **Two Pointers.**
 
+- Introduction to Two Pointer Technique,
+- Opposite Direction Pointers,
+- Same Direction Pointers,
+- Sorted Array Techniques,
+- Pair Sum Problems,
+- Removing Duplicates,
+- Sliding Range Logic,
+- Time Complexity Advantage.
+
 ## [Week-10](./Week-10/README.md) : **Prefix Sums & Sliding window.**
 
 ## [Week-11](./Week-11/README.md) : **Bit Manipulation.**
