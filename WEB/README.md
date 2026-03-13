@@ -127,7 +127,26 @@
 - API Rate Limiting,
 - API Security Design Principles.
 
-## [Week-10]() : **Error handling & logging.**
+## [Week-10](./Week-10/README.md) : **Error handling & logging.**
+
+- Why Error Handling & Logging Matter,
+- Types of Errors in Node.js,
+- The Error Object in JS,
+- Synchronous Error Handling,
+- Asynchronous Error Handling,
+- The Custom AppError Class,
+- Express Error Handling Pipeline,
+- Handling Uncaught Exceptions & Unhandled Rejections,
+- HTTP Error Libraries,
+- Logging Fundamentals,
+- Morgan (HTTP Request Logger),
+- Winston (Production Logger),
+- Structured Logging,
+- Log Levels & When to Use Them,
+- Request ID Tracing,
+- Error Monitoring Services,
+- Production vs Development Error Responses,
+- Complete Error Handling Architecture.
 
 ## [Week-11]() : **Authentication & Security.**
 
