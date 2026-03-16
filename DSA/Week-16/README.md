@@ -1,8 +1,8 @@
 # List of things learned.
 
-## Min heap
-## Max heap
-## STL priority_queue
-## Custom comparator
-## K largest/smallest problems
-## Heap concept
+## Greedy strategy thinking
+## Interval scheduling
+## Activity selection
+## Fractional knapsack
+## Sorting + greedy pattern
+## Proof intuition (why greedy works)

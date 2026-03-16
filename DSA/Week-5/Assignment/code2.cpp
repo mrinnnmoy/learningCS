@@ -1,39 +1,36 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    int arr[] = {3, 1, 4, 1, 5};
-    int n = 5;
+    string s;
+    cout << "Enter a string: ";
+    getline(cin, s);
 
-    int prefix[n];
-    prefix[0] = arr[0];
+    int left = 0;
+    int right = s.length() - 1;
+    bool isPalindrome = true;
 
-    for (int i = 1; i < n; i++)
+    while (left < right)
     {
-        prefix[i] = prefix[i - 1] + arr[i];
+        char c1 = tolower(s[left]);
+        char c2 = tolower(s[right]);
+
+        if (c1 != c2)
+        {
+            isPalindrome = false;
+            break;
+        }
+
+        left++;
+        right--;
     }
 
-    // Queries
-    int l = 1, r = 3;
-    int sum;
-
-    if (l == 0)
-        sum = prefix[r];
+    if (isPalindrome)
+        cout << "Palindrome";
     else
-        sum = prefix[r] - prefix[l - 1];
-
-    cout << "Sum from 1 to 3: " << sum << endl;
-
-    l = 0;
-    r = 4;
-
-    if (l == 0)
-        sum = prefix[r];
-    else
-        sum = prefix[r] - prefix[l - 1];
-
-    cout << "Sum from 0 to 4: " << sum << endl;
+        cout << "Not Palindrome";
 
     return 0;
 }

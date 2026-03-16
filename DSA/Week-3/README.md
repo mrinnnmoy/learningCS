@@ -1,638 +1,305 @@
 # List of things learned.
 
-## Memory Fundamentals.
+## Introduction to Complexity Analysis.
 
-**Memory management** is the process of controlling how much memory your program uses - and how it is used.
+Complexity analysis is defined as a technique to characterise the time taken by an algorithm with respect to input size (independent from the machine, language and compiler).
 
-This includes creating, using and releasing memory when it's no longer needed.
+It is used for evaluating the variations of execution time on different algorithms.
 
-When you create a variable in C++, the compiler automatically reserves space in memory for it.
+### Need for Complexity Analysis.
 
-For example :
+- Complexity Analysis determines the amount of time and space resources required to execute it.
+- It is used for comparing different algorithms on different input sizes.
+- Complexity helps to determine the difficulty of a problem.
+- often measured by how much time and space (memory) it takes to solve a particular problem
 
-    int myNumber = 10;
+## Asymptotic Notations.
 
-The line above tells the program: **"I need space to store an integer."**
+Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.
 
-C++ handles this memory automatically, so in this case, you dont have to worry about managing memory.
+There are mainly three asymptotic notations:
 
-<hr />
+- Big-O notation,
+- Omega notation &
+- Theta notation.
 
-### **Stack vs Heap memory (basic model).**
+1.  **Big-O Notation.**
 
-In C, C++ and Java, memory can be allocated on either a stack or a heap.
+    Big-O notation represents the upper bound of the running time of an algorithm.
 
-Stack allocation happens in the function call stack, where each function gets its own memory for variables.
+    Therefore, it gives the **worst-case** complexity of an algorithm.
 
-In C/C++, heap memory is controlled by programmer as there is no automatic garbage collection.
+    By using big O- notation, we can asymptotically limit the expansion of a running time to a range of constant factors above and below.
 
-![img](https://camo.githubusercontent.com/ac92230c6f8660c45eb5ceabcaf1147f7495c05cfb99a6e3569db1260c7ff4ae/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e643947635176796b6e54426f454f6d725932494c4961624734457a704447734d53717236506951736e49526b6f3479772673)
+    It is a model for quantifying algorithm performance.
 
-To Understand the difference between **stack** and **heap** memory allocation by observing how objects are created and managed in both cases using a class Emp for storing Employee details.
+    ![img](https://camo.githubusercontent.com/9ed197c5802e790668f6c5a7270cd181304acf79d3bccf44b8562e3fadf37ac3/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324663646e2e70726f6772616d697a2e636f6d25324673697465732532467475746f7269616c3270726f6772616d25324666696c6573253246626967302e706e673f7461626c653d626c6f636b2669643d62343139623762382d633932652d343032652d626537622d6565333038346136646664342663616368653d7632)
+    - We say, a function `f(n)` is `O(g(n))` if there exists c and > 0 such that,
 
-    #include <bits/stdc++.h>
-    using namespace std;
+      Examples:
 
-    class Emp {
-    public:
-        int id;
-        string emp_name;
+            f(n) = n^2 + 5n - 6
+            g(n) = 2n ^ 2
+            So g(n) ≥ f(n) n ≥ 3 (Solved using quadratic equation)
+            So there exists, c = 2 and = 3 such that f(n) ≤ c \* g(n) for all n ≥
+            So f(n) = O(g(n))
 
-        // Constructor to initialize employee details
-        Emp(int id, string emp_name) {
-            this->id = id;
-            this->emp_name = emp_name;
-        }
-    };
+2.  **Omega Notation.**
 
-    // Function to create and return an Emp object
-    Emp Emp_detail(int id, string emp_name) {
-        return Emp(id, emp_name);
-    }
+    Omega notation represents the lower bound of the running time of an algorithm.
 
-    int main() {
-        // Initializing employee details
-        int id = 21;
-        string name = "Maddy";
+    Thus, it provides the **best-case** complexity of an algorithm.
 
-        // Creating an Emp object using the function
-        Emp person_ = Emp_detail(id, name);
+    The execution time serves as a lower bound on the algorithm’s time complexity.
 
-        return 0;
-    }
+    It is defined as the condition that allows an algorithm to complete statement execution in the shortest amount of time.
 
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20201210222125/Untitled4-660x361.png)
+        Ω(g(n)) = { f(n): there exist positive constants c and n0
+        such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n0 }
 
-Here's a comparison chart for better understanding.
+    ![img](https://camo.githubusercontent.com/497c8aa233862ed37a2ccd3db8980f15fbb65a4056148f1b303e81a1c3646e25/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324663646e2e70726f6772616d697a2e636f6d25324673697465732532467475746f7269616c3270726f6772616d25324666696c65732532466f6d6567612e706e673f7461626c653d626c6f636b2669643d30616261303364392d666237622d343962362d386330382d3537623831346439613766612663616368653d7632)
 
-| Parameter                  | Stack                                                      | Heap                                                                           |
-| -------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Basic                      | Memory is allocated in a contiguous block.                 | Memory is allocated in any random order.                                       |
-| Allocation & De-allocation | Automatic by compiler instructions.                        | Manual by the programmer (in C or C++ and garbage collector in Java or Python) |
-| Cost                       | Less                                                       | More                                                                           |
-| Implementation             | Easy                                                       | Hard                                                                           |
-| Main Issue                 | Shortage of Memory                                         | Memoery fragmentation                                                          |
-| Locality of reference      | Excellent                                                  | Adequate                                                                       |
-| Safety                     | Thread safe, data stored can only be accessed by the owner | Not Thread safe, data stored visible to all threads                            |
-| Flexibility                | Fixed-size                                                 | Resizing is possible                                                           |
-| Data type structure        | Linear                                                     | Hierarchical                                                                   |
-| Preferred                  | Static memory allocation is preferred in an array.         | Heap memory allocation is preferred in the linked list.                        |
-| Size                       | Smaller than heap memory.                                  | Larger than stack memory.                                                      |
+    For example, `f(n) = n^2` and `g(n) = n + 10`
 
-<hr />
+3.  **Theta Notation.**
 
-### How variables are stored in memory.
+    Theta notation encloses the function from above and below.
 
-The memory layout of a program shows how its data is stored in memory during execution. It helps developers understand and manage memory efficiently.
+    Since it represents the upper and the lower bound of the running time of an algorithm, it is used for analyzing the **average-case** complexity of an algorithm.
 
-- Memory is divided into sections such as code, data, heap and stack.
+    The execution time serves as both a lower and upper bound on the algorithm’s time complexity.
 
-- Knowing the memory layout is useful for optimizing performance, debugging and prevent errors like segmentation fault and memory leak.
+    It exists as both, the most, and least boundaries for a given input value.
 
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20250122155858092295/Memory-Layout-of-C-Program-768.webp)
+        Θ(g(n)) = { f(n): there exist positive constants c1, c2 and n0
+        such that 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) for all n ≥ n0 }
 
-1. **Text Segment.**
+    ![img](https://camo.githubusercontent.com/2490c153c9371ebf3a3bf62bbf9380ff545871e50b88c116d139c522f4a18170/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324663646e2e70726f6772616d697a2e636f6d25324673697465732532467475746f7269616c3270726f6772616d25324666696c657325324674686574612e706e673f7461626c653d626c6f636b2669643d62343230626666612d393334362d346331362d613336352d3436643834646631316435662663616368653d7632)
 
-- The text segment (or code segment) stores the executable code of the program like program’s functions and instructions.
-- The segment is usually read-only to prevent accidental modification during execution.
-- It is typically stored in the lower part of memory.
-- The size of the text segment depends on the number of instructions and the program’s complexity.
+## How to measure complexity.
 
-2. **Data Segment.**
+The complexity of an algorithm can be measured in three ways:
 
-- The data segment stores global and static variables of the program.
-- Variables in this segment retain their values throughout program execution.
-- The size of the data segment depends on the number and type of global/static variables.
-- It is divided into initialized and uninitialized (BSS) sections.
+- Time complexity,
+- Space Complexity &
+- Auxiliary space.
 
-3. **Heap Segment.**
+1.  **Time Complexity.**
 
-- The heap segment is used for dynamic memory allocation.
-- It starts at the end of the BSS segment and grows towards higher memory addresses.
-- Memory in the heap is managed using functions like malloc(), realloc() and free().
-- The heap is shared by all shared libraries and dynamically loaded modules in a process.
+    The time complexity of an algorithm is defined as the amount of time taken by an algorithm to run as a function of the length of the input.
 
-4. **Stack Segment.**
+    **Note** that the time to run is a function of the length of the input and not the actual execution time of the machine on which the algorithm is running on.
+    - **How is Time complexity computed?**
 
-- The stack stores local variables, function parameters, and return addresses for each function call.
-- Each function call creates a stack frame in this segment.
-- The stack is usually at higher memory addresses and grows opposite to the heap.
-- When the stack and heap meet, the program’s free memory is exhausted.
+      To estimate the time complexity, we need to consider the cost of each fundamental instruction and the number of times the instruction is executed.
+      - If we have statements with basic operations like **comparisons, return statements, assignments and reading a variable**.
 
-### What is a memory address?
+        We can assume they take **constant time each O(1)**.
 
-When you create a variable in c++, the compiler automatically reserves space in memeory for it.
+              Statement 1: int a=5;            // reading a variable
+              statement 2; if( a==5) return true;  // return statement
+              statement 3; int x= 4>5 ? 1:0;     // comparison
+              statement 4; bool flag=true;      // Assignment
 
-For example:
+        This is the result of calculating the overall time complexity.
 
-    int myNumber = 10;
+              total time = time(statement1) + time(statement2) + ... time (statementN)
 
-The line above tells the program: "**I need space to store an integer.**"
+        Assuming that **n is the size** of the input, let's use `T(n)` to represent the **overall time** and t to represent the **amount of time** that a **statement or collection** of statements takes to **execute**.
 
-C++ handles this memory automatically, so in this case, you dont have to worry about managing memory.
+              T(n) = t(statement1) + t(statement2) + ... + t(statementN);
 
-You can also check how much memeory a variable type uses with the `sizeof` operator.
+        **Overall, T(n)= O(1), which means constant complexity.**
+        - For any loop, we find out the runtime of the block inside them and multiply it by the number of times the program will repeat the loop.
 
-    #include <iostream>
-    using namespace std;
+                for (int i = 0; i < n; i++) {
+                cout << "Hello World." << endl;
+                }
 
-    int main() {
-    int myInt;
-    float myFloat;
-    double myDouble;
-    char myChar;
+          For the above example, the loop will execute `n` times, and it will print "Hello World." N number of times. so the time taken to run this program is:
 
-    cout << sizeof(myInt) << "\n";     // 4 bytes (typically)
-    cout << sizeof(myFloat) << "\n";   // 4 bytes
-    cout << sizeof(myDouble) << "\n";  // 8 bytes
-    cout << sizeof(myChar) << "\n";    // 1 byte
-    return 0;
-    }
+                T(N)= n *( t(cout statement))
+                    = n * O(1)
+                    =O(n), Linear complexity.
 
-But does that mean, you have to manager memory yourself?
+        - For 2D arrays, we would have nested loop concepts, which means a loop inside a loop.
 
-**Sometimes yes & sometime no.**
+                for (int i = 0; i < n; i++) {
+                for (int j = 0; j < m; j++) {
+                    cout << "Hello World." << endl;
+                }
+                }
 
-- For normal variables (like int x = 10;), C++ takes care of the memory for you.
-- But when you want to create memory manually while the program is running.
+          For the above example, the cout statement will execute n*m times, and it will print "Hello World." N * M number of times. so the time taken to run this program is:
 
-  (for example: based on user input), you need to manage it yourself and clean it up when you're done.
+                T(N)= n * m *(t(cout statement))
+                    = n * m * O(1)
+                    =O(n*m), Quadratic Complexity.
 
-If your program uses too much memory, or forgets to clean up memory it no longer needs, it can lead to slow performance or even crashes.
+2.  **Space Complexity.**
 
-That's why understanding memory is important. It gives you more control and helps avoid common bugs.
+    The amount of memory required by the algorithm to solve a given problem is called the space complexity of the algorithm.
 
-### Using & (address-of operator)
+    Problem-solving using a computer requires memory to hold temporary data or final result while the program is in execution.
+    - **How is Space complexity computed?**
 
-In c++, we can also get the memory address of a variable by using the `&` operator:
+      The space Complexity of an algorithm is the total space taken by the algorithm with respect to the input size. Space complexity includes both Auxiliary space and space used by input.
 
-    string food = "Pizza"; // A food variable of type string
+      Space complexity is a parallel concept to time complexity. If we need to create an array of size n, this will require `O(n)` space. If we create a two-dimensional array of size `n*n`, this will require `O(n2)` space.
 
-    cout << food;  // Outputs the value of food (Pizza)
-    cout << &food; // Outputs the memory address of food (0x6dfed4)
+      **In recursive calls stack space also counts.**
+      - Example:
 
-<hr />
-
-## Introduction to Pointers.
-
-### What is a pointer?
-
-A **pointer** however, is a variable that stores the memory address as its value.
-
-A pointer variable points to a data type (like `int` or `string`) of the same type and is created with the `*` operator.
-
-The address of the variable you're working with is assigned to the pointer:
-
-    string food = "Pizza";  // A food variable of type string
-    string* ptr = &food;    // A pointer variable, with the name ptr, that stores the address of food
-
-    // Output the value of food (Pizza)
-    cout << food << "\n";
-
-    // Output the memory address of food (0x6dfed4)
-    cout << &food << "\n";
-
-    // Output the memory address of food with the pointer (0x6dfed4)
-    cout << ptr << "\n";
-
-- Here we're creating a pointer variable with the name `ptr`, that points to a `string` variable, by using the asterisk sign `*` (`string* ptr`).
-
-- Note that the type of the pointer has to match the type of the variable you're working with.
-
-- Use the `&` operator to store the memory address of the variable called food and assign it to the pointer.
-
-- Now, `ptr` holds the value of `food`'s memory address.
-
-### Pointer initialization, declaration and dereferencing.
-
-From the previous example, we used the pointer variable to get the memory address of a variable (used together with the & reference operator).
-
-However, you can also use the pointer to get the value of the variable, by using the \* operator (the dereference operator):
-
-    string food = "Pizza";  // Variable declaration
-    string* ptr = &food;    // Pointer declaration
-
-    // Reference: Output the memory address of food with the pointer (0x6dfed4)
-    cout << ptr << "\n";
-
-    // Dereference: Output the value of food with the pointer (Pizza)
-    cout << *ptr << "\n";
-
-### Modifying Pointers.
-
-You can also change the pointer's value.
-
-But note that this will also change the value of the original variable:
-
-    string food = "Pizza";
-    string* ptr = &food;
-
-    // Output the value of food (Pizza)
-    cout << food << "\n";
-
-    // Output the memory address of food (0x6dfed4)
-    cout << &food << "\n";
-
-    // Access the memory address of food and output its value (Pizza)
-    cout << *ptr << "\n";
-
-    // Change the value of the pointer
-    *ptr = "Hamburger";
-
-    // Output the new value of the pointer (Hamburger)
-    cout << *ptr << "\n";
-
-    // Output the new value of the food variable (Hamburger)
-    cout << food << "\n";
-
-<hr />
-
-## Pointer Arithmetic.
-
-In C++, pointer arithmetic means performing valid arithmetic operations on pointer variables to move and access memory locations efficiently.
-
-### Incrementing & decrementing pointers.
-
-The value of pointer is incremented depending on the type of variable address stored in the pointer.
-
-For example, If an integer pointer `ptr` holds the address `1000` and we increment the pointer, then the pointer will be incremented by `4` or `8` bytes (size of the integer).
-
-And the pointer will now hold the address `1004` or `1008`.
-
-Similarly Like increment, the value can also be decreased according to the size of the type.
-
-The following diagram assumes size of integer as 4 bytes.
-
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20230424100855/Pointer-Increment-Decrement-768.webp)
-
-    #include <iostream>
-    using namespace std;
-
-    int main() {
-
-        int n = 27;
-        int* ptr = &n;
-
-        cout << "Size of int: " << sizeof(int) << endl;
-        cout << "Before Increment: " << ptr << endl;
-
-        ptr++;
-        cout << "After Increment: " << ptr << endl;
-        cout << "Before Decrement: " << ptr << endl;
-
-        ptr--;
-        cout << "After Decrement: " << ptr;
-        return 0;
-    }
-
-    <!-- Output -->
-    Size of int: 4
-    Before Increment: 0x7ffcbc721cec
-    After Increment: 0x7ffcbc721cf0
-    Before Decrement: 0x7ffcbc721cf0
-    After Decrement: 0x7ffcbc721cec
-
-### Pointer arithmetic with integers.
-
-We can add integer values to Pointers and the pointer is adjusted based on the size of the data type it points to.
-
-For example, if an integer pointer ptr stores the address 1000 and we add the value 5 to the pointer.
-
-    ptr + 5
-
-It will calculate the new address as:
-
-    1000 + (5 * 4(size of an integer)) = 1020
-
-![img](https://media.geeksforgeeks.org/wp-content/uploads/20230424100935/Pointer-Addition-768.webp)
-
-    #include <iostream>
-    using namespace std;
-
-    int main(){
-
-        int n = 20;
-        int* ptr = &n;
-
-        cout << "Address stored in ptr: " << ptr << endl;
-        ptr = ptr + 1;
-        cout << "Adding 1 to ptr: " << ptr << endl;
-
-        ptr = ptr + 2;
-        cout << "Adding 2 to ptr: " << ptr;
-        return 0;
-    }
-
-    <!-- Output -->
-    Address stored in ptr: 0x7ffc79d0fcec
-    Adding 1 to ptr: 0x7ffc79d0fcf0
-    Adding 2 to ptr: 0x7ffc79d0fcf8
-
-### Pointer arithmetic with arrays.
-
-Pointers contain addresses.
-
-Adding two addresses makes no sense because there is no idea what it would point to.
-
-Subtracting two addresses lets you compute the offset between the two addresses.
-
-An array name acts like a pointer constant.
-
-The value of this pointer constant is the address of the first element.
-
-**For Example**: if an array is named `arr` then `arr` and `&arr[0]` can be used to reference the array as a pointer.
-
-    #include <stdio.h>
-
-    int main(){
-
-        int N = 5;
-
-        // An array
-        int arr[] = { 1, 2, 3, 4, 5 };
-
-        // Declare pointer variable
-        int* ptr;
-
-        // Point the pointer to first
-        // element in array arr[]
-        ptr = arr;
-
-        // Traverse array using ptr
-        for (int i = 0; i < N; i++) {
-
-            // Print element at which
-            // ptr points
-            printf("%d ", ptr[0]);
-            ptr++;
-        }
-    }
-
-    <!-- Output -->
-    1 2 3 4 5
-
-<hr />
-
-## Dynamic Memory Allocation.
-
-In C++, **stack memory** is automatically allocated for variables at compile time and has a fixed size. For greater control and flexibility, **dynamic memory allocation** on the heap is used, allowing manual allocation with new and deallocation with delete.
-
-It allows the program to request memory from the heap at runtime using the `new` operator and release it using the `delete` operator. This is useful when the size of required memory isn’t known at compile time, such as for variable-sized arrays or dynamic data structures like linked lists and trees.
-
-The new operator in C++ allocates memory from the `Free Store` (a portion of the heap). If enough memory is available, it initializes the memory with a default value based on its type and returns the address of the allocated memory
-
-### `new` operator.
-
-A `new` operator is also used to dynamically allocate a block (an array) of memory of given data type as shown below:
-
-    new data_type[n];
-
-This statement dynamically allocates memory for `n` elements of given `data_type`. Arrays can also be initialized during allocation.
-
-    #include <iostream>
-    #include <memory>
-    using namespace std;
-
-    int main() {
-
-        // Declared a pointer to store
-        // the address of the allocated memory
-        int *nptr;
-
-        // Allocate and initialize array of
-        // integer with 5 elements
-        nptr = new int[5]{1, 2, 3, 4, 5};
-
-        // Print array
-        for (int i = 0; i < 5; i++)
-            cout << nptr[i] << " ";
-        return 0;
-    }
-
-    <!-- Output -->
-    1 2 3 4 5
-
-### `delete` operator.
-
-In C++, `delete` operator is used to release dynamically allocated memory. It deallocates memory that was previously allocated with new.
-
-- Syntax:
-  delete ptr;
-
-where, `ptr` is the pointer to the dynamically allocated memory.
-
-- To free the dynamically allocated array pointed by pointer variable, use the following form of delete:
-
-        delete[] arr;
-
-- Example.
-
-        #include <iostream>
-        using namespace std;
-
-        int main() {
-            int *ptr = NULL;
-
-            // Request memory for integer variable
-            // using new operator
-            ptr = new int(10);
-            if (!ptr) {
-                cout << "allocation of memory failed";
-                exit(0);
+            int add (int n){
+                if (n <= 0){
+                    return 0;
+                }
+                return n + add (n-1);
             }
 
-            cout << "Value of *p: " << *ptr << endl;
+            Here each call add a level to the stack :
+            1.  add(4)
+            2.    -> add(3)
+            3.      -> add(2)
+            4.        -> add(1)
+            5.          -> add(0)
+            Each of these calls is added to call stack and takes up actual memory.
+            So it takes O(n) space.
 
-            // Free the value once it is used
-            delete ptr;
+        However, just because you have n calls total doesn’t mean it takes O(n) space.
 
-            // Allocate an array
-            ptr = new int[3];
-            ptr[2] = 11;
-            ptr[1] = 22;
-            ptr[0] = 33;
-            cout << "Array: ";
-            for (int i = 0; i < 3; i++)
-                cout << ptr[i] << " ";
+3.  **Auxiliary Space.**
 
-            // Deallocate when done
-            delete[] ptr;
+    The temporary space needed for the use of an algorithm is referred to as auxiliary space. Like temporary arrays, pointers, etc.
 
-            return 0;
-        }
+    It is preferable to make use of Auxiliary Space when comparing things like sorting algorithms.
 
-        <!-- Output -->
-        Value of *p: 10
-        Array: 33 22 11
+    For example, **sorting algorithms** take `O(n)` space, as there is an input array to sort, **but auxiliary space is O(1) in that case**.
 
-### Memory leaks (basic awareness)
+## Some popular complexities.
 
-As powerful as dynamic memory allocation is it is also prone to one of the worst errors in C++. Major ones are:
+- `O(1)` -> Constant time complexity.
 
-- Memory Leaks.
+  Example: a + b, a % b, swap(a, b)
 
-  Memory leak is a situation where the memory allocated for a particular task remains allocated even after it is no longer needed. Moreover, if the address to the memory is lost, then it will remain allocated till the program runs.
+- `O()` -> Logarithmic complexity.
 
-  **Solution**: Use smart pointers whenever possible. They automatically deallocate when goes out of scope.
+  Example: Binary search
 
-- Dangling Pointers.
+- `O()` -> Example: Finding divisors of a number
 
-  Dangling pointers are created when the memory pointed by the pointer is accessed after it is deallocated, leading to undefined behaviour (crashes, garbage data, etc.).
+- `O(n)` -> Linear time complexity.
 
-  **Solution**: Initialize pointers with nullptr and assign nullptr again when deallocated.
+  Example: Linear search, finding maximum element
 
-- Double Deletion.
+- `O()` -> Example: Sorting, Seive of Eratosthenes
 
-  When delete is called on the same memory twice, leading to crash or corrupted program.
+- `O()` -> Quadratic complexity.
 
-  **Solution**: assign nullptr to the memory pointer when deallocated.
+  Example: Insertion sort
 
-<hr />
+- `O()` -> Cubic complexity.
 
-## Passing Arguments in Functions.
+  Example: Floyd Warshall algorithm
 
-In C++, data can be sent to functions when they are called in order to perform operations. This data is called parameters or arguments and there are various parameter passing methods available in C++. In this article, we will discuss various parameter-passing techniques in C++.
+- `O()` -> Exponential complexity.
 
-Before you see the techniques, first understand the difference between the following terms:
+  Example: bitmasking
 
-- **Formal Parameters**: Variables used in parameter list of a function as placeholders. Also called only parameters.
-- **Actual Parameters**: The expressions or values passed in during a function call. Also called arguments.
+## Effect of Complexity on any algorithm.
 
-There are 3 different methods using which we can pass parameters to a function in C++.
+- **Time complexity** of an algorithm quantifies the amount of time taken by an algorithm to run as a function of length of the input.
 
-1.  **Pass by value**.
+- While, the **space complexity** of an algorithm quantifies the amount of space or memory taken by an algorithm to run as a function of the length of the input.
 
-    In pass by value method, a variable's value is copied and then passed to the function. As the result, any changes to the parameter inside the function will not affect the variable's original value in the caller. This method is simple, easy to understand and implement but it is not preferred for large size of data structures at it involves copying the value.
+## Steps to optimize Complexity Analysis of an algorithm.
 
-        #include <iostream>
-        using namespace std;
+Optimization means modifying the brute-force approach to a problem. It is done to derive the best possible solution to solve the problem so that it will take less time and space complexity. We can optimize a program by either limiting the search space at each step or occupying less search space from the start.
 
-        // Arguments are pass by value
-        void change(int a) {
+We can optimize a solution using both time and space optimization.
 
-            // Modifying arguments
-            a = 22;
-        }
+To optimize a program,
 
-        int main() {
-            int x = 5;
-
-            // Passing x by value to change()
-            change(x);
-
-            cout << x;
-            return 0;
-        }
-
-        <!-- Output -->
-        5
-
-    In this program, when the change function is called with x as the argument, a copy of x is created and passed to the function. Inside the function, the parameter a is modified, but this modification only affects the local copy of the value, not the original variable x, as demonstrated by the output.
-
-2.  **Pass by reference**.
-
-    In pass-by-reference method, instead of passing the value of the argument, we pass the reference of an argument to the function. This allows the function to change the value of the original argument. This is useful when you have to pass large size data.
-
-        #include <iostream>
-        using namespace std;
-
-        // Arguments are pass by value
-        void change(int& a) {
-
-            // Modifying arguments
-            a = 22;
-        }
-
-        int main() {
-            int x = 5;
-
-            // Passing x by reference to change()
-            change(x);
-
-            cout << x;
-            return 0;
-        }
-
-        <!-- Output -->
-        22
-
-    As we can see, the original value is modified. Just declaring the parameter a as a reference changes it from pass by value to pass by reference.
-
-3.  **Pass by address (using pointers)**.
-
-    The pass-by-pointer is very similar to the pass-by-reference method. The only difference is that we pass the raw address of the argument as the parameter to the function instead of reference.
-
-        #include <iostream>
-        using namespace std;
-
-        // Arguments are pass by value
-        void change(int* a) {
-
-            // Modifying arguments
-            *a = 22;
-        }
-
-        int main() {
-            int x = 5;
-
-            // Passing address of x to change()
-            change(&x);
-
-            cout << x;
-            return 0;
-        }
-
-        <!-- Output -->
-        22
-
-    The original value is modified, but it increased to complexity of the program as we need to be careful of referencing, referencing and passing addresses. So, passing reference is preferred over this method.
-
-### Difference between reference and pointer.
-
-Below are key difference between pointers and references in C++ based on their behavior, usage and memory handling.
-
-| Feature        | Pointer                                                 | Reference                                                       |
-| -------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
-| Definition     | A pointer stores the memory address of another variable | A reference is an alias (another name) for an existing variable |
-| Declaration    | Uses \* symbol                                          | Uses & symbol                                                   |
-| Initialization | Can be declared without initialization                  | Must be initialized at the time of declaration                  |
-| Null Value     | Can be NULL or nullptr                                  | Cannot be null                                                  |
-| Reassignment   | Can point to another variable                           | Cannot be reassigned to refer to another variable               |
-| Memory Address | Has its own memory address                              | Shares the same memory address as the referenced variable       |
-| Dereferencing  | Requires dereferencing using \*                         | No dereferencing needed                                         |
-| Usage          | Useful for dynamic memory, arrays, and data structures  | Useful for function parameters and operator overloading         |
-| Safety         | Less safe (can cause dangling pointers)                 | Safer compared to pointers                                      |
-
-<hr />
+- We can reduce the time taken to run the program and increase the space occupied;
+- we can reduce the memory usage of the program and increase its total run time, or
+- we can reduce both time and space complexity by deploying relevant algorithms
 
 ## Assignment.
 
-1. Write a program in c++ that takes two integers as input,
-   - Swap them using :
-     - Pass by value,
-     - Pass by reference,
-     - Pass by address (pointer)
-   - Print the values before & after each swap.
+1.  Find the Time Complexity & Space of this code,
 
-   [Solution](./Assignment/code1.cpp)
+        int sum = 0;
+        for(int i = 0; i < n; i++) {
+            sum += i;
+        }
 
-2. Write a program in c++ that takes `n` as input,
-   - Dynamically allocates an array of size `n` using `new`.
-   - Takes array elements from user
-   - Uses pointer arithmetic only (no indexing like `arr[i]`) to:
-     - Print the array
-     - Calculate sum of elements
-   - Deallocate memory peoperly using `delete[]`.
+    - **Solution.**
+      - **Time Complexity.**
 
-   [Solution](./Assignment/code2.cpp)
+        This loop runs from `0` to `n-1`.
 
-3. Write a program in c++ that takes `n` as input,
-   - Dynamically creates an array of size `n`.
-   - Takes elements as input.
-   - Create a function that:
-     - Accepts the array using pass by address
-     - Modifies each element (e.g., multiply by 2)
-   - Print the modified array in `main`.
-   - Properly free memory.
+        Meaning, the statement `sum += i` runs `n` times & each operation inside loop = `O(1)`.
 
-   [Solution](./Assignment/code3.cpp)
+        So total time is,
+
+              T(n) = n × O(1) = O(n)
+
+      - **Space Complexity.**
+
+        We're only using, `sum` & `i`.
+
+        So, space stays constant, `O(1)`.
+
+2.  Find the Time complexity & Space complexity of this code,
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < i; j++) {
+                cout << i << j;
+            }
+        }
+
+    - **Solution.**
+
+      Inner loop runs:
+
+            When i = 0 → 0 times
+            When i = 1 → 1 time
+            When i = 2 → 2 times
+            When i = 3 → 3 times
+            ...
+            When i = n-1 → n-1 times
+
+      So total execution:
+
+            0 + 1 + 2 + 3 + ... + (n-1)
+
+      That sum is:
+
+            n(n-1)/2
+
+      Ignore constants and lower order terms:
+
+            ≈ n²/2 → O(n²)
+
+      - **Time Complexity** = O(n^2)
+      - **Space Complexity** = O(1)
+
+3.  Find the Time complexity & Space complexity of this code,
+
+        for(int i = 1; i < n; i = i * 2) {
+            for(int j = 0; j < n; j++) {
+                cout << i << j;
+            }
+        }
+
+    - **Solution.**
+
+      First let's understand outer loop,
+      - `i` starts at 1 and doubles each time, so outer loop runs `O(log n)` times.
+
+      For each outer iterations, inner loop runs `n` times.
+      - So total work is `(log n) * n`.
+
+      - **Time Complexity** = O(n log n)
+
+      - **Space Complexity** = O(1)

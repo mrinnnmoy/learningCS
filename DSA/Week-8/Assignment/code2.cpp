@@ -1,30 +1,26 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <unordered_map>
 using namespace std;
 
 int main()
 {
 
-    int n;
-    cin >> n;
+    int arr[] = {1, 2, 2, 3, 3, 3};
+    int n = 6;
 
-    vector<int> arr(n);
+    unordered_map<int, int> freq;
 
+    // Count frequency
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        freq[arr[i]]++;
     }
 
-    int x;
-    cin >> x;
-
-    auto lb = lower_bound(arr.begin(), arr.end(), x);
-    auto ub = upper_bound(arr.begin(), arr.end(), x);
-
-    int count = ub - lb;
-
-    cout << count;
+    // Print frequencies
+    for (auto pair : freq)
+    {
+        cout << pair.first << " -> " << pair.second << endl;
+    }
 
     return 0;
 }

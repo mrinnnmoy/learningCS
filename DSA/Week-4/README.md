@@ -1,305 +1,258 @@
-# List of things learned.
+# Lists of things learned.
 
-## Introduction to Complexity Analysis.
+## Introduction to Arrays.
 
-Complexity analysis is defined as a technique to characterise the time taken by an algorithm with respect to input size (independent from the machine, language and compiler).
+Arrays are used to store multiple values in a single variable, instead of declaring seperate variables for each value.
 
-It is used for evaluating the variations of execution time on different algorithms.
+![array-img](https://camo.githubusercontent.com/64df9278cbb7ca901094ac28aa1302a3ac7011aa0008f77595269dee05291ccf/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e64394763527a326c734e664876484a673679586170575f6c7a5a663553496c534256387753506b613842577a766a2673)
 
-### Need for Complexity Analysis.
+### Declaring an Array.
 
-- Complexity Analysis determines the amount of time and space resources required to execute it.
-- It is used for comparing different algorithms on different input sizes.
-- Complexity helps to determine the difficulty of a problem.
-- often measured by how much time and space (memory) it takes to solve a particular problem
+To declare an array, define the variable type, specify the name of the array followed by **square brackets** and specify the number of elements it should store:
 
-## Asymptotic Notations.
+    string cars[4];
 
-Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.
+### Initializing an Array.
 
-There are mainly three asymptotic notations:
+We have now declared a variable that holds an array of four strings. To insert values to it, we can use an array literal - place the values in a comma-seperated list, inside curly braces:
 
-- Big-O notation,
-- Omega notation &
-- Theta notation.
+    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
 
-1.  **Big-O Notation.**
+To create and array of three integers, you could write:
 
-    Big-O notation represents the upper bound of the running time of an algorithm.
+    int myNum[3] = {10, 20, 30};
 
-    Therefore, it gives the **worst-case** complexity of an algorithm.
+### Accessing the Elements of an Array.
 
-    By using big O- notation, we can asymptotically limit the expansion of a running time to a range of constant factors above and below.
+You access an array element by referring to the index number inside square brackets `[]`.
 
-    It is a model for quantifying algorithm performance.
+This statement accesses the value of the **first element** in **cars**:
 
-    ![img](https://camo.githubusercontent.com/9ed197c5802e790668f6c5a7270cd181304acf79d3bccf44b8562e3fadf37ac3/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324663646e2e70726f6772616d697a2e636f6d25324673697465732532467475746f7269616c3270726f6772616d25324666696c6573253246626967302e706e673f7461626c653d626c6f636b2669643d62343139623762382d633932652d343032652d626537622d6565333038346136646664342663616368653d7632)
-    - We say, a function `f(n)` is `O(g(n))` if there exists c and > 0 such that,
+    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
 
-      Examples:
+    cout << cars[0];
+    // Outputs Volvo
 
-            f(n) = n^2 + 5n - 6
-            g(n) = 2n ^ 2
-            So g(n) ≥ f(n) n ≥ 3 (Solved using quadratic equation)
-            So there exists, c = 2 and = 3 such that f(n) ≤ c \* g(n) for all n ≥
-            So f(n) = O(g(n))
+### Updating an Array Element.
 
-2.  **Omega Notation.**
+To update the value of a specific element, refer to the index number:
 
-    Omega notation represents the lower bound of the running time of an algorithm.
+    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
 
-    Thus, it provides the **best-case** complexity of an algorithm.
+    cars[0] = "Opel";
+    cout << cars[0];
+    // Now outputs Opel instead of Volvo
 
-    The execution time serves as a lower bound on the algorithm’s time complexity.
+## Traversing Arrays.
 
-    It is defined as the condition that allows an algorithm to complete statement execution in the shortest amount of time.
+### Looping through an Array.
 
-        Ω(g(n)) = { f(n): there exist positive constants c and n0
-        such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n0 }
+You can loop through the array elements with the for loop.
 
-    ![img](https://camo.githubusercontent.com/497c8aa233862ed37a2ccd3db8980f15fbb65a4056148f1b303e81a1c3646e25/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324663646e2e70726f6772616d697a2e636f6d25324673697465732532467475746f7269616c3270726f6772616d25324666696c65732532466f6d6567612e706e673f7461626c653d626c6f636b2669643d30616261303364392d666237622d343962362d386330382d3537623831346439613766612663616368653d7632)
+The following example outputs all elements in the cars array:
 
-    For example, `f(n) = n^2` and `g(n) = n + 10`
+    // Create an array of strings
+    string cars[5] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
 
-3.  **Theta Notation.**
+    // Loop through strings
+    for (int i = 0; i < 5; i++) {
+    cout << cars[i] << "\n";
+    }
 
-    Theta notation encloses the function from above and below.
+## Vectors (Dynamic Arrays in C++)
 
-    Since it represents the upper and the lower bound of the running time of an algorithm, it is used for analyzing the **average-case** complexity of an algorithm.
+For operations that require adding and removing array elements, C++ provides **vectors**, which are **resizable arrays**.
 
-    The execution time serves as both a lower and upper bound on the algorithm’s time complexity.
+The size of a vector is dynamic, meaning it can grow and shrink as needed.
 
-    It exists as both, the most, and least boundaries for a given input value.
+Vectors are found in the `<vector>` library and they come with many useful functions to add, remove and modify elements:
 
-        Θ(g(n)) = { f(n): there exist positive constants c1, c2 and n0
-        such that 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) for all n ≥ n0 }
+Here's an example,
 
-    ![img](https://camo.githubusercontent.com/2490c153c9371ebf3a3bf62bbf9380ff545871e50b88c116d139c522f4a18170/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f687474707325334125324625324663646e2e70726f6772616d697a2e636f6d25324673697465732532467475746f7269616c3270726f6772616d25324666696c657325324674686574612e706e673f7461626c653d626c6f636b2669643d62343230626666612d393334362d346331362d613336352d3436643834646631316435662663616368653d7632)
+    // A vector with 3 elements
+    vector<string> cars = {"Volvo", "BMW", "Ford"};
 
-## How to measure complexity.
+    // Adding another element to the vector
+    cars.push_back("Tesla");
 
-The complexity of an algorithm can be measured in three ways:
+### Basic Operations.
 
-- Time complexity,
-- Space Complexity &
-- Auxiliary space.
+- `push_back()`
 
-1.  **Time Complexity.**
+  Adds an element at the end of the vector.
 
-    The time complexity of an algorithm is defined as the amount of time taken by an algorithm to run as a function of the length of the input.
+        vector<int> v = {1, 2, 3};
+        v.push_back(4);   // v becomes {1, 2, 3, 4}
 
-    **Note** that the time to run is a function of the length of the input and not the actual execution time of the machine on which the algorithm is running on.
-    - **How is Time complexity computed?**
+- `pop_back()`
 
-      To estimate the time complexity, we need to consider the cost of each fundamental instruction and the number of times the instruction is executed.
-      - If we have statements with basic operations like **comparisons, return statements, assignments and reading a variable**.
+  Removes the last element of the vector.
 
-        We can assume they take **constant time each O(1)**.
+        vector<int> v = {1, 2, 3};
+        v.pop_back();   // v becomes {1, 2}
 
-              Statement 1: int a=5;            // reading a variable
-              statement 2; if( a==5) return true;  // return statement
-              statement 3; int x= 4>5 ? 1:0;     // comparison
-              statement 4; bool flag=true;      // Assignment
+- `size()`
 
-        This is the result of calculating the overall time complexity.
+  Returns the number of elements currently stored in the vector.
 
-              total time = time(statement1) + time(statement2) + ... time (statementN)
+        vector<int> v = {10, 20, 30};
+        cout << v.size();   // Output: 3
 
-        Assuming that **n is the size** of the input, let's use `T(n)` to represent the **overall time** and t to represent the **amount of time** that a **statement or collection** of statements takes to **execute**.
+- `empty()`
 
-              T(n) = t(statement1) + t(statement2) + ... + t(statementN);
+  Checks whether the vector is empty.
 
-        **Overall, T(n)= O(1), which means constant complexity.**
-        - For any loop, we find out the runtime of the block inside them and multiply it by the number of times the program will repeat the loop.
+        vector<int> v;
+        if(v.empty()) {
+            cout << "Vector is empty";
+        }
 
-                for (int i = 0; i < n; i++) {
-                cout << "Hello World." << endl;
-                }
+        <!-- Output -->
+        Returns true if size is 0.
+        Returns false otherwise.
 
-          For the above example, the loop will execute `n` times, and it will print "Hello World." N number of times. so the time taken to run this program is:
+- `clear()`
 
-                T(N)= n *( t(cout statement))
-                    = n * O(1)
-                    =O(n), Linear complexity.
+  Removes all elements from the vector.
 
-        - For 2D arrays, we would have nested loop concepts, which means a loop inside a loop.
+        vector<int> v = {1, 2, 3};
+        v.clear();   // v becomes empty
 
-                for (int i = 0; i < n; i++) {
-                for (int j = 0; j < m; j++) {
-                    cout << "Hello World." << endl;
-                }
-                }
+- `resize()`
 
-          For the above example, the cout statement will execute n*m times, and it will print "Hello World." N * M number of times. so the time taken to run this program is:
+  Changes the size of the vector.
 
-                T(N)= n * m *(t(cout statement))
-                    = n * m * O(1)
-                    =O(n*m), Quadratic Complexity.
+        vector<int> v = {1, 2, 3};
 
-2.  **Space Complexity.**
+        v.resize(5);
+        // v becomes {1, 2, 3, 0, 0}
 
-    The amount of memory required by the algorithm to solve a given problem is called the space complexity of the algorithm.
+        v.resize(2);
+        // v becomes {1, 2}
 
-    Problem-solving using a computer requires memory to hold temporary data or final result while the program is in execution.
-    - **How is Space complexity computed?**
+## Prefix & Prefix Sum Technique.
 
-      The space Complexity of an algorithm is the total space taken by the algorithm with respect to the input size. Space complexity includes both Auxiliary space and space used by input.
+### Concept of Prefix.
 
-      Space complexity is a parallel concept to time complexity. If we need to create an array of size n, this will require `O(n)` space. If we create a two-dimensional array of size `n*n`, this will require `O(n2)` space.
+A prefix is a letter or group of letters, for example 'un-' or 'multi-', which is added to the beginning of a word in order to form a different word.
 
-      **In recursive calls stack space also counts.**
-      - Example:
+Example: unmanageable, unhappy.
 
-            int add (int n){
-                if (n <= 0){
-                    return 0;
-                }
-                return n + add (n-1);
-            }
+### Prefix in arrays.
 
-            Here each call add a level to the stack :
-            1.  add(4)
-            2.    -> add(3)
-            3.      -> add(2)
-            4.        -> add(1)
-            5.          -> add(0)
-            Each of these calls is added to call stack and takes up actual memory.
-            So it takes O(n) space.
+Any continuous segment of array starting from index 0 is a prefix.
 
-        However, just because you have n calls total doesn’t mean it takes O(n) space.
+Example,
 
-3.  **Auxiliary Space.**
+`Array = [1, 2, 3, 4, 5];`
 
-    The temporary space needed for the use of an algorithm is referred to as auxiliary space. Like temporary arrays, pointers, etc.
+`Prefixes: [1] [1, 2] [1, 2, 3] [1, 2, 3, 4] [1, 2, 3, 4, 5];`
 
-    It is preferable to make use of Auxiliary Space when comparing things like sorting algorithms.
+### Prefix Sum Array.
 
-    For example, **sorting algorithms** take `O(n)` space, as there is an input array to sort, **but auxiliary space is O(1) in that case**.
+It is a sum array that we create from main array, where `prefix_sum[i] = sum of all the elements of the array from 0 to i`.
 
-## Some popular complexities.
+![prefixSum-img](https://camo.githubusercontent.com/14724fbea6848d40d07d37e05602c31d6c73843dceaa3c91f21443270a87c5a6/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f68747470732533412532462532466d69726f2e6d656469756d2e636f6d2532467632253246726573697a65253341666974253341383030253246312a6b4a75794d72477a68394d4579334c5843324e4c39772e6a7065673f7461626c653d626c6f636b2669643d34616230666232372d316237642d343736342d623236622d6365353033663966333632352663616368653d7632)
 
-- `O(1)` -> Constant time complexity.
+## 2-D Arrays. (Matrices)
 
-  Example: a + b, a % b, swap(a, b)
+A multi-dimensional array is an array of arrays.
 
-- `O()` -> Logarithmic complexity.
+### Declaring a 2-D Array.
 
-  Example: Binary search
+To declare a multi-dimensional array, define the variable type, specify the name of the array followed by square brackets which specify how many elements the main array has, followed by another set of square brackets which indicates how many elements the sub-arrays have:
 
-- `O()` -> Example: Finding divisors of a number
+    string letters[2][4];
 
-- `O(n)` -> Linear time complexity.
+As with ordinary arrays, you can insert values with an array literal - a comma-seperated list inside curly braces.
 
-  Example: Linear search, finding maximum element
+### Initializing a 2-D Array.
 
-- `O()` -> Example: Sorting, Seive of Eratosthenes
+In a multi-dimensional array, each element in an array literal is another array literal.
 
-- `O()` -> Quadratic complexity.
+    string letters[2][4] = {
+    { "A", "B", "C", "D" },
+    { "E", "F", "G", "H" }
+    };
 
-  Example: Insertion sort
+Each set of square brackets in an array declaration adds another **dimension** to an array. An array like the one above is said to have two dimensions.
 
-- `O()` -> Cubic complexity.
+### Accessing Elements in a 2-D Array.
 
-  Example: Floyd Warshall algorithm
+Arrays can have any number of dimensions. The more dimensions an array has, the more complex the code becomes. The following array has three dimensions:
 
-- `O()` -> Exponential complexity.
+    string letters[2][2][2] = {
+    {
+        { "A", "B" },
+        { "C", "D" }
+    },
+    {
+        { "E", "F" },
+        { "G", "H" }
+    }
+    };
 
-  Example: bitmasking
+### Accessing the elements of a 2-D Aray.
 
-## Effect of Complexity on any algorithm.
+To access an element of a multi-dimensional array, specify an index number in each of the array's dimensions.
 
-- **Time complexity** of an algorithm quantifies the amount of time taken by an algorithm to run as a function of length of the input.
+This statement accesses the value of the element in the **first row (0)** and **third column (2)** of the letters array.
 
-- While, the **space complexity** of an algorithm quantifies the amount of space or memory taken by an algorithm to run as a function of the length of the input.
+Example
 
-## Steps to optimize Complexity Analysis of an algorithm.
+    string letters[2][4] = {
+    { "A", "B", "C", "D" },
+    { "E", "F", "G", "H" }
+    };
 
-Optimization means modifying the brute-force approach to a problem. It is done to derive the best possible solution to solve the problem so that it will take less time and space complexity. We can optimize a program by either limiting the search space at each step or occupying less search space from the start.
+    cout << letters[0][2];  // Outputs "C"
 
-We can optimize a solution using both time and space optimization.
+### Changing Elements in a 2-D Array.
 
-To optimize a program,
+To change the value of an element, refer to the index number of the element in each of the dimensions:
 
-- We can reduce the time taken to run the program and increase the space occupied;
-- we can reduce the memory usage of the program and increase its total run time, or
-- we can reduce both time and space complexity by deploying relevant algorithms
+    string letters[2][4] = {
+    { "A", "B", "C", "D" },
+    { "E", "F", "G", "H" }
+    };
+    letters[0][0] = "Z";
+
+    cout << letters[0][0];  // Now outputs "Z" instead of "A"
+
+### Looping through a 2-D Array.
+
+To loop through a multi-dimensional array, you need one loop for each of the array's dimensions.
+
+The following example outputs all elements in the letters array:
+
+    string letters[2][4] = {
+        { "A", "B", "C", "D" },
+        { "E", "F", "G", "H" }
+    };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << letters[i][j] << "\n";
+        }
+    }
 
 ## Assignment.
 
-1.  Find the Time Complexity & Space of this code,
+1. Given an array of size n, find the second largest element.
 
-        int sum = 0;
-        for(int i = 0; i < n; i++) {
-            sum += i;
-        }
+   [Solution](./Assignment/code1.cpp)
 
-    - **Solution.**
-      - **Time Complexity.**
+2. You are given:
+   - An array of size `n`,
+   - `q` queries
 
-        This loop runs from `0` to `n-1`.
+   Each query contains two indices `l` and `r`.
 
-        Meaning, the statement `sum += i` runs `n` times & each operation inside loop = `O(1)`.
+   For each query, print the sum of elements from index `l` to `r`.
 
-        So total time is,
+   [Solution](./Assignment/code2.cpp)
 
-              T(n) = n × O(1) = O(n)
+3. You are given a 2D matrix of size `n × m`.
+   Count how many 2×2 submatrices have an even sum.
 
-      - **Space Complexity.**
-
-        We're only using, `sum` & `i`.
-
-        So, space stays constant, `O(1)`.
-
-2.  Find the Time complexity & Space complexity of this code,
-
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < i; j++) {
-                cout << i << j;
-            }
-        }
-
-    - **Solution.**
-
-      Inner loop runs:
-
-            When i = 0 → 0 times
-            When i = 1 → 1 time
-            When i = 2 → 2 times
-            When i = 3 → 3 times
-            ...
-            When i = n-1 → n-1 times
-
-      So total execution:
-
-            0 + 1 + 2 + 3 + ... + (n-1)
-
-      That sum is:
-
-            n(n-1)/2
-
-      Ignore constants and lower order terms:
-
-            ≈ n²/2 → O(n²)
-
-      - **Time Complexity** = O(n^2)
-      - **Space Complexity** = O(1)
-
-3.  Find the Time complexity & Space complexity of this code,
-
-        for(int i = 1; i < n; i = i * 2) {
-            for(int j = 0; j < n; j++) {
-                cout << i << j;
-            }
-        }
-
-    - **Solution.**
-
-      First let's understand outer loop,
-      - `i` starts at 1 and doubles each time, so outer loop runs `O(log n)` times.
-
-      For each outer iterations, inner loop runs `n` times.
-      - So total work is `(log n) * n`.
-
-      - **Time Complexity** = O(n log n)
-
-      - **Space Complexity** = O(1)
+   [Solution](./Assignment/code3.cpp)

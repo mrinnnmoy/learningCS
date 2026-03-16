@@ -1,9 +1,8 @@
 # List of things learned.
 
-## Trie node structure
-## Insert
-## Search
-## Prefix search
-## Memory tradeoff
-
-- Applications (auto-complete, dictionary)
+## Min heap
+## Max heap
+## STL priority_queue
+## Custom comparator
+## K largest/smallest problems
+## Heap concept

@@ -1,46 +1,32 @@
 #include <iostream>
-#include <vector>
+#include <unordered_map>
 using namespace std;
-
-int binarySearch(vector<int> &arr, int target)
-{
-
-    int left = 0;
-    int right = arr.size() - 1;
-
-    while (left <= right)
-    {
-
-        int mid = (left + right) / 2;
-
-        if (arr[mid] == target)
-            return mid;
-
-        else if (arr[mid] < target)
-            left = mid + 1;
-
-        else
-            right = mid - 1;
-    }
-
-    return -1;
-}
 
 int main()
 {
 
-    int n;
-    cin >> n;
+    int arr[] = {4, 5, 1, 2, 0, 4, 1};
+    int n = 7;
 
-    vector<int> arr(n);
+    unordered_map<int, int> freq;
 
+    // Step 1: Count frequencies
     for (int i = 0; i < n; i++)
-        cin >> arr[i];
+    {
+        freq[arr[i]]++;
+    }
 
-    int x;
-    cin >> x;
+    // Step 2: Find first element with frequency 1
+    for (int i = 0; i < n; i++)
+    {
+        if (freq[arr[i]] == 1)
+        {
+            cout << arr[i];
+            return 0;
+        }
+    }
 
-    cout << binarySearch(arr, x);
+    cout << "No unique element";
 
     return 0;
 }

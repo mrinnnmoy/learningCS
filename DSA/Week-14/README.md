@@ -1,8 +1,9 @@
 # List of things learned.
 
-## Node structure
-## Singly linked list
-## Insert/delete
-## Reverse linked list
-## Cycle detection
-## Two pointer technique in LL
+## Prime check (optimized)
+## Sieve of Eratosthenes
+## GCD (Euclid algorithm)
+## LCM
+## Modular arithmetic
+## Fast exponentiation
+## Mod inverse (basic idea)

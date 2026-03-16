@@ -1,11 +1,10 @@
 # List of things learned.
 
-## Stack implementation
-## Queue implementation
-## STL versions
-
-- Applications:
-    - Balanced parentheses
-    - Next greater element
-    - Monotonic stack
-    - BFS concept intro
+## Recursive thinking
+## Base case
+## Recursion tree
+## Stack behavior
+## Backtracking template
+## Subsets
+## Permutations
+## N-Queen (important)

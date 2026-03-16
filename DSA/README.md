@@ -27,15 +27,7 @@
 - Mathematical Patterns,
 - Symmetry & Advanced Patterns.
 
-## [Week-3](./Week-3/README.md) : **Pointers, Pass by value/reference/address.**
-
-- Memory Fundamentals,
-- Introduction to Pointers,
-- Pointer Arithmetic,
-- Dynamic Memory Allocation,
-- Passing Arguments in Functions.
-
-## [Week-4](./Week-4/README.md) : **Complexity Analysis.**
+## [Week-3](./Week-3/README.md) : **Complexity Analysis.**
 
 - Introduction to Complexity Analysis,
 - Asymptotic Notations,
@@ -44,7 +36,7 @@
 - Effects of complexity on any algorithm,
 - Steps to optimize Complexity Analysis of an algorithm.
 
-## [Week-5](./Week-5/README.md) : **Arrays & 2-D Arrays.**
+## [Week-4](./Week-4/README.md) : **Arrays & 2-D Arrays.**
 
 - Introduction to Arrays,
 - Traversing Arrays,
@@ -52,7 +44,7 @@
 - Prefix & Prefix Sum Technique,
 - 2-D Arrays.
 
-## [Week-6](./Week-6/README.md) : **Strings.**
+## [Week-5](./Week-5/README.md) : **Strings.**
 
 - Introduction to String,
 - `std::string` vs C-Style Strings,
@@ -65,20 +57,15 @@
 - Numbers & Strings,
 - Escape Characters.
 
-## [Week-7](./Week-7/README.md) : **Sets & Maps.**
+## [Week-6](./Week-6/README.md) : **Pointers, Pass by value/reference/address.**
 
-- Introduction to Containers,
-- `set` (Ordered Set),
-- `unordered_set`,
-- `map` (Ordered Map),
-- `unordered_map`,
-- Frequency Maps,
-- set vs maps (difference),
-- Iterators,
-- Algorithms with Iterators,
-- Time Complexity Comparison.
+- Memory Fundamentals,
+- Introduction to Pointers,
+- Pointer Arithmetic,
+- Dynamic Memory Allocation,
+- Passing Arguments in Functions.
 
-## [Week-8](./Week-8/README.md) : **Sorting & Searching.**
+## [Week-7](./Week-7/README.md) : **Sorting & Searching.**
 
 - Introduction to Algorithms,
 - Sorting Algorithms,
@@ -92,7 +79,33 @@
 - Modifying Algorithms,
 - Search Space Thinking.
 
-## [Week-9](./Week-9/README.md) : **Two Pointers.**
+## [Week-8](./Week-8/README.md) : **Sets & Maps.**
+
+- Introduction to Containers,
+- `set` (Ordered Set),
+- `unordered_set`,
+- `map` (Ordered Map),
+- `unordered_map`,
+- Frequency Maps,
+- set vs maps (difference),
+- Iterators,
+- Algorithms with Iterators,
+- Time Complexity Comparison.
+
+## [Week-9](./Week-9/README.md) : **Linked List.**
+
+## [Week-10](./Week-10/README.md) : **Stacks, Queue & Deque.**
+
+## [Week-11](./Week-11/README.md) : **Prefix Sums & Sliding window.**
+
+- Introduction,
+- Prefix Sum (1D),
+- Prefix Sum (2D),
+- Range Queries using Prefix Sum,
+- Sliding Window Technique,
+- Time Complexity.
+
+## [Week-12](./Week-12/README.md) : **Two Pointers.**
 
 - Introduction to Two Pointer Technique,
 - Opposite Direction Pointers,
@@ -103,32 +116,19 @@
 - Sliding Range Logic,
 - Time Complexity Advantage.
 
-## [Week-10](./Week-10/README.md) : **Prefix Sums & Sliding window.**
+## [Week-13](./Week-11/README.md) : **Bit Manipulation.**
 
-- Introduction,
-- Prefix Sum (1D),
-- Prefix Sum (2D),
-- Range Queries using Prefix Sum,
-- Sliding Window Technique,
-- Time Complexity.
+## [Week-14](./Week-12/README.md) : **Number theory basics.**
 
-## [Week-11](./Week-11/README.md) : **Bit Manipulation.**
+## [Week-15](./Week13/README.md) : **Recursion & Back tracking.**
 
-## [Week-12](./Week-12/README.md) : **Number theory basics.**
-
-## [Week-13](./Week13/README.md) : **Recursion & Back tracking.**
-
-## [Week-14](./Week-14/README.md) : **Linked List.**
-
-## [Week-15](./Week-15/README.md) : **Stacks, Queue & Deque.**
-
-## [Week-16](./Week-16/README.md) : **Priority Queue & Heap.**
+## [Week-16](./Week-19/README.md) : **Greedy.**
 
 ## [Week-17](./Week-17/README.md) : **Binary tree & Binary Search tree.**
 
-## [Week-18](./Week-18/README.md) : **Trie.**
+## [Week-18](./Week-16/README.md) : **Priority Queue & Heap.**
 
-## [Week-19](./Week-19/README.md) : **Greedy.**
+## [Week-19](./Week-18/README.md) : **Trie.**
 
 ## [Week-20](./Week-20/README.md) : **Dynamic Programming.**
 

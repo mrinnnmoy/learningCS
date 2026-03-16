@@ -1,258 +1,317 @@
-# Lists of things learned.
+# List of things learned.
 
-## Introduction to Arrays.
+## Introduction to Strings.
 
-Arrays are used to store multiple values in a single variable, instead of declaring seperate variables for each value.
+Strings are used to store and manipulate text (sequence of characters).
 
-![array-img](https://camo.githubusercontent.com/64df9278cbb7ca901094ac28aa1302a3ac7011aa0008f77595269dee05291ccf/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e64394763527a326c734e664876484a673679586170575f6c7a5a663553496c534256387753506b613842577a766a2673)
+In C++, strings are objects of the `std::string` class from the `<string>` library.
 
-### Declaring an Array.
+    #include <iostream>
+    #include <string>
+    using namespace std;
 
-To declare an array, define the variable type, specify the name of the array followed by **square brackets** and specify the number of elements it should store:
-
-    string cars[4];
-
-### Initializing an Array.
-
-We have now declared a variable that holds an array of four strings. To insert values to it, we can use an array literal - place the values in a comma-seperated list, inside curly braces:
-
-    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-
-To create and array of three integers, you could write:
-
-    int myNum[3] = {10, 20, 30};
-
-### Accessing the Elements of an Array.
-
-You access an array element by referring to the index number inside square brackets `[]`.
-
-This statement accesses the value of the **first element** in **cars**:
-
-    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-
-    cout << cars[0];
-    // Outputs Volvo
-
-### Updating an Array Element.
-
-To update the value of a specific element, refer to the index number:
-
-    string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
-
-    cars[0] = "Opel";
-    cout << cars[0];
-    // Now outputs Opel instead of Volvo
-
-## Traversing Arrays.
-
-### Looping through an Array.
-
-You can loop through the array elements with the for loop.
-
-The following example outputs all elements in the cars array:
-
-    // Create an array of strings
-    string cars[5] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
-
-    // Loop through strings
-    for (int i = 0; i < 5; i++) {
-    cout << cars[i] << "\n";
+    int main() {
+        string greeting = "Hello World";
+        cout << greeting;
     }
 
-## Vectors (Dynamic Arrays in C++)
+- Why `std::string`?
+  1.  Automatically manages memeory
+  2.  Can grow and shrink dynamically
+  3.  Provides many built-in functions
+  4.  Easier and safer than C-style character arrays
 
-For operations that require adding and removing array elements, C++ provides **vectors**, which are **resizable arrays**.
+<hr />
 
-The size of a vector is dynamic, meaning it can grow and shrink as needed.
+## `std::string` vs C-Style Strings.
 
-Vectors are found in the `<vector>` library and they come with many useful functions to add, remove and modify elements:
+### C++ String (`std::string`)
 
-Here's an example,
+    string s = "Hello";
 
-    // A vector with 3 elements
-    vector<string> cars = {"Volvo", "BMW", "Ford"};
+- Dynamic size
+- Built-int functions available
+- Safe and easy to use
 
-    // Adding another element to the vector
-    cars.push_back("Tesla");
+### C-Style String (`char[]`)
 
-### Basic Operations.
+    char s[] = "Hello";
 
-- `push_back()`
+- Fixed size
+- Must manage memory manually
+- Uses `<cstring>` functions
 
-  Adds an element at the end of the vector.
+<hr />
 
-        vector<int> v = {1, 2, 3};
-        v.push_back(4);   // v becomes {1, 2, 3, 4}
+## String Input Method.
 
-- `pop_back()`
+It is possible to use the extraction operator `>>` on `cin` to store a string entered by a user:
 
-  Removes the last element of the vector.
+    string firstName;
+    cout << "Type your first name: ";
+    cin >> firstName; // get user input from the keyboard
+    cout << "Your name is: " << firstName;
 
-        vector<int> v = {1, 2, 3};
-        v.pop_back();   // v becomes {1, 2}
+    // Type your first name: John
+    // Your name is: John
 
-- `size()`
+However, `cin` considers a space (whitespace, tabs, etc) as a terminating character, which means that it can only store a single word (even if you type many words):
 
-  Returns the number of elements currently stored in the vector.
+    string fullName;
+    cout << "Type your full name: ";
+    cin >> fullName;
+    cout << "Your name is: " << fullName;
 
-        vector<int> v = {10, 20, 30};
-        cout << v.size();   // Output: 3
+    // Type your full name: John Doe
+    // Your name is: John
 
-- `empty()`
+From the example above, you would expect the program to print "John Doe", but it only prints "John".
 
-  Checks whether the vector is empty.
+That's why, when working with strings, we often use the `getline()` function to read a line of text. It takes `cin` as the first parameter, and the string variable as second:
 
-        vector<int> v;
-        if(v.empty()) {
-            cout << "Vector is empty";
+    string fullName;
+    cout << "Type your full name: ";
+    getline (cin, fullName);
+    cout << "Your name is: " << fullName;
+
+    // Type your full name: John Doe
+    // Your name is: John Doe
+
+<hr />
+
+## String Namespace.
+
+You might see some C++ programs that run without the standard namespace library.
+
+The `using namespace std` line can be omitted and replaced with the `std` keyword, followed by the `::` operator for `string` (and `cout`) objects:
+
+    #include <iostream>
+    #include <string>
+    // using namespace std; - Remove this line
+
+    int main() {
+    std::string greeting = "Hello";
+    std::cout << greeting;
+    return 0;
+    }
+
+<hr />
+
+## Basic String Opeations.
+
+### Initializing a String.
+
+- Initialization of a string assigns characters to the string at the time of creation.
+
+        #include <iostream>
+        #include <string>
+        using namespace std;
+
+        int main() {
+
+            // Initializing a string directly
+            string str1 = "Hello World";
+            string str2("Hello World");
+
+            // Printing the string
+            cout << str1 << endl;
+            cout << str2 << endl;
+
+            return 0;
         }
 
         <!-- Output -->
-        Returns true if size is 0.
-        Returns false otherwise.
+        Hello World
+        Hello World
 
-- `clear()`
+- A string can be initialized directly using = or constructor syntax with text inside quotes.
 
-  Removes all elements from the vector.
+### Accessing Characters.
 
-        vector<int> v = {1, 2, 3};
-        v.clear();   // v becomes empty
+- Characters of a string can be accessed using the [] operator or the .at() function.
 
-- `resize()`
+        string s = "Hello";
 
-  Changes the size of the vector.
+        cout << s[0]; // H
+        cout << s.at(1); // e
+        cout << s[s.length()-1]; // Last character
 
-        vector<int> v = {1, 2, 3};
+- Time Complexity: : O(1)
 
-        v.resize(5);
-        // v becomes {1, 2, 3, 0, 0}
+### Modifying Characters.
 
-        v.resize(2);
-        // v becomes {1, 2}
+- To change the value of a specific character in a string, refer to the index number and use single quotes.
 
-## Prefix & Prefix Sum Technique.
+        string s = "Hello";
+        s[0] = 'J'; // Jello
 
-### Concept of Prefix.
+### String Length.
 
-A prefix is a letter or group of letters, for example 'un-' or 'multi-', which is added to the beginning of a word in order to form a different word.
+- The number of characters in a string can be found using `size()` or `length()`.
 
-Example: unmanageable, unhappy.
+        string s = "Hello";
 
-### Prefix in arrays.
+        cout << s.length();
+        cout << s.size();
 
-Any continuous segment of array starting from index 0 is a prefix.
+- Time Complexity: O(1)
 
-Example,
+<hr />
 
-`Array = [1, 2, 3, 4, 5];`
+## String Concatenation.
 
-`Prefixes: [1] [1, 2] [1, 2, 3] [1, 2, 3, 4] [1, 2, 3, 4, 5];`
+### Using `+` Operator.
 
-### Prefix Sum Array.
+The `+` opeartor can be used between strings to add them together to make a new string. This is called concatentation.
 
-It is a sum array that we create from main array, where `prefix_sum[i] = sum of all the elements of the array from 0 to i`.
+    string firstName = "John ";
+    string lastName = "Doe";
+    string fullName = firstName + lastName;
+    cout << fullName;
 
-![prefixSum-img](https://camo.githubusercontent.com/14724fbea6848d40d07d37e05602c31d6c73843dceaa3c91f21443270a87c5a6/68747470733a2f2f7777772e6e6f74696f6e2e736f2f696d6167652f68747470732533412532462532466d69726f2e6d656469756d2e636f6d2532467632253246726573697a65253341666974253341383030253246312a6b4a75794d72477a68394d4579334c5843324e4c39772e6a7065673f7461626c653d626c6f636b2669643d34616230666232372d316237642d343736342d623236622d6365353033663966333632352663616368653d7632)
+In the example above, we added a space after firstName to create a space between John and Doe on output.
 
-## 2-D Arrays. (Matrices)
+Howerver you can also add a space with quotes (`" "`) or (`' '`).
 
-A multi-dimensional array is an array of arrays.
+### Using `append()`.
 
-### Declaring a 2-D Array.
+A string in C++ is actually an object, which contains functions that can perform certain operations on strings.
 
-To declare a multi-dimensional array, define the variable type, specify the name of the array followed by square brackets which specify how many elements the main array has, followed by another set of square brackets which indicates how many elements the sub-arrays have:
+For example, you can also concatenate strings with the `append()` function:
 
-    string letters[2][4];
+    string firstName = "John ";
+    string lastName = "Doe";
+    string fullName = firstName.append(lastName);
+    cout << fullName;
 
-As with ordinary arrays, you can insert values with an array literal - a comma-seperated list inside curly braces.
+<hr />
 
-### Initializing a 2-D Array.
+## Important STL String Functions.
 
-In a multi-dimensional array, each element in an array literal is another array literal.
+C++ provides some inbuilt functions which are used for string manipulation, such as the strcpy() and strcat() functions for copying and concatenating strings.
 
-    string letters[2][4] = {
-    { "A", "B", "C", "D" },
-    { "E", "F", "G", "H" }
-    };
+Some of them are:
 
-Each set of square brackets in an array declaration adds another **dimension** to an array. An array like the one above is said to have two dimensions.
+| Function               | Description           |
+| ---------------------- | --------------------- |
+| length()/size()        | Returns string length |
+| substr(pos, len)       | Extract substring     |
+| find(str)              | Find first occurrence |
+| rfind(str)             | Find last occurrence  |
+| erase(pos, len)        | Remove part of string |
+| replace(pos, len, str) | Replace part          |
+| compare(str)           | Compare two strings   |
+| push_back(ch)          | Add character at end  |
+| pop_back()             | Remove last character |
+| clear()                | Remove all characters |
+| resize(n)              | Resize string         |
+| swap(str)              | Swap two strings      |
 
-### Accessing Elements in a 2-D Array.
+<hr />
 
-Arrays can have any number of dimensions. The more dimensions an array has, the more complex the code becomes. The following array has three dimensions:
+## Substring Extraction.
 
-    string letters[2][2][2] = {
-    {
-        { "A", "B" },
-        { "C", "D" }
-    },
-    {
-        { "E", "F" },
-        { "G", "H" }
-    }
-    };
+- The .substr(pos,len) is used to extract a part of a string, where pos means the starting position and len means how many characters you want to copy.
+- This function creates a new string containing the selected portion, starting at pos and copying len characters.
+- Time complexity of extraction is O(len).
 
-### Accessing the elements of a 2-D Aray.
+        #include <iostream>
+        #include <string>
+        using namespace std;
 
-To access an element of a multi-dimensional array, specify an index number in each of the array's dimensions.
+        int main() {
+            string str = "Hello Geeks";
 
-This statement accesses the value of the element in the **first row (0)** and **third column (2)** of the letters array.
+            // Extract "Hello"
+            string sub1 = str.substr(0, 5);
+            cout << "Substring 1: " << sub1 << endl;
 
-Example
+            // Extract "Geeks"
+            string sub2 = str.substr(6, 5);
+            cout << "Substring 2: " << sub2 << endl;
 
-    string letters[2][4] = {
-    { "A", "B", "C", "D" },
-    { "E", "F", "G", "H" }
-    };
-
-    cout << letters[0][2];  // Outputs "C"
-
-### Changing Elements in a 2-D Array.
-
-To change the value of an element, refer to the index number of the element in each of the dimensions:
-
-    string letters[2][4] = {
-    { "A", "B", "C", "D" },
-    { "E", "F", "G", "H" }
-    };
-    letters[0][0] = "Z";
-
-    cout << letters[0][0];  // Now outputs "Z" instead of "A"
-
-### Looping through a 2-D Array.
-
-To loop through a multi-dimensional array, you need one loop for each of the array's dimensions.
-
-The following example outputs all elements in the letters array:
-
-    string letters[2][4] = {
-        { "A", "B", "C", "D" },
-        { "E", "F", "G", "H" }
-    };
-
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 4; j++) {
-            cout << letters[i][j] << "\n";
+            return 0;
         }
-    }
+
+<hr />
+
+## Numbers and Strings.
+
+C++ uses the `+` operator for both addition and concatenation.
+
+Numbers are added. Strings are concatenated.
+
+If you add two numbers, the result will be a number.
+
+    int x = 10;
+    int y = 20;
+    int z = x + y;      // z will be 30 (an integer)
+
+If you add two strings, the result will be a string concatenation.
+
+    string x = "10";
+    string y = "20";
+    string z = x + y;   // z will be 1020 (a string)
+
+But if you try to add a number to a string, an error occurs.
+
+### Basic Parsing.
+
+- Convert String to Integer.
+
+        string s = "123";
+        int num = stoi(s);
+
+- Convert Integer to String.
+
+        int x = 456;
+        string s = to_string(x);
+
+<hr />
+
+## Escape Characters.
+
+Because strings must be written within quotes, C++ will misunderstand this string and generate an error.
+
+    string txt = "We are the so-called "Vikings" from the north.";
+
+The solution to avoid this problem, is to use the backslash escape character (`\`).
+
+It turns special characters into string characters:
+
+| Escape character | Result | Description  |
+| ---------------- | ------ | ------------ |
+| \'               | '      | Single quote |
+| \"               | "      | Double quote |
+| \\\              | \      | Backslash    |
+
+For example:
+
+    string txt1 = "We are the so-called \"Vikings\" from the north.";
+    string txt2 = "It\'s alright.";
+    string txt3 = "The character \\ is called backslash.";
+
+Other popular escape characters in C++ are:
+
+| Escape character | Result   |
+| ---------------- | -------- |
+| \n               | new line |
+| \t               | Tab      |
+
+<hr />
 
 ## Assignment.
 
-1. Given an array of size n, find the second largest element.
+1. Take a string as input and print the reversed string.
 
    [Solution](./Assignment/code1.cpp)
 
-2. You are given:
-   - An array of size `n`,
-   - `q` queries
-
-   Each query contains two indices `l` and `r`.
-
-   For each query, print the sum of elements from index `l` to `r`.
+2. Check whether a string is a palindrome or not. (Ignore uppercase/lowercase difference)
 
    [Solution](./Assignment/code2.cpp)
 
-3. You are given a 2D matrix of size `n × m`.
-   Count how many 2×2 submatrices have an even sum.
+3. Given a string, print:
+   - frequency of each character (ignore spaces)
+   - the most frequent character.
 
    [Solution](./Assignment/code3.cpp)

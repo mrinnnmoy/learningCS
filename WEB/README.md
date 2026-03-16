@@ -92,7 +92,9 @@
 
 -> **Assignment (Not done)**
 
-## [Week-7]() : **HTTP Deep Dive & Express.js.**
+## [Week-7]() : **Env vars & config management.**
+
+## [Week-8]() : **HTTP Deep Dive & Express.js.**
 
 - HTTP request/response cycle,
 - Methods (GET, POST, PUT, DELETE),
@@ -106,7 +108,11 @@
 - Logging,
 - Error handling patterns.
 
-## [Week-8]() : **Authentication & Security.**
+## [Week-9]() : **REST API design principles.**
+
+## [Week-10]() : **Error handling & logging.**
+
+## [Week-11]() : **Authentication & Security.**
 
 - Cookies vs Tokens,
 - JWT,
@@ -118,7 +124,9 @@
 - Security best practices,
 - Connecting frontend to backend.
 
-## [Week-9]() : **MongoDB (NoSQL Database).**
+## [Week-12]() : **Web Security - OWASP Top 10.**
+
+## [Week-13]() : **MongoDB (NoSQL Database).**
 
 - NoSQL vs SQL,
 - MongoDB installation,
@@ -128,7 +136,7 @@
 - Aggregation basics,
 - Data modeling decisions.
 
-## [Week-10]() : **PostgreSQl (SQL Database).**
+## [Week-14]() : **PostgreSQl (SQL Database).**
 
 - SQL basics,
 - Tables & relations,
@@ -139,7 +147,7 @@
 - Normalization,
 - Writing raw SQL queries.
 
-## [Week-11]() : **Prisma/Drizzle (ORM Layer).**
+## [Week-15]() : **Prisma/Drizzle (ORM Layer).**
 
 - What is an ORM?
 - Schema definition,
@@ -149,36 +157,9 @@
 - Advanced queries,
 - Performance awareness.
 
-## [Week-12]() : **ReactJS (Fundamentals).**
+## [Week-16]() : **Redis.**
 
-- Component architecture,
-- JSX,
-- Props,
-- useState,
-- Event handling,
-- Conditional rendering,
-- Lists & keys,
-- Basic SPA understanding.
-
-## [Week-13]() : **ReactJS (Advanced).**
-
-- Routing,
-- Context API,
-- Lifting state up,
-- Custom hooks,
-- Recoil (state management),
-- Performance basics
-- Folder structure organization.
-
-## [Week-14]() : **Tailwind CSS.**
-
-- Utility-first styling,
-- Responsive utilities,
-- Layout systems
-- Component styling
-- Building real-world UI.
-
-## [Week-15]() : **TypeScript.**
+## [Week-17]() : **TypeScript.**
 
 - Basic types,
 - Interfaces,
@@ -189,7 +170,38 @@
 - TypeScript with React,
 - TypeScript with Node.
 
-## [Week-16]() : **NextJS.**
+## [Week-18]() : **Tailwind CSS.**
+
+- Utility-first styling,
+- Responsive utilities,
+- Layout systems
+- Component styling
+- Building real-world UI.
+
+## [Week-19]() : **ReactJS (Fundamentals).**
+
+- Component architecture,
+- JSX,
+- Props,
+- useState,
+- Event handling,
+- Conditional rendering,
+- Lists & keys,
+- Basic SPA understanding.
+
+## [Week-20]() : **ReactJS (Advanced).**
+
+- Routing,
+- Context API,
+- Lifting state up,
+- Custom hooks,
+- Recoil (state management),
+- Performance basics
+- Folder structure organization.
+
+## [Week-21]() : **Testing - Vitest/Playwright.**
+
+## [Week-22]() : **NextJS.**
 
 - CSR vs SSR vs SSG,
 - File-based routing,
@@ -199,7 +211,9 @@
 - Data fetching strategies,
 - Production build process.
 
-## [Week-17]() : **WebSockets & WebRTC.**
+## [Week-23]() : **tRPC.**
+
+## [Week-24]() : **WebSockets & WebRTC.**
 
 - HTTP vs WebSockets,
 - Real-time communication,
@@ -207,7 +221,15 @@
 - WebRTC basics,
 - Peer-to-peer communication.
 
-## [Week-18]() : **Monorepo & Turborepo.**
+## [Week-25]() : **Queues & Pub/Sub Systems.**
+
+- Event-driven architecture,
+- Pub/Sub pattern,
+- Background jobs,
+- Message queues basics,
+- Scaling backend systems.
+
+## [Week-26]() : **Monorepo & Turborepo.**
 
 - What is a monorepo?
 - Turborepo setup,
@@ -216,15 +238,7 @@
 - Build pipelines,
 - Optimizing development workflow.
 
-## [Week-19]() : **Queues & Pub/Sub Systems.**
-
-- Event-driven architecture,
-- Pub/Sub pattern,
-- Background jobs,
-- Message queues basics,
-- Scaling backend systems.
-
-## [Week-20]() : **Deployment & Production.**
+## [Week-27]() : **Deployment & Production.**
 
 - Environment configuration,
 - Build vs runtime,

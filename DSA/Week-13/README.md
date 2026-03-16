@@ -1,10 +1,10 @@
 # List of things learned.
 
-## Recursive thinking
-## Base case
-## Recursion tree
-## Stack behavior
-## Backtracking template
-## Subsets
-## Permutations
-## N-Queen (important)
+## Binary representation
+## AND, OR, XOR
+## Left/right shift
+## Check odd/even using bit
+## Set/unset/toggle bit
+## Count set bits
+## Power of 2 check
+## XOR tricks

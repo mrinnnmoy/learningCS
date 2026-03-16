@@ -1,29 +1,43 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    int matrix[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}};
+    string s;
+    cout << "Enter a string: ";
+    getline(cin, s);
 
-    int n = 3, m = 3;
-    int count = 0;
+    int freq[256] = {0}; // ASCII frequency array
 
-    for (int i = 0; i < n - 1; i++)
+    // Count frequency
+    for (char ch : s)
     {
-        for (int j = 0; j < m - 1; j++)
+        if (ch != ' ')
         {
-
-            int sum = matrix[i][j] + matrix[i][j + 1] + matrix[i + 1][j] + matrix[i + 1][j + 1];
-
-            if (sum % 2 == 0)
-                count++;
+            freq[(int)ch]++;
         }
     }
 
-    cout << "Number of 2x2 submatrices with even sum: " << count;
+    // Print frequency & find max
+    int maxFreq = 0;
+    char maxChar;
+
+    for (int i = 0; i < 256; i++)
+    {
+        if (freq[i] > 0)
+        {
+            cout << (char)i << " : " << freq[i] << endl;
+
+            if (freq[i] > maxFreq)
+            {
+                maxFreq = freq[i];
+                maxChar = (char)i;
+            }
+        }
+    }
+
+    cout << "Most frequent character: " << maxChar;
 
     return 0;
 }
