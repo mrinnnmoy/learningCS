@@ -148,17 +148,21 @@
 - Production vs Development Error Responses,
 - Complete Error Handling Architecture.
 
-## [Week-11]() : **Authentication & Security.**
+## [Week-11](./Week-11/README.md) : **Authentication & Security.**
 
+- Authentication vs Authorization,
 - Cookies vs Tokens,
-- JWT,
-- Password hashing,
-- Zod validation,
-- Auth middleware,
-- Protecting routes,
-- Environment variables,
-- Security best practices,
-- Connecting frontend to backend.
+- Password Hashing with bcrypt,
+- JSON Web Tokens (JWT),
+- Implementing Registration & Login,
+- Auth Middleware (Protecting Routes),
+- Role-Based Access Control (RBAC),
+- Refresh Tokens,
+- Zod Validation,
+- Environment Variables & Secrets,
+- Security Best Practices & HTTP Headers,
+- OWASP Top 10 (Awareness),
+- Connecting Frontend to Backend.
 
 ## [Week-12]() : **Web Security - OWASP Top 10.**
 
