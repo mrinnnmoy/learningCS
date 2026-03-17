@@ -94,6 +94,14 @@
 
 ## [Week-9](./Week-9/README.md) : **Linked List.**
 
+- Introduction,
+- Applications of Linked Lists,
+- Node Structure,
+- Singly Linked List,
+- Doubly Linked List,
+- Circular Linked List,
+- Advantages & Disadvantages of Linked Lists.
+
 ## [Week-10](./Week-10/README.md) : **Stacks, Queue & Deque.**
 
 ## [Week-11](./Week-11/README.md) : **Prefix Sums & Sliding window.**
