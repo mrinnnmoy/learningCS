@@ -164,7 +164,22 @@
 - OWASP Top 10 (Awareness),
 - Connecting Frontend to Backend.
 
-## [Week-12]() : **Web Security - OWASP Top 10.**
+## [Week-12](./Week-12/README.md) : **Web Security - OWASP Top 10.**
+
+- What is OWASP,
+- Broken Access Control,
+- Cryptographic Failures,
+- Injection,
+- Insecure Design,
+- Security Misconfiguration,
+- Vulnerable & Outdated Components,
+- Identification & Authentication Failures,
+- Software & Data Integrity Failures,
+- Security Logging & Monitoring Failures,
+- Server-Side Request Forgery (SSRF),
+- Cross-Cutting Defenses,
+- Security Testing Basics,
+- Secure Express App Checklist.
 
 ## [Week-13]() : **MongoDB (NoSQL Database).**
 
