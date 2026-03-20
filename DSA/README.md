@@ -104,6 +104,11 @@
 
 ## [Week-10](./Week-10/README.md) : **Stacks, Queue & Deque.**
 
+- Stack,
+- Queue,
+- Deque,
+- Comparison (Queue vs Deque).
+
 ## [Week-11](./Week-11/README.md) : **Prefix Sums & Sliding window.**
 
 - Introduction,
