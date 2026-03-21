@@ -129,19 +129,26 @@
 - Sliding Range Logic,
 - Time Complexity Advantage.
 
-## [Week-13](./Week-11/README.md) : **Bit Manipulation.**
+## [Week-13](./Week-13/README.md) : **Bit Manipulation.**
 
-## [Week-14](./Week-12/README.md) : **Number theory basics.**
+- Introduction,
+- Bitwise Operators in C++,
+- Bit Tricks & Techniques,
+- Application of Bitwise Operator,
+- Important Built-in Functions in C++,
+- Bitmask Techniques.
 
-## [Week-15](./Week13/README.md) : **Recursion & Back tracking.**
+## [Week-14](./Week-14/README.md) : **Number theory basics.**
 
-## [Week-16](./Week-19/README.md) : **Greedy.**
+## [Week-15](./Week15/README.md) : **Recursion & Back tracking.**
+
+## [Week-16](./Week-16/README.md) : **Greedy.**
 
 ## [Week-17](./Week-17/README.md) : **Binary tree & Binary Search tree.**
 
-## [Week-18](./Week-16/README.md) : **Priority Queue & Heap.**
+## [Week-18](./Week-18/README.md) : **Priority Queue & Heap.**
 
-## [Week-19](./Week-18/README.md) : **Trie.**
+## [Week-19](./Week-19/README.md) : **Trie.**
 
 ## [Week-20](./Week-20/README.md) : **Dynamic Programming.**
 
