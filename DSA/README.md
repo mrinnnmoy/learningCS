@@ -140,6 +140,17 @@
 
 ## [Week-14](./Week-14/README.md) : **Number theory basics.**
 
+- Introduction,
+- Divisibility & Modular Arithmetic,
+- Prime Numbers,
+- Greatest Common Divisor (GCD) & Least Common Multiple (LCM),
+- Prime Factorization,
+- Fast Exponentation,
+- Modular Inverse,
+- Euler's Totient Function (concept level),
+- Important Identities & Tricks for CP.
+
+
 ## [Week-15](./Week15/README.md) : **Recursion & Back tracking.**
 
 ## [Week-16](./Week-16/README.md) : **Greedy.**
