@@ -150,8 +150,15 @@
 - Euler's Totient Function (concept level),
 - Important Identities & Tricks for CP.
 
+## [Week-15](./Week-15/README.md) : **Recursion & Back tracking.**
 
-## [Week-15](./Week15/README.md) : **Recursion & Back tracking.**
+- Introduction to Recursion,
+- How the Call Stack works,
+- Types of Recursion,
+- Understanding Recursion Tree,
+- Back Tracking,
+- Memoization,
+- Time & Space Complexity of Recursion.
 
 ## [Week-16](./Week-16/README.md) : **Greedy.**
 
