@@ -162,6 +162,17 @@
 
 ## [Week-16](./Week-16/README.md) : **Greedy.**
 
+- Introduction,
+- Properties of Greedy Algorithms,
+- General Greedy Framework,
+- Classic Greedy Problems,
+- Greedy on Arrays,
+- Greedy on Intervals,
+- Greedy on Strings,
+- Huffman Encoding (Concept Level),
+- Time & Space Complexity Summary,
+- How to Identify a Greedy Problem.
+
 ## [Week-17](./Week-17/README.md) : **Binary tree & Binary Search tree.**
 
 ## [Week-18](./Week-18/README.md) : **Priority Queue & Heap.**
