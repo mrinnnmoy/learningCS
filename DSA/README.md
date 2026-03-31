@@ -175,6 +175,17 @@
 
 ## [Week-17](./Week-17/README.md) : **Binary tree & Binary Search tree.**
 
+- Introduction to Trees,
+- Introduction to Binary Tree,
+- Binary Tree Implementation in C++,
+- Tree Traversals,
+- Common Binary Tree Operations,
+- Binary Search Tree,
+- BST Opeartions,
+- BST - Important Derived Operations,
+- Iterative Traversals using Stack,
+- Time & Space Complexity Summary.
+
 ## [Week-18](./Week-18/README.md) : **Priority Queue & Heap.**
 
 ## [Week-19](./Week-19/README.md) : **Trie.**
