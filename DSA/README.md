@@ -188,6 +188,17 @@
 
 ## [Week-18](./Week-18/README.md) : **Priority Queue & Heap.**
 
+- Introduction to Priority Queue,
+- Introduction to Heap,
+- Heap Representation using Array,
+- Heap Operations,
+- Complete Max Heap Implementation in C++,
+- Heap Sort,
+- STL Priority Queue in C++,
+- Classic Heap Problems,
+- Comparison: Heap vs Other Data Structures,
+- Time & Space Complexity Summary.
+
 ## [Week-19](./Week-19/README.md) : **Trie.**
 
 ## [Week-20](./Week-20/README.md) : **Dynamic Programming.**
