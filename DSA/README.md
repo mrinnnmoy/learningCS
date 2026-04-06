@@ -201,6 +201,15 @@
 
 ## [Week-19](./Week-19/README.md) : **Trie.**
 
+- Introduction to Trie,
+- Trie Node Structure,
+- Core Trie Operations,
+- Complete Trie Implmentation in C++,
+- Trie (Advanced Applications),
+- Compressed Trie (Radix Tree),
+- Trie vs HashMap for String Storage,
+- Time & Space Complexity Summary.
+
 ## [Week-20](./Week-20/README.md) : **Dynamic Programming.**
 
 ## [Week-21](./Week-21/README.md) : **Graphs.**
