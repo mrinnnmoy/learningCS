@@ -202,7 +202,7 @@
 - Normalization,
 - Writing raw SQL queries.
 
-## [Week-15]() : **Prisma/Drizzle (ORM Layer).**
+## [Week-15](./Week-15/README.md) : **Prisma/Drizzle (ORM Layer).**
 
 - What is an ORM?
 - Schema definition,
