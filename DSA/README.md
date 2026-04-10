@@ -212,6 +212,19 @@
 
 ## [Week-20](./Week-20/README.md) : **Dynamic Programming.**
 
+- Introduction to Dynamic Programming,
+- When to Use Dynamic Programming,
+- DP vs Recursion vs Greedy,
+- Two Approaches to DP,
+- DP on 1D Arrays,
+- DP on 2D Arrays / Grids,
+- DP on Strings,
+- Knapsack Problems,
+- DP on Intervals,
+- DP Patterns,
+- Common DP Mistakes & Tips,
+- Time & Space Complexity Summary.
+
 ## [Week-21](./Week-21/README.md) : **Graphs.**
 
 ## [Week-22](./Week-22/README.md) : **Segment tree/Ordered set.**
