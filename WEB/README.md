@@ -212,7 +212,19 @@
 - Advanced queries,
 - Performance awareness.
 
-## [Week-16]() : **Redis.**
+## [Week-16](./Week-16/README.md) : **Redis.**
+
+- What is Redis,
+- Installation and Setup,
+- Data Structures,
+- Key Expiry & TTL,
+- Caching Patterns,
+- Rate Limiting,
+- Session Management,
+- Pub/Sub Messaging,
+- Pipelines & Transactions,
+- Persistence & Production,
+- Common Patterns.
 
 ## [Week-17]() : **TypeScript.**
 
