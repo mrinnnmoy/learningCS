@@ -227,4 +227,18 @@
 
 ## [Week-21](./Week-21/README.md) : **Graphs.**
 
+- Introduction to Graphs,
+- Graph Terminology,
+- Types of Graph,
+- Graph Representations,
+- Graph Traversals,
+- Connected Components,
+- Cycle Detection,
+- Shortest Path Algorithm,
+- Minimum Spanning Tree,
+- Topological Sort,
+- Disjoint Set Union,
+- Floyd-Warshall,
+- Time & Space Complexity Summary.
+
 ## [Week-22](./Week-22/README.md) : **Segment tree/Ordered set.**
