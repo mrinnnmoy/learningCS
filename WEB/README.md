@@ -226,7 +226,7 @@
 - Persistence & Production,
 - Common Patterns.
 
-## [Week-17]() : **TypeScript.**
+## [Week-17](./Week-17/README.md) : **TypeScript.**
 
 - Basic types,
 - Interfaces,
