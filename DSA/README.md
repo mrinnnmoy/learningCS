@@ -242,3 +242,20 @@
 - Time & Space Complexity Summary.
 
 ## [Week-22](./Week-22/README.md) : **Segment tree/Ordered set.**
+
+- Introduction to Segment Tree,
+- Segment Tree (Core Concept),
+- Segment Tree (Array Representation),
+- Building a Segment Tree,
+- Range Sum Query,
+- Point Update,
+- Range Minimum / Maximum Query,
+- Lazy Propagation,
+- Complete Segment Tree Class,
+- Introduction to Ordered Set,
+- Ordered Set (Operations in Detail),
+- Ordered Multiset,
+- Classic Problems using Ordered Set,
+- Segment Tree vs Ordered Set,
+- Fenwick Tree (Concept),
+- Time & Space Complexity Summary.
