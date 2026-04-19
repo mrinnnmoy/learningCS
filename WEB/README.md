@@ -237,12 +237,12 @@
 - TypeScript with React,
 - TypeScript with Node.
 
-## [Week-18]() : **Tailwind CSS.**
+## [Week-18](./Week-18/README.md) : **Tailwind CSS.**
 
 - Utility-first styling,
 - Responsive utilities,
-- Layout systems
-- Component styling
+- Layout systems,
+- Component styling,
 - Building real-world UI.
 
 ## [Week-19]() : **ReactJS (Fundamentals).**

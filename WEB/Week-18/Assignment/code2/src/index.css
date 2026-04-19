@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Apply the dark background to the whole page when dark mode is active */
+html.dark {
+  color-scheme: dark;
+}

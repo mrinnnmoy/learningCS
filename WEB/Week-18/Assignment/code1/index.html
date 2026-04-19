@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 18 — Assignment 1: Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="font-bold text-xl text-blue-600">Brandly</div>
+
+                <!-- Desktop nav links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+                    <button
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Mobile hamburger -->
+                <button id="menu-button" class="md:hidden p-2 text-gray-600 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-4 py-3 space-y-2">
+            <a href="#" class="block text-gray-600 hover:text-gray-900 py-2">Home</a>
+            <a href="#" class="block text-gray-600 hover:text-gray-900 py-2">Features</a>
+            <a href="#" class="block text-gray-600 hover:text-gray-900 py-2">Pricing</a>
+            <a href="#" class="block text-gray-600 hover:text-gray-900 py-2">Contact</a>
+            <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg mt-2">
+                Get Started
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="flex flex-col items-center justify-center text-center px-4 py-20 md:py-28 bg-gradient-to-b from-blue-50 to-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 max-w-3xl leading-tight">
+            Build faster with the tools you already know
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-500 max-w-xl">
+            A utility-first toolkit that helps you ship polished interfaces without leaving your markup.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <button
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+                Start for free
+            </button>
+            <button
+                class="bg-white hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-lg font-medium border border-gray-300 transition-colors">
+                View demo
+            </button>
+        </div>
+    </section>
+
+    <!-- Feature Grid -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
+            Everything you need
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-4">⚡</div>
+                <h3 class="font-semibold text-lg text-gray-900 mb-2">Fast by default</h3>
+                <p class="text-gray-500">Ship a lean CSS bundle that only includes the classes you actually use.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-4">📱</div>
+                <h3 class="font-semibold text-lg text-gray-900 mb-2">Responsive by design</h3>
+                <p class="text-gray-500">Mobile-first breakpoints make every layout adapt without extra media queries.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-shadow">
+                <div class="text-3xl mb-4">🎨</div>
+                <h3 class="font-semibold text-lg text-gray-900 mb-2">Consistent design</h3>
+                <p class="text-gray-500">A built-in spacing and color scale keeps every screen visually consistent.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Toggle mobile menu visibility
+        document.getElementById('menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

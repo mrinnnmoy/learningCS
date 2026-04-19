@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Default theme variables (fallback / indigo) */
+:root,
+[data-theme='indigo'] {
+  --color-primary: 79 70 229;
+}
+
+[data-theme='emerald'] {
+  --color-primary: 5 150 105;
+}
+
+[data-theme='rose'] {
+  --color-primary: 225 29 72;
+}
+
+/* Smooth transition whenever the theme color changes */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
