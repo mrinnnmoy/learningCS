@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 2rem;
+}
+
+.page-title {
+  text-align: center;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.avatar {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  margin: 0;
+  color: #111827;
+}
+
+.role {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.bio {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  min-height: 2.5em;
+}
+
+.toggle-link {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0;
+  font-weight: 500;
+}
+
+.profile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.follower-count {
+  color: #6b7280;
+  font-size: 0.8125rem;
+}
+
+.follow-btn {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.follow-btn:hover {
+  background: #d1d5db;
+}
+
+.follow-btn.following {
+  background: #3b82f6;
+  color: white;
+}
+
+.follow-btn.following:hover {
+  background: #2563eb;
+}
