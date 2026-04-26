@@ -266,7 +266,16 @@
 - Performance basics
 - Folder structure organization.
 
-## [Week-21]() : **Testing - Vitest/Playwright.**
+## [Week-21](./Week-21/README.md) : **Testing - Vitest/Playwright.**
+
+- Why Testing Matters,
+- Vitest (Unit & Integration Testing),
+- Testing Utility Functions,
+- Testing React Components,
+- Mocking with `vi`,
+- Testing Custom Hooks,
+- Playwright (End-to-End Testing),
+- Test Organization & Best Practices.
 
 ## [Week-22]() : **NextJS.**
 
