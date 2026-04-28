@@ -277,15 +277,18 @@
 - Playwright (End-to-End Testing),
 - Test Organization & Best Practices.
 
-## [Week-22]() : **NextJS.**
+## [Week-22](./Week-22/README.md) : **NextJS.**
 
-- CSR vs SSR vs SSG,
-- File-based routing,
-- API routes,
-- Server components,
-- Authentication (NextAuth),
-- Data fetching strategies,
-- Production build process.
+- What is Next.js & Why Use It,
+- File-Based Routing,
+- Server Components vs Client Components,
+- Data Fetching,
+- API Routes (Route Handlers),
+- Server Actions,
+- Metadata & SEO,
+- Next.js Image & Font Optimisation,
+- Rendering Strategies,
+- Authentication with NextAuth.js.
 
 ## [Week-23]() : **tRPC.**
 
