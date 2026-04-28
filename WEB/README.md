@@ -191,7 +191,7 @@
 - Aggregation basics,
 - Data modeling decisions.
 
-## [Week-14](./Week-14/README.md) : **PostgreSQl (SQL Database).**
+## [Week-14](./Week-14/README.md) : **PostgreSQL (SQL Database).**
 
 - SQL basics,
 - Tables & relations,

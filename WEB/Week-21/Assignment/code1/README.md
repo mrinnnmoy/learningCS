@@ -2,44 +2,39 @@
 
 ```
 Step 1 — Initialise
-  npm create vite@latest code3 -- --template react-ts
-  cd code3
-  npm install react-router-dom recoil
+  npm create vite@latest code1 -- --template react-ts
+  cd code1
+  npm install --save-dev vitest @vitest/ui jsdom
+  npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
 
-Step 2 — Create src/types/index.ts
-  User, Product, Order interfaces. OrderStatus type alias.
-  OrderStats interface (totalRevenue, pendingCount, deliveredCount, orderCount).
+Step 2 — Configure vite.config.ts
+  Add test: { environment: 'jsdom', globals: true, setupFiles: ['./src/test/setup.ts'] }.
 
-Step 3 — Create src/data/mockOrders.ts and mockProducts.ts
-  15 typed Order objects. 10 typed Product objects. Export as typed arrays.
+Step 3 — Create src/test/setup.ts
+  import '@testing-library/jest-dom';
 
-Step 4 — Create src/store/atoms.ts
-  ordersAtom: atom<Order[]>, productsAtom: atom<Product[]>,
-  statusFilterAtom: atom<OrderStatus | 'all'>, searchAtom: atom<string>.
+Step 4 — Update tsconfig.json
+  Add "types": ["vitest/globals", "@testing-library/jest-dom"] to compilerOptions.
 
-Step 5 — Create src/store/selectors.ts
-  orderStatsSelector: selector<OrderStats>
-  filteredOrdersSelector: selector<Order[]>
+Step 5 — Write src/utils/formatCurrency.ts
+  Use Intl.NumberFormat. Accept amount: number, currency = 'USD'.
 
-Step 6 — Create typed hooks
-  useDebounce.ts: useDebounce<T>(value: T, delay?: number): T
-  useClickOutside.ts: useClickOutside<T extends HTMLElement>(handler: () => void): RefObject<T>
+Step 6 — Write src/utils/truncate.ts
+  truncate(text: string, maxLength: number): string
+  If text.length <= maxLength return text, else return text.slice(0, maxLength) + '...'.
 
-Step 7 — Create src/context/AuthContext.tsx
-  Typed AuthContextType with updateDisplayName(name: string): void.
+Step 7 — Write src/utils/groupBy.ts
+  groupBy<T>(arr: T[], keyFn: (item: T) => string): Record<string, T[]>
+  Reduce the array into an object keyed by keyFn(item).
 
-Step 8 — Create src/components/ProtectedRoute.tsx (same as Assignment 1).
+Step 8 — Write src/utils/debounce.ts
+  debounce<T extends unknown[]>(fn: (...args: T) => void, delay: number)
+  Returns a function that delays calling fn until delay ms after the last call.
 
-Step 9 — Create src/layouts/DashboardLayout.tsx
-  Typed sidebar NavLink array. useClickOutside<HTMLDivElement> for profile dropdown.
-  useCallback(() => setDropdownOpen(false), []) as the stable handler.
+Step 9 — Write src/hooks/useCounter.ts
+  useState<number>. Return { count, increment, decrement, reset, incrementBy }.
 
-Step 10 — Lazy-load all 4 dashboard pages in App.tsx.
-  Wrap each in <Suspense fallback={<p>Loading...</p>}>.
-
-Step 11 — Build all 4 pages with full TypeScript typing.
-  OrdersPage: useCallback<(s: OrderStatus | 'all') => void> for status setter.
-  useMemo<Order[]> for the sorted list.
+Step 10 — Write all test files. Run: npx vitest run
 ```
 
 ---

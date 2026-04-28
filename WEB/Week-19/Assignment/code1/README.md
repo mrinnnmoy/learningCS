@@ -1,45 +1,35 @@
 # How to Build.
 
 ```
-Step 1 — Initialise
-  npm create vite@latest code3 -- --template react-ts
-  cd code3
-  npm install react-router-dom recoil
+Step 1 — Initialise the project
+  npm create vite@latest code1 -- --template react
+  cd code1
+  npm install
 
-Step 2 — Create src/types/index.ts
-  User, Product, Order interfaces. OrderStatus type alias.
-  OrderStats interface (totalRevenue, pendingCount, deliveredCount, orderCount).
+Step 2 — Build src/components/Card.jsx
+  A simple wrapper accepting a 'children' prop.
+  Renders children inside a div with border, padding, border-radius, box-shadow.
 
-Step 3 — Create src/data/mockOrders.ts and mockProducts.ts
-  15 typed Order objects. 10 typed Product objects. Export as typed arrays.
+Step 3 — Build src/components/ProfileCard.jsx
+  Accept name, role, avatarEmoji, bio, initialFollowers as props.
+  useState for isFollowing (boolean, default false).
+  useState for followerCount (initialized from initialFollowers prop).
+  useState for isExpanded (boolean, default false) for the bio toggle.
+  handleFollowClick: toggle isFollowing, increment/decrement followerCount accordingly.
+  Render avatarEmoji, name, role always.
+  Conditionally render full bio or a truncated version based on isExpanded.
+  Render the Follow/Following button with conditional className for color.
 
-Step 4 — Create src/store/atoms.ts
-  ordersAtom: atom<Order[]>, productsAtom: atom<Product[]>,
-  statusFilterAtom: atom<OrderStatus | 'all'>, searchAtom: atom<string>.
+Step 4 — Build src/App.jsx
+  Import Card and ProfileCard.
+  Render 3 ProfileCard instances (each wrapped in Card) with different prop values.
 
-Step 5 — Create src/store/selectors.ts
-  orderStatsSelector: selector<OrderStats>
-  filteredOrdersSelector: selector<Order[]>
+Step 5 — Add basic styling in src/index.css
+  Style .card, .follow-btn (and its 'following' state), .avatar, etc.
 
-Step 6 — Create typed hooks
-  useDebounce.ts: useDebounce<T>(value: T, delay?: number): T
-  useClickOutside.ts: useClickOutside<T extends HTMLElement>(handler: () => void): RefObject<T>
-
-Step 7 — Create src/context/AuthContext.tsx
-  Typed AuthContextType with updateDisplayName(name: string): void.
-
-Step 8 — Create src/components/ProtectedRoute.tsx (same as Assignment 1).
-
-Step 9 — Create src/layouts/DashboardLayout.tsx
-  Typed sidebar NavLink array. useClickOutside<HTMLDivElement> for profile dropdown.
-  useCallback(() => setDropdownOpen(false), []) as the stable handler.
-
-Step 10 — Lazy-load all 4 dashboard pages in App.tsx.
-  Wrap each in <Suspense fallback={<p>Loading...</p>}>.
-
-Step 11 — Build all 4 pages with full TypeScript typing.
-  OrdersPage: useCallback<(s: OrderStatus | 'all') => void> for status setter.
-  useMemo<Order[]> for the sorted list.
+Step 6 — Run the dev server
+  npm run dev
+  Open http://localhost:5173
 ```
 
 ---

@@ -1,45 +1,42 @@
 # How to Build.
 
 ```
-Step 1 — Initialise
-  npm create vite@latest code3 -- --template react-ts
-  cd code3
-  npm install react-router-dom recoil
+Step 1 — Start from Week-20 Assignment 1 source
+  Copy the src/ folder from Week-20 Assignment 1 (the multi-page app
+  with AuthContext, useFetch, product grid, and protected dashboard).
+  This gives you a working app to run E2E tests against.
 
-Step 2 — Create src/types/index.ts
-  User, Product, Order interfaces. OrderStatus type alias.
-  OrderStats interface (totalRevenue, pendingCount, deliveredCount, orderCount).
+Step 2 — Install Playwright
+  npm install --save-dev @playwright/test
+  npx playwright install
 
-Step 3 — Create src/data/mockOrders.ts and mockProducts.ts
-  15 typed Order objects. 10 typed Product objects. Export as typed arrays.
+Step 3 — Write playwright.config.ts
+  testDir: './e2e', baseURL: 'http://localhost:5173'.
+  webServer: { command: 'npm run dev', url: 'http://localhost:5173', reuseExistingServer: true }.
+  projects for chromium (minimum for local dev — add firefox and webkit for CI).
 
-Step 4 — Create src/store/atoms.ts
-  ordersAtom: atom<Order[]>, productsAtom: atom<Product[]>,
-  statusFilterAtom: atom<OrderStatus | 'all'>, searchAtom: atom<string>.
+Step 4 — Build e2e/pages/LoginPage.ts
+  Constructor receives page: Page.
+  Properties: emailInput, passwordInput, submitButton, errorMessage.
+  Methods: goto(), login(email, password), expectError(text).
 
-Step 5 — Create src/store/selectors.ts
-  orderStatsSelector: selector<OrderStats>
-  filteredOrdersSelector: selector<Order[]>
+Step 5 — Build e2e/pages/DashboardPage.ts
+  Properties: heading, userEmail (locator for the email in the navbar).
+  Methods: isVisible() — asserts URL is /dashboard and heading is visible.
+           getUserEmail(): Promise<string | null>.
 
-Step 6 — Create typed hooks
-  useDebounce.ts: useDebounce<T>(value: T, delay?: number): T
-  useClickOutside.ts: useClickOutside<T extends HTMLElement>(handler: () => void): RefObject<T>
+Step 6 — Write e2e/home.spec.ts
+  page.route to mock the dummyjson API before navigating.
+  Test page title, product cards visible, clicking card navigates to /products/:id.
 
-Step 7 — Create src/context/AuthContext.tsx
-  Typed AuthContextType with updateDisplayName(name: string): void.
+Step 7 — Write e2e/product.spec.ts
+  Navigate directly to /products/1 (no mock needed — Playwright makes real requests
+  to dummyjson for this test, demonstrating both mocked and unmocked approaches).
+  Test URL contains '1', title and price are visible, back button works.
 
-Step 8 — Create src/components/ProtectedRoute.tsx (same as Assignment 1).
-
-Step 9 — Create src/layouts/DashboardLayout.tsx
-  Typed sidebar NavLink array. useClickOutside<HTMLDivElement> for profile dropdown.
-  useCallback(() => setDropdownOpen(false), []) as the stable handler.
-
-Step 10 — Lazy-load all 4 dashboard pages in App.tsx.
-  Wrap each in <Suspense fallback={<p>Loading...</p>}>.
-
-Step 11 — Build all 4 pages with full TypeScript typing.
-  OrdersPage: useCallback<(s: OrderStatus | 'all') => void> for status setter.
-  useMemo<Order[]> for the sorted list.
+Step 8 — Write e2e/auth.spec.ts
+  Use LoginPage and DashboardPage POMs throughout.
+  Cover all 4 auth scenarios listed in Requirements.
 ```
 
 ---

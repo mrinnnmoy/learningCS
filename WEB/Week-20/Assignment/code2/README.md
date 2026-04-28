@@ -1,3 +1,45 @@
+# How to Build.
+
+```
+Step 1 — Initialise
+  npm create vite@latest code2 -- --template react-ts
+  cd code2
+  npm install react-router-dom recoil
+
+Step 2 — Create src/types/index.ts
+  Product interface, CartItem interface (extends Product with qty: number),
+  ProductListResponse interface.
+
+Step 3 — Create src/store/atoms.ts
+  cartAtom: atom<CartItem[]>, searchAtom: atom<string>.
+
+Step 4 — Create src/store/selectors.ts
+  cartTotalSelector: selector<number>, cartCountSelector: selector<number>.
+
+Step 5 — Create src/hooks/useFetch.ts (generic, same as Assignment 1).
+
+Step 6 — Create src/components/Navbar.tsx
+  useRecoilValue<number>(cartCountSelector) for the badge.
+
+Step 7 — Create src/components/ProductCard.tsx
+  React.memo on the component, typed props interface.
+  useSetRecoilState<CartItem[]>(cartAtom), useCallback with typed (product: CartItem) arg.
+
+Step 8 — Create src/pages/HomePage.tsx
+  useSearchParams for category + page.
+  useRecoilState<string>(searchAtom) for search box.
+  Filter and paginate products, render ProductCard grid.
+
+Step 9 — Create src/pages/CartPage.tsx
+  useRecoilState<CartItem[]>(cartAtom).
+  useRecoilValue<number>(cartTotalSelector).
+  Quantity controls: updateQty(id: number, delta: number): void.
+
+Step 10 — Wire App.tsx and main.tsx with RecoilRoot.
+```
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

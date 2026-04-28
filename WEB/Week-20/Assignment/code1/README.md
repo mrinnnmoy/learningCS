@@ -1,3 +1,36 @@
+# How to Build.
+
+```
+Step 1 — Initialise
+  npm create vite@latest code1 -- --template react-ts
+  cd code1
+  npm install react-router-dom
+
+Step 2 — Create src/types/index.ts
+  Export User interface (id, name, email).
+  Export Product interface (id, title, price, description, thumbnail, rating, category).
+
+Step 3 — Create src/hooks/useFetch.ts
+  Generic function useFetch<T>(url: string | null): { data, loading, error }.
+  useState<T | null>, useEffect with cancellation flag, typed error handling.
+
+Step 4 — Create src/context/AuthContext.tsx
+  AuthContextType interface. createContext<AuthContextType | null>(null).
+  AuthProvider: useState<User | null>. login sets user. logout clears.
+  useAuth(): AuthContextType hook with null-check guard.
+
+Step 5 — Create src/components/Navbar.tsx and ProtectedRoute.tsx
+  Navbar: useAuth(), NavLink with typed isActive callback.
+  ProtectedRoute: useAuth(), return <Navigate /> if no user, else <Outlet />.
+
+Step 6 — Create pages: HomePage.tsx, ProductDetailPage.tsx, LoginPage.tsx, DashboardPage.tsx
+  All typed — event handlers as React.FormEvent, React.ChangeEvent<HTMLInputElement>.
+
+Step 7 — Wire everything in App.tsx and main.tsx.
+```
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

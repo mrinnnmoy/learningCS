@@ -2,44 +2,48 @@
 
 ```
 Step 1 — Initialise
-  npm create vite@latest code3 -- --template react-ts
-  cd code3
-  npm install react-router-dom recoil
+  npm create vite@latest code2 -- --template react
+  cd code2
+  npm install
 
-Step 2 — Create src/types/index.ts
-  User, Product, Order interfaces. OrderStatus type alias.
-  OrderStats interface (totalRevenue, pendingCount, deliveredCount, orderCount).
+Step 2 — Build src/components/TodoInput.jsx
+  Controlled text input + Add button.
+  useState for the input's current text value.
+  onSubmit (form) or Enter keydown triggers an onAdd(text) callback prop.
+  Trim the text and reject if empty before calling onAdd.
+  Clear the input after a successful add.
 
-Step 3 — Create src/data/mockOrders.ts and mockProducts.ts
-  15 typed Order objects. 10 typed Product objects. Export as typed arrays.
+Step 3 — Build src/components/TodoItem.jsx
+  Accept a single todo object + onToggle, onDelete, onEdit callback props.
+  useState for isEditing (boolean) and editText (string).
+  Checkbox calls onToggle(todo.id) on change.
+  Delete button calls onDelete(todo.id).
+  Double-click on the text enters edit mode — render an input instead of text.
+  Enter or blur in edit mode calls onEdit(todo.id, newText) and exits edit mode.
+  Escape in edit mode cancels without saving, reverting editText.
 
-Step 4 — Create src/store/atoms.ts
-  ordersAtom: atom<Order[]>, productsAtom: atom<Product[]>,
-  statusFilterAtom: atom<OrderStatus | 'all'>, searchAtom: atom<string>.
+Step 4 — Build src/components/TodoList.jsx
+  Accept todos array + the same callback props.
+  Map over todos rendering a TodoItem per item, key={todo.id}.
+  Show a friendly empty state message if todos.length === 0.
 
-Step 5 — Create src/store/selectors.ts
-  orderStatsSelector: selector<OrderStats>
-  filteredOrdersSelector: selector<Order[]>
+Step 5 — Build src/components/TodoFilters.jsx
+  Accept currentFilter and onFilterChange props.
+  Render 3 buttons (All/Active/Completed), highlight the active one.
 
-Step 6 — Create typed hooks
-  useDebounce.ts: useDebounce<T>(value: T, delay?: number): T
-  useClickOutside.ts: useClickOutside<T extends HTMLElement>(handler: () => void): RefObject<T>
+Step 6 — Build src/App.jsx
+  useState for todos array (initialize lazily from localStorage via useState(() => ...)).
+  useState for the current filter string ('all' | 'active' | 'completed').
+  useEffect that writes todos to localStorage whenever todos changes.
+  addTodo, toggleTodo, deleteTodo, editTodo, clearCompleted functions —
+  all using immutable updates (spread/map/filter, never mutate the array directly).
+  Compute filteredTodos and activeCount as plain derived values
+  (NOT separate state) on every render based on todos and filter.
+  Render TodoInput, TodoFilters, the active count, TodoList, and a
+  "Clear completed" button (only shown if there's at least one completed todo).
 
-Step 7 — Create src/context/AuthContext.tsx
-  Typed AuthContextType with updateDisplayName(name: string): void.
-
-Step 8 — Create src/components/ProtectedRoute.tsx (same as Assignment 1).
-
-Step 9 — Create src/layouts/DashboardLayout.tsx
-  Typed sidebar NavLink array. useClickOutside<HTMLDivElement> for profile dropdown.
-  useCallback(() => setDropdownOpen(false), []) as the stable handler.
-
-Step 10 — Lazy-load all 4 dashboard pages in App.tsx.
-  Wrap each in <Suspense fallback={<p>Loading...</p>}>.
-
-Step 11 — Build all 4 pages with full TypeScript typing.
-  OrdersPage: useCallback<(s: OrderStatus | 'all') => void> for status setter.
-  useMemo<Order[]> for the sorted list.
+Step 7 — Run the dev server
+  npm run dev
 ```
 
 ---
