@@ -290,7 +290,18 @@
 - Rendering Strategies,
 - Authentication with NextAuth.js.
 
-## [Week-23]() : **tRPC.**
+## [Week-23](./Week-23/README.md) : **tRPC.**
+
+- What is tRPC & Why use it,
+- Setting up tRPC,
+- Procedures (Queries & Mutations),
+- Input Validation with ZOD,
+- Context & Middleware,
+- tRPC with Next.js (App Router),
+- Calling Procedures from the client,
+- Subscriptions,
+- Error-Handling,
+- Type Inference Utilities.
 
 ## [Week-24]() : **WebSockets & WebRTC.**
 
