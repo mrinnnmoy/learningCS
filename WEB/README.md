@@ -303,13 +303,15 @@
 - Error-Handling,
 - Type Inference Utilities.
 
-## [Week-24]() : **WebSockets & WebRTC.**
+## [Week-24](./Week-24/README.md) : **WebSockets & WebRTC.**
 
-- HTTP vs WebSockets,
-- Real-time communication,
-- Chat application architecture,
-- WebRTC basics,
-- Peer-to-peer communication.
+- WebSockets (The Protocol),
+- The `ws` Library,
+- Socket.IO,
+- WebRTC,
+- Media Controls,
+- React Patterns,
+- Security.
 
 ## [Week-25]() : **Queues & Pub/Sub Systems.**
 
