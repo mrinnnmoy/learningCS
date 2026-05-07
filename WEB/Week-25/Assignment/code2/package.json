@@ -1,0 +1,38 @@
+{
+  "name": "code2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "worker:payment": "tsx workers/paymentWorker.ts",
+    "worker:inventory": "tsx workers/inventoryWorker.ts",
+    "worker:receipt": "tsx workers/emailReceiptWorker.ts",
+    "worker:dlq": "tsx workers/dlqWorker.ts",
+    "worker:scheduled": "tsx workers/scheduledWorker.ts",
+    "workers": "concurrently \"npm run worker:payment\" \"npm run worker:inventory\" \"npm run worker:receipt\" \"npm run worker:dlq\" \"npm run worker:scheduled\""
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.0",
+    "bullmq": "^5.79.3",
+    "ioredis": "^5.11.1",
+    "next": "16.2.10",
+    "prisma": "^6.0.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^10.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.0",
+    "typescript": "^5"
+  }
+}

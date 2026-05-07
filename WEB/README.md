@@ -313,13 +313,16 @@
 - React Patterns,
 - Security.
 
-## [Week-25]() : **Queues & Pub/Sub Systems.**
+## [Week-25](./Week-25/README.md) : **Queues & Pub/Sub Systems.**
 
-- Event-driven architecture,
-- Pub/Sub pattern,
-- Background jobs,
-- Message queues basics,
-- Scaling backend systems.
+- Why Queues & Pub/Sub Exist,
+- Redis as the Backbone,
+- BullMQ,
+- Redis Pub/Sub,
+- Multiple Queue Patterns,
+- Using Queues in Next.js API Routes,
+- BullBoard,
+- Patterns & Best Practices.
 
 ## [Week-26]() : **Monorepo & Turborepo.**
 

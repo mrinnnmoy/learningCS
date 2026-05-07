@@ -1,0 +1,34 @@
+{
+  "name": "code3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "sub:payment": "tsx workers/paymentSubscriber.ts",
+    "sub:inventory": "tsx workers/inventorySubscriber.ts",
+    "sub:notification": "tsx workers/notificationSubscriber.ts",
+    "subscribers": "concurrently \"npm run sub:payment\" \"npm run sub:inventory\" \"npm run sub:notification\""
+  },
+  "dependencies": {
+    "bullmq": "^5.79.3",
+    "ioredis": "^5.11.1",
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^10.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.0",
+    "typescript": "^5"
+  }
+}
