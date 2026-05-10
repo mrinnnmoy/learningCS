@@ -1,0 +1,20 @@
+{
+  "name": "@acme/api-client",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@acme/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:*",
+    "typescript": "^5.5.0"
+  }
+}

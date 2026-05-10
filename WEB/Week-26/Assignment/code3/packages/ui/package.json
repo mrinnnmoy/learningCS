@@ -1,0 +1,27 @@
+{
+  "name": "@acme/ui",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:*",
+    "@acme/utils": "workspace:*",
+    "@types/react": "^19",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5.5.0"
+  }
+}

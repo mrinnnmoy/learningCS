@@ -324,14 +324,18 @@
 - BullBoard,
 - Patterns & Best Practices.
 
-## [Week-26]() : **Monorepo & Turborepo.**
+## [Week-26](./Week-26/README.md) : **Monorepo & Turborepo.**
 
-- What is a monorepo?
-- Turborepo setup,
-- Shared packages,
-- Managing frontend + backend together,
-- Build pipelines,
-- Optimizing development workflow.
+- What is a Monorepo & Why use one,
+- Workspaces (The Foundation),
+- Turborepo (The Build Orchestrator),
+- Caching,
+- Filtering,
+- Shared Packages,
+- Environment Variables,
+- `tubro.jsonc`,
+- Turborepo CLI Reference,
+- CI/CD with Turborepo.
 
 ## [Week-27]() : **Deployment & Production.**
 
