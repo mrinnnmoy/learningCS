@@ -337,14 +337,15 @@
 - Turborepo CLI Reference,
 - CI/CD with Turborepo.
 
-## [Week-27]() : **Deployment & Production.**
+## [Week-27](./Week-27/README.md) : **Deployment & Production.**
 
-- Environment configuration,
-- Build vs runtime,
-- Deployment basics,
-- Hosting frontend,
-- Hosting backend,
-- Database deployment,
-- CI/CD basics,
-- Monitoring & logging,
-- Production debugging.
+- Production Readiness,
+- Environment Variables & Secrets Management,
+- Next.js 16 Production Features,
+- Deployment to Vercel,
+- Deployment with Docker,
+- Self-Hosting on a VPS,
+- Database Management in Production,
+- Logging and Error Monitoring,
+- CI/CD Pipeline with GitHub Actions,
+- Health Checks & Monitoring.
