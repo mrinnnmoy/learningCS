@@ -1,0 +1,11 @@
+{
+  "name": "toolchain-doctor",
+  "version": "1.0.0",
+  "description": "Checks that required and upcoming Web3 dev tools are installed.",
+  "type": "module",
+  "main": "check.js",
+  "scripts": {
+    "check": "node check.js"
+  },
+  "license": "MIT"
+}

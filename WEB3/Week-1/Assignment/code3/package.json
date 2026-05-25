@@ -1,0 +1,11 @@
+{
+  "name": "web3-orientation-kit",
+  "version": "1.0.0",
+  "description": "Environment checker and 42-week progress tracker for the Blockchain Fundamentals course.",
+  "type": "module",
+  "main": "kit.js",
+  "scripts": {
+    "start": "node kit.js"
+  },
+  "license": "MIT"
+}

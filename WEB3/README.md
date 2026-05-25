@@ -1,6 +1,12 @@
 # List of things learned.
 
-## [Week-1]() : Orientation.
+## [Week-1](./Week-1/README.md) : Orientation.
+
+- What is WEB3 & how it differs from WEB2,
+- The Blockchain landscape,
+- Anatomy of a WEB3 developer's toolchain,
+- How this 42-week course is structured & how to use each week's README,
+- Reading fast-moving documentation & pinning versions.
 
 ## [Week-2]() : Introduction to blockchains.
 
