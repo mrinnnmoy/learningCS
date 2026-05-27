@@ -8,7 +8,13 @@
 - How this 42-week course is structured & how to use each week's README,
 - Reading fast-moving documentation & pinning versions.
 
-## [Week-2]() : Introduction to blockchains.
+## [Week-2](./Week-2/README.md) : Introduction to blockchains.
+
+- What is a blockchain,
+- Hash functions,
+- From block to chain,
+- Distributed ledgers,
+- Basic Consensus.
 
 ## [Week-3]() : Cryptography.
 
