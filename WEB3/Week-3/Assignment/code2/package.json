@@ -1,0 +1,17 @@
+{
+  "name": "code2",
+  "version": "1.0.0",
+  "description": "A message log where every entry is signed by a named, persisted identity.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx log.ts"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "tsx": "^4.23.0",
+    "@types/node": "^24.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

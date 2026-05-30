@@ -1,0 +1,5 @@
+{
+  "name": "bob",
+  "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAaCSFjSJt6ErEnQUILVBiMjWPCvB+3LeRAibBm/Y094A=\n-----END PUBLIC KEY-----\n",
+  "privateKeyPem": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIJ0iNTiwsys+9lIlYV/fOx3HnMZEbwNXkbR0fVpA8NfL\n-----END PRIVATE KEY-----\n"
+}

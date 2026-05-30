@@ -1,0 +1,17 @@
+{
+  "name": "code1",
+  "version": "1.0.0",
+  "description": "Generates an Ed25519 keypair and demonstrates signing and verification.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx signer.ts"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "tsx": "^4.23.0",
+    "@types/node": "^24.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

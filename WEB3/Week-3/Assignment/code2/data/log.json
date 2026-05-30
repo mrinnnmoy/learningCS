@@ -1,0 +1,23 @@
+[
+  {
+    "author": "alice",
+    "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEARNhp29x/LtsMqhNMFPRYO2yLjq/DOEz31pUOQdBE4qE=\n-----END PUBLIC KEY-----\n",
+    "message": "Alice says hello",
+    "signature": "5747ab6c092cf322608b3a25cfb794a1718183e24d5203e1e43316340d6023a5075baa38f6d0eee38f852bed02212bebc814dafdfce1886589df1b95eae1fe07",
+    "timestamp": 1784013221156
+  },
+  {
+    "author": "bob",
+    "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAaCSFjSJt6ErEnQUILVBiMjWPCvB+3LeRAibBm/Y094A=\n-----END PUBLIC KEY-----\n",
+    "message": "Bob replies hello back",
+    "signature": "37eabef7d22944a9a260671f0c0159c466287bbf8f75d43fdb443d977b706d70877c5368a8f32b8fb192f8062145ee6da0ee347f38ae7e7d795db613b9a6a109",
+    "timestamp": 1784013229268
+  },
+  {
+    "author": "alice",
+    "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEARNhp29x/LtsMqhNMFPRYO2yLjq/DOEz31pUOQdBE4qE=\n-----END PUBLIC KEY-----\n",
+    "message": "Alice signs off for the day",
+    "signature": "6ba85da93cb9bb696ca799857a39680c135f33931fc679c398290cbedf3fd502df0a71a7f4b80ba9d212baf5c84567fbb8d027df08f2669c33390261134ed101",
+    "timestamp": 1784013236638
+  }
+]

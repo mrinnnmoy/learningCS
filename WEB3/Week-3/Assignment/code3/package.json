@@ -1,0 +1,17 @@
+{
+  "name": "code3",
+  "version": "1.0.0",
+  "description": "A hash-chained ledger where every block must also carry a valid signature from an authorized key.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx cli.ts"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2",
+    "tsx": "^4.23.0",
+    "@types/node": "^24.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
