@@ -1,0 +1,17 @@
+{
+  "name": "code2",
+  "version": "1.0.0",
+  "description": "Generates an Ed25519 keypair and stores its private key encrypted at rest, protected by a password.",
+  "scripts": {
+    "start": "tsx cli.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
+  }
+}

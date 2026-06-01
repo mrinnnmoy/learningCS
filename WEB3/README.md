@@ -24,7 +24,13 @@
 - Elliptic Curves,
 - Signed Transactions.
 
-## [Week-4]() : Wallets & Key management. (basics)
+## [Week-4](./Week-4/README.md) : Wallets & Key management. (basics)
+
+- What is a wallet,
+- Seed phrases,
+- Hierarchial deterministic wallets,
+- Password-based Encryption,
+- The Wallet landscape.
 
 ## [Week-5]() : Data Serialization. (Serde/Borsh)
 

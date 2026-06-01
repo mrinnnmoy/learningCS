@@ -1,0 +1,17 @@
+{
+  "name": "code3",
+  "version": "1.0.0",
+  "description": "One encrypted master seed, many deterministically derived accounts.",
+  "scripts": {
+    "start": "tsx vault.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
+  }
+}
