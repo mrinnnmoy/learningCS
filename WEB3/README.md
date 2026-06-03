@@ -32,7 +32,13 @@
 - Password-based Encryption,
 - The Wallet landscape.
 
-## [Week-5]() : Data Serialization. (Serde/Borsh)
+## [Week-5](./Week-5/README.md) : Data Serialization. (Serde/Borsh)
+
+- What is Serialization,
+- Why JSON isn't good enough for on-chain data,
+- Borsh,
+- Serde,
+- Schema Evolution.
 
 ## [Week-6]() : Rust (fundamentals)
 

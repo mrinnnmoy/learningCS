@@ -1,0 +1,20 @@
+{
+  "name": "code3",
+  "version": "1.0.0",
+  "description": "A minimal version-tagged Borsh record format with a working V1-to-V2 migration.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx cli.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "borsh": "^2.0.0"
+  }
+}

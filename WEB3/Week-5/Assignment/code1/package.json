@@ -1,0 +1,20 @@
+{
+  "name": "code1",
+  "version": "1.0.0",
+  "description": "Compares JSON and Borsh serialization of identical logical data.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx compare.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "borsh": "^2.0.0"
+  }
+}

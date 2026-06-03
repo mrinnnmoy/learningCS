@@ -1,0 +1,20 @@
+{
+  "name": "code2",
+  "version": "1.0.0",
+  "description": "Round-trips a token-account-like struct through Borsh and demonstrates two kinds of corruption.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx accounts.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "borsh": "^2.0.0"
+  }
+}
