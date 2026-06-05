@@ -40,7 +40,13 @@
 - Serde,
 - Schema Evolution.
 
-## [Week-6]() : Rust (fundamentals)
+## [Week-6](./Week-6/README.md) : Rust (fundamentals)
+
+- Cargo & The Anatomy of a Rust Project,
+- Variables, Mutability & Basic types,
+- Ownership & Borrowing,
+- Structs & Enums,
+- Pattern Matching, Option & Result.
 
 ## [Week-7]() : Rust (advanced)
 
