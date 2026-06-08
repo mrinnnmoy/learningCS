@@ -48,7 +48,13 @@
 - Structs & Enums,
 - Pattern Matching, Option & Result.
 
-## [Week-7]() : Rust (advanced)
+## [Week-7](./Week-7/README.md) : Rust (advanced)
+
+- Traits,
+- Generics,
+- Trait Objects & Dynamic dispatch,
+- Closure & Iterators,
+- Smart pointers: `Box`, `Rc` and `RefCell`.
 
 ## [Week-8]() : Deriving macros.
 
