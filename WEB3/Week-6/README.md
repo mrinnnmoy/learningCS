@@ -102,7 +102,7 @@ Borrowing rules, enforced entirely at compile time, with zero runtime cost:
   - never both kinds on the same value at the same time
 ```
 
-This is Rust's actual pitch: memory safety and data-race freedom, without a garbage collector, by having the compiler prove these rules hold before your program is even allowed to run.
+**This is Rust's actual pitch:** Memory safety and data-race freedom, without a garbage collector, by having the compiler prove these rules hold before your program is even allowed to run.
 
 > Easy's assignment this week is built entirely around feeling this directly, including deliberately triggering the "value used after move" error above, on purpose, so it stops being an abstract idea.
 
@@ -178,6 +178,73 @@ match some_result {
 ```
 
 > One piece of syntax worth previewing before Hard's assignment uses it: the `?` operator, placed after an expression of type `Result<T, E>` (or `Option<T>`), means "if this is `Err`/`None`, return it from the current function immediately; otherwise, unwrap and continue with the `Ok`/`Some` value." It's shorthand for a `match` that only wants to handle the success case inline, letting failure cases propagate upward automatically.
+
+---
+
+## 6. Control flow, Slices & a preview of modules.
+
+### `if`, `loop`, `while`, `for` (expressions, not just statements)
+
+JavaScript's `if` is a statement, it doesn't produce a value, which is why you reach for the ternary `?:` when you want one.
+
+Rust's `if` is an **expression**, it evaluates to a value directly, no separate ternary syntax needed at all:
+
+```rust
+let status = if balance >= 0 { "solvent" } else { "overdrawn" };
+// no ternary operator exists in Rust — if/else IS the ternary
+```
+
+`match` (Concept 5) works the same way, every arm's value becomes the whole expression's value. `loop` takes this further, an infinite loop that can hand back a value via `break`:
+
+```rust
+let result = loop {
+    attempts += 1;
+    if attempts == 3 { break attempts; }   // loop evaluates to 3
+};
+```
+
+`while` behaves as you'd expect from JavaScript.
+
+`for` is the one to unlearn a habit for, there's no C-style `for (let i = 0; ...)` in Rust, it only ever iterates over something that produces values one at a time (a range like `0..5`, or a `Vec`, or, next, a slice):
+
+```rust
+for amount in &transactions {     // iterates by reference — see slices below
+    println!("{}", amount);
+}
+```
+
+### Slices: A borrowed view into a sequence, without owning it.
+
+Concept 2 already drew the line between `String` (owned) and `&str` (borrowed text).
+
+A **slice** is that exact same owned-vs-borrowed idea, generalized to any sequence:
+
+- `&[T]` is a borrowed,
+
+- contiguous view into part (or all) of a `Vec<T>` or array and
+
+- `&str` is, quite literally, a slice of UTF-8 bytes (`&[u8]`, roughly) with the guarantee that it's always valid text.
+
+```
+Vec<i64> owns:  [100, -30, 50, -20, 200]
+                      ^--------^
+                      &vec[1..3]  <- a slice: pointer + length, borrows,
+                                     doesn't copy or own the elements
+```
+
+> This is why Concept 1's Easy assignment can iterate `&transactions` and pass it into helper functions that only read it, without ever taking ownership, a slice (or a reference to the whole `Vec`) is exactly the borrowing mechanism Concept 3 introduced, now applied to a sequence instead of a single value.
+
+### A brief preview of modules.
+
+Every assignment this week lives in a single `main.rs`, deliberately so nothing besides this week's actual concepts competes for your attention.
+
+Real Rust projects split code across files using:
+
+- `mod` (declare a module),
+- `pub` (make an item visible outside its module)
+- `use` (bring an item into scope from elsewhere).
+
+> You'll start actually writing multi-file, multi-module code from Week 8 onward and Solana program code from Week 14 on uses this constantly, so the keywords will feel familiar rather than new when they show up for real.
 
 ---
 

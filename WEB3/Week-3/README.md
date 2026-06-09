@@ -92,7 +92,7 @@ Two properties fall out of this for free:
 
 ---
 
-## 4. Elliptic curves. (Briefly & why different chains disagree)
+## 4. Elliptic Curves. (Briefly & why different chains disagree)
 
 The specific math that makes _"a private key produces a matching public key and the relationship can't be reversed"_ practical to compute on ordinary hardware is called **elliptic curve cryptography**.
 
@@ -106,9 +106,23 @@ Both curves solve the identical problem (one-way key pairs, signing, verifying) 
 
 > This week's assignments use Ed25519 throughout, both because it's what Solana (this course's first deep-dive chain) uses, and because Node's built-in crypto module supports it with a notably simpler API than secp256k1.
 
+### Naming the Signature scheme, not just the curve.
+
+The curve is the underlying math;
+
+The **signature scheme** is the specific algorithm built on top of it for signing and verifying.
+
+It's worth knowing both names, because docs and error messages use them interchangeably with the curve names:
+
+- **EdDSA** (Edwards-curve Digital Signature Algorithm): The scheme used with Ed25519. Deterministic, signing the same message with the same key twice produces the _same_ signature both times.
+
+- **ECDSA** (Elliptic Curve Digital Signature Algorithm): The scheme used with secp256k1. Requires a fresh random number (the next section's topic) for every single signature, reusing that random value even once is enough to leak the private key.
+
+That last point is exactly why the next section matters.
+
 ---
 
-## 5. Signed transactions. (Where this plugs into last week's blockchain)
+## 5. Signed Transactions. (Where this plugs into last week's blockchain)
 
 Last week's mini blockchain simulator had a real gap, worth naming directly:
 
@@ -119,6 +133,86 @@ Hashing and chaining only protect data from being _silently altered after the fa
 This week's addition closes that gap, every entry now has to carry a signature that only the real author's private key could have produced and anyone re-verifying the chain checks that signature using the author's public key.
 
 > This week's Hard assignment builds exactly that, a hash-chained ledger (Week 2's idea) where every block must _also_ be validly signed by an authorized key (this week's idea) before it's accepted.
+
+### Nonces & Replay Protection. (A real signature isn't automatically a valid one)
+
+A signature only proves _"the private key holder signed these exact bytes."_
+
+It says nothing about _when_ or _how many times_ those exact bytes are allowed to be used.
+
+That gap is exactly what a **replay attack** exploits, taking a perfectly genuine signature and resubmitting it somewhere it wasn't intended for.
+
+- Example: Alice signs _"pay Bob 5 coins"_ once. If nothing ties that signature to a specific point in time or a specific transaction slot, an attacker can resubmit the exact same signed message again and again and each copy is cryptographically _"genuine."_
+
+The standard fix is a **nonce**, a number that's only ever used once per signer, usually incrementing.
+
+A message is only accepted if its nonce is strictly greater than the last one seen from that signer, so a captured, replayed signature gets rejected as stale.
+
+You'll see this exact gap deliberately exploited in this week's Hard assignment, where a genuinely-signed piece of data is reattached to different data than what it originally signed, the same underlying issue as replaying a signature outside its intended context.
+
+---
+
+## 6. Merkle trees & Merkle proofs. (Hashing a whole collection at once)
+
+Week 2 chained blocks by having each one carry the _previous_ block's hash.
+
+A **Merkle tree** applies the same one-way-fingerprint trick to a completely different shape of problem, proving a single item belongs to a large collection, without handing over the entire collection.
+
+Take a list of items.
+
+Hash each one individually, these are the _"leaves."_
+
+Then hash pairs of those hashes together to get the next layer up, repeat until only one hash remains, the **Merkle root**.
+
+```
+Leaf hashes:    H(A)     H(B)     H(C)     H(D)
+                  \        /        \        /
+                 H(H(A)+H(B))      H(H(C)+H(D))
+                        \              /
+                           Merkle root
+```
+
+Change a single item anywhere in the original list and the root changes too, exactly the avalanche effect from Week 2, just applied across a whole collection instead of one linear chain.
+
+### Why a Merkle proof is powerful.
+
+If someone hands you just the root, plus a small handful of sibling hashes along the path from one specific leaf up to the root (a **Merkle proof**), you can verify that one specific item is really part of the original collection, without ever seeing the other items.
+
+The proof size grows only logarithmically with the collection size, proving membership in a list of a million items takes roughly 20 hashes, not a million.
+
+### Why this matters for a beginner.
+
+You won't build a full Merkle tree implementation this week, this is a conceptual preview.
+
+It resurfaces concretely in **Week 21** (compressed NFTs store millions of NFTs' data as leaves of one Merkle tree instead of one account each) and **Week 35** (indexers use Merkle proofs to let clients verify data without trusting the indexer).
+
+Recognizing the shape now, "one root, many leaves, small proofs," means those weeks are an application of something familiar, not a brand-new structure.
+
+---
+
+## 7. Zero-knowledge proofs. (A brief conceptual preview)
+
+Everything so far in this course proves things by _revealing_ something, a signature reveals a proof tied to a public key, a Merkle proof reveals a small set of sibling hashes.
+
+A **zero-knowledge proof** does something stranger, it lets you prove a statement is true **without revealing why it's true, or any of the underlying data**.
+
+The classic framing, proving you know a password without ever transmitting the password itself, or proving you're over 18 without revealing your actual birthdate.
+
+The verifier ends up _convinced_, but learns nothing beyond the single bit of "yes, this statement holds."
+
+```
+Normal proof:  "Here's my private key's signature over this message" -> reveals a signature
+ZK proof:      "I know a value that satisfies this condition"        -> reveals NOTHING
+                                                                          except that you're right
+```
+
+### Why this matters for a beginner.
+
+This week is purely conceptual, no ZK code yet.
+
+The full mathematics (circuits, trusted setups, proving systems) is genuinely deep and gets a dedicated, hands-on treatment in **Week 47**.
+
+> What's worth carrying forward from today is just the shape of the idea: proof of knowledge, without disclosure of the knowledge itself, since it'll make Week 47 land as "oh, this is that thing from Week 3" rather than an entirely new mental model dropped in late.
 
 ---
 

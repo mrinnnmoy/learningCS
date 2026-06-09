@@ -2,8 +2,6 @@
 
 ## 1. What is WEB3 & how it differs from WEB2.
 
-### Plain-English version first.
-
 Imagine every app you use today like your bank's app, Instagram, Google Docs everything is a shop where the owner keeps the ledger in a back room you never see.
 
 You trust that the owner is writing down your balance, your posts, your edits correctly, because you have no way to check. If the owner changes the ledger, deletes your account, or the shop burns down with no backup, you have no recourse except to complain and hope.
@@ -39,6 +37,16 @@ Almost every confusing term you will meet in this course like "decentralized," "
 
 Keep re-deriving definitions from that one sentence and the jargon stops being scary.
 
+### Three words worth nailing down precisely.
+
+These get used loosely all the time, so pin the exact meanings now:
+
+- **Centralized:** One party controls the system and can unilaterally change or halt it (your bank, Instagram's servers).
+
+- **Decentralized:** Control is spread across many independent parties, none of whom can unilaterally change or halt the system alone.
+
+- **Trustless:** You don't need to trust any single party's honesty, because the rules are enforced by public code and math instead of a promise. Note this doesn't mean "no trust anywhere" — you're still trusting the protocol's code is correct and that enough of the network is honest, just not trusting one company.
+
 It is worth being honest about the tradeoffs, since this course will not pretend blockchains are strictly better than normal databases:
 
 - **Slower and more expensive** than a company's private database, because thousands of computers redundantly do the same work instead of one server doing it once.
@@ -51,11 +59,13 @@ It is worth being honest about the tradeoffs, since this course will not pretend
 
 ---
 
-## 2. The blockchain landscape: chains, layers & where this course goes.
+## 2. The Blockchain Landscape. (Chains, Layers & Where this course goes)
 
-### Analogy first.
+Think of blockchains the way you'd think of operating systems.
 
-Think of blockchains the way you'd think of operating systems. There isn't "one blockchain" any more than there is "one OS". There's a family of them (Bitcoin-like, Ethereum-like, Solana-like), each with different design philosophies and on top of the big ones there are "layers" the way Android sits on top of Linux.
+There isn't _"one blockchain"_ any more than there is _"one OS"_.
+
+There's a family of them (Bitcoin-like, Ethereum-like, Solana-like), each with different design philosophies and on top of the big ones there are _"layers"_ the way Android sits on top of Linux.
 
 A few vocabulary anchors you'll hear constantly:
 
@@ -97,6 +107,14 @@ Phase 3 — Cross-cutting advanced topics (Weeks 38-42)
   -> on-chain data modeling -> oracles -> multisig & governance
   Purpose: topics that apply across chains — how real production systems
   manage keys, bring in real-world data, and share control safely.
+
+Phase 4 — Emerging & advanced topics (Weeks 43-51)
+  L2s/rollups -> account abstraction -> MEV -> gas optimization
+  -> practical ZK -> restaking -> formal verification/testing
+  -> Web3 devops -> landscape beyond Solana/EVM
+  Purpose: round out the picture with what's actively shaping the
+  ecosystem right now, and give enough context to evaluate new
+  primitives that show up after this course ends.
 ```
 
 ### Why Solana before Ethereum?
@@ -112,8 +130,6 @@ You are climbing the steeper hill first on purpose.
 ---
 
 ## 3. Anatomy of a WEB3 developer's toolchain.
-
-### Analogy first.
 
 A carpenter's workshop has general-purpose tools (hammer, tape measure) and specialty tools bought only once you start a specific kind of project (a lathe for chair legs). Your Web3 toolchain works the same way:
 
@@ -140,11 +156,11 @@ Chain-specific tools (installed when the relevant week arrives)
 
 A core discipline this course will drill into you from day one is to **verify your tools are present and know their versions before you start building**, not after something breaks mysteriously.
 
-That is the entire point of this week's assignments: before you write a single line of blockchain code, you build the habit (and a reusable tool) for checking "is my environment actually ready?"
+That is the entire point of this week's assignments: before you write a single line of blockchain code, you build the habit (and a reusable tool) for checking _"is my environment actually ready?"_
 
 ---
 
-## 4. How this 42-week course is structured & how to use each week's README.
+## 4. How this 42-week course is structured & How to use each week's README.
 
 Each week's README (like this one) is self-contained and always follows the same shape:
 
@@ -172,8 +188,6 @@ A few operating notes for how you should actually work through these:
 
 ## 5. Reading fast-moving documentation & pinning versions.
 
-### Plain-English version first.
-
 A cookbook recipe written five years ago for "the latest oven" is dangerous if ovens have changed since. Web3 tooling, especially chain CLIs, SDKs and frameworks moves fast and a
 tutorial that was correct six months ago can silently be wrong today (a flag renamed, a default changed, a package split in two).
 
@@ -186,6 +200,54 @@ Bad habit:                          Good habit:
  when a new major version ships     gets the exact same behaviour you
  with breaking changes)             tested against)
 ```
+
+---
+
+## 6. Block Explorers, Networks & Faucets. (How you'll actually poke at a chain)
+
+If a blockchain is the public ledger, a **block explorer** is the website that lets you read that ledger without downloading and parsing raw blocks yourself.
+
+The same way a bank's online statement lets you see your transactions without reading the bank's internal database directly.
+
+- **Solana:** Solscan, Solana Explorer.
+- **Ethereum & most EVM chains:** Etherscan (and chain-specific forks like Arbiscan, Basescan).
+
+You'll use these constantly from Week 10 onward to confirm _"did my transaction actually do what I expected,"_ instead of just trusting your code silently worked.
+
+### Networks: Mainnet, Testnet, Devnet & Localnet.
+ 
+Every chain you'll touch in this course has multiple parallel networks and mixing them up is one of the most common beginner mistakes (deploying to the wrong one, or funding a wallet on the wrong network and wondering where the money went):
+ 
+```
+localnet   -- runs entirely on your own machine, instant, free, resets whenever you want
+   |          use for: fast iteration while writing a program/contract
+   v
+devnet     -- a shared public test network, free test tokens via a faucet
+   |          use for: testing against real network conditions before it matters
+   v
+testnet    -- a shared public network meant to mirror mainnet more closely
+   |          use for: final rehearsal, closer to production conditions
+   v
+mainnet    -- the real network, real assets, real value, mistakes cost real money
+```
+ 
+- Solana's public test networks are literally called `devnet` and `testnet`.
+
+- Ethereum's most commonly used public test network today is `Sepolia`.
+
+The core idea, disposable money on a copy of the network, is identical either way.
+
+### Faucets. (Where your test money comes from)
+ 
+A **faucet** is a free service that drips a small amount of test-network tokens into your wallet so you can pay gas/fees while testing, without ever touching real money.
+
+You'll use one the moment you send your first devnet/testnet transaction (starting Week 12 for Solana, Week 32 for Ethereum).
+ 
+A couple of habits worth building now:
+
+- Faucet tokens have **zero real-world value**, never confuse a devnet balance with a real one.
+
+- Faucets are rate-limited on purpose. If you're testing heavily, keep a couple of funded test wallets around instead of re-requesting constantly.
 
 ---
 

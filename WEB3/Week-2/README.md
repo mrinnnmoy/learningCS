@@ -1,8 +1,6 @@
 # List of things learned.
 
-## 1. What is a blockchain, really?
-
-### Plain-English version first.
+## 1. What is a Blockchain, really?
 
 Take a single page of a notebook. Write a fact on it, like _"Alice paid Bob 5 coins."_
 
@@ -35,9 +33,7 @@ Nothing about consensus, mining or wallets is needed to understand this part. It
 
 ---
 
-## 2. Hash functions: The one tool blockchains can't work without.
-
-### Plain-English version first.
+## 2. Hash functions. (The one tool blockchains can't work without)
 
 A hash function is a machine with three rules:
 
@@ -75,9 +71,7 @@ Signatures are about proving _who_ authorized a transaction. A different problem
 
 ---
 
-## 3. From block to chain: Why tampering becomes visible.
-
-### Plain-English version first.
+## 3. From block to chain. (Why tampering becomes visible)
 
 Say someone tampers with Block #2's data after the fact maybe changing _"Alice pays Bob 5 coins"_ to _"Alice pays Bob 500 coins."_
 
@@ -112,9 +106,7 @@ Anyone re-verifying the chain from scratch will notice. Week 20 and Week 31 buil
 
 ---
 
-## 4. Distributed ledgers: Nodes, Replication & Forks.
-
-### Plain-English version first.
+## 4. Distributed ledgers. (Nodes, Replication & Forks)
 
 A blockchain isn't interesting if only one computer holds a copy. That's just a fancy tamper-evident log file and whoever controls that one computer still controls the "truth."
 
@@ -137,15 +129,39 @@ This is called a **fork**. It isn't a bug. It's an expected, temporary disagreem
 
 ### Why this matters for a beginner.
 
-Every "the network agreed" or "the transaction was confirmed" phrase you'll hear from Week 10 onward is really shorthand for "enough independent nodes converged on the same chain."
+Every _"the network agreed"_ or _"the transaction was confirmed"_ phrase you'll hear from Week 10 onward is really shorthand for "enough independent nodes converged on the same chain."
 
 Nothing about that convergence is magic, it follows directly from a rule that every node applies identically, which is exactly this week's next (and final) concept.
 
+### Nodes vs. Validators vs. Miners. (Same job, Different titles)
+
+_"Node"_ is the generic term.
+
+Any computer running the blockchain's software and holding a copy of the chain.
+
+What that node _does_ to help decide "what comes next" depends on the consensus mechanism (next section):
+
+- **Miner:** a node that competes to add the next block by burning real computational work (Proof of Work — Bitcoin's model).
+
+- **Validator:** a node that earns the right to add the next block by locking up (staking) value as collateral instead of burning computation (Proof of Stake — Ethereum's and Solana's model).
+
+Every miner and validator is a node, but not every node mines or validates — plenty of nodes just hold a copy and verify, without ever proposing new blocks.
+
+### Hard forks vs. Soft forks. (A different meaning of "fork.")
+
+The forks discussed above are _temporary, unintentional_ disagreements that resolve themselves once nodes converge.
+
+There's a second, unrelated use of the word worth knowing now so it doesn't confuse you later:
+
+- **Soft fork:** A backward-compatible rule tightening. Old nodes still see new blocks as valid, they just can't produce blocks under the new stricter rules themselves.
+
+- **Hard fork:** A backward-_incompatible_ rule change. Old nodes reject new blocks outright, permanently splitting the network into two chains if enough participants don't upgrade (this is literally how Ethereum and Ethereum Classic became two separate chains).
+
+Both are _intentional, planned_ forks, unlike the organic, temporary kind you just saw above.
+
 ---
 
-## 5. Basic consensus: How independent nodes agree on "the real chain."
-
-### Plain-English version first.
+## 5. Basic Consensus. (How independent nodes agree on _"the real chain."_)
 
 If two nodes disagree on which chain is correct, there needs to be an objective, mechanical rule that both nodes apply. With no need to trust each other's judgment.
 
@@ -171,6 +187,88 @@ The _longest valid chain wins_ version you'll build this week is a genuine simpl
 This is the last piece needed to explain why attacking a real blockchain is expensive.
 
 An attacker doesn't just need to fabricate one tampered block, they need to produce an entire _valid, longer_ chain than the honest network's, which (as Week 20's mining/security discussion will cover in more depth) gets combinatorially harder the more independent, honest nodes are running.
+
+### Finality. (How sure is _"confirmed,"_ really?)
+
+_"Longest valid chain wins"_ has an uncomfortable implication.
+
+A block you thought was confirmed can, in principle, get replaced if an even longer competing chain shows up later.
+
+Different chains handle this differently:
+
+- **Probabilistic finality** (Bitcoin-style): A block is never _mathematically_ guaranteed final, it just becomes exponentially expensive to reverse the more blocks get built on top of it. This is where _"wait for 6 confirmations"_ comes from.
+
+- **Deterministic finality** (many Proof-of-Stake chains): After a specific point, a block is provably final, full stop, because reversing it would require a large, provable fraction of staked validators to visibly misbehave and lose their stake for it.
+
+Solana and Ethereum each have their own specific finality mechanics, covered in Weeks 10 and 26 respectively.
+
+The concept to hold onto now is just that _"confirmed"_ is not one universal guarantee, it's a spectrum and knowing where a given chain sits on it changes how long you should wait before treating a transaction as safe.
+
+### A word on Trade-offs. (You can't maximize everything at once)
+
+You've now seen the ingredients:
+
+- hashing (Week 2 §1-3),
+- replication (§4) and
+- an agreement rule (§5).
+
+A useful lens for evaluating _any_ distributed system, blockchains included, is a version of the CAP theorem:
+
+- you can't simultaneously maximize **consistency** (everyone agrees on the exact same state), **availability** (the system always responds) and **partition tolerance** (it keeps working even when parts of the network can't talk to each other).
+
+You have to pick which one to relax.
+
+Blockchains generally choose to relax availability during a fork (better to briefly disagree and let consensus resolve it than to serve possibly-wrong data as final), which is exactly the behaviour you saw in this week's diagrams.
+
+This framing will resurface anytime you evaluate a new chain's design trade-offs later in the course.
+
+---
+
+## 6. The Mempool, The Transaction Lifecycle & Why fees exist.
+
+Think of a busy restaurant with one open kitchen window.
+
+Customers don't get served the instant they order, their order ticket goes on a rail first, and the kitchen pulls tickets off in whatever order it chooses.
+
+That rail is the **mempool**, a waiting area of transactions that have been broadcast to the network but not yet included in a block.
+
+```
+You submit a tx
+     |
+     v
+Mempool  -- broadcast to nodes, sitting unconfirmed, visible to anyone watching
+     |        (a miner/validator picks it up from here)
+     v
+Included in a candidate block
+     |
+     v
+Block gets added to the chain (mined/validated, following this week's rules)
+     |
+     v
+Confirmed  -- and, per Section 5 above, "confirmed" has degrees depending on the chain
+```
+
+### Why fees exist at all.
+
+Block space is scarce, only so many transactions fit in a block and nodes spend real resources (computation, bandwidth, storage) processing every transaction they accept.
+
+Fees solve two problems at once:
+
+- **Spam prevention:** Without a cost, nothing stops someone from flooding the network with junk transactions.
+
+- **Prioritization:** When more transactions want in than fit in the next block, fees act as a market. Higher fee, higher priority to get picked from the mempool.
+
+This course will use the generic term **"gas/fees"** for now.
+
+Solana and Ethereum implement the fee market very differently in practice (Solana's fees are small and mostly flat, Ethereum's `EIP-1559` model burns a base fee and lets you tip on top) and those mechanics get their own dedicated treatment in Weeks 10 and 26.
+
+### Why this matters for a beginner.
+
+Every time you've heard _"my transaction is stuck"_ or _"gas is expensive right now,"_ it's this exact rail-and-kitchen-window picture:
+
+- too many tickets on the rail, not enough being pulled off fast enough at the price you offered.
+
+Holding this mental model now means the fee-market specifics in later weeks are a refinement, not a brand-new concept.
 
 ---
 

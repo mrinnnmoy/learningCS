@@ -39,7 +39,7 @@ Same logical data, two valid JSON encodings:
                                     -->  DIFFERENT strings, DIFFERENT hashes
 ```
 
-This week's Easy assignment demonstrates exactly this problem directly, then shows the fix.
+> This week's Easy assignment demonstrates exactly this problem directly, then shows the fix.
 
 ---
 
@@ -68,6 +68,24 @@ The SCHEMA is what tells you those 8 trailing bytes mean "balance".
 ```
 
 > Solana uses Borsh natively for account data and instruction data. This is the exact format you'll be reading and writing directly once Week 10 onward puts you inside Solana's account model.
+
+### Endianness & Alignment. (Two more things the schema fixes, not chance)
+ 
+Two lower-level details are worth naming explicitly, both already visible in the diagram above without being called out:
+ 
+- **Endianness** is the order individual bytes of a multi-byte number are stored in.
+
+     `500u64` as **little-endian** stores its *least* significant byte first; **big-endian** would store its *most* significant byte first.
+
+     Same number, different byte sequence, so a hash over it would come out completely different depending on which convention was used.
+
+     Borsh always uses little-endian, fixed by spec, which is exactly what makes Week 1's "every honest node computes the same hash" claim actually hold across machines with different native architectures.
+
+- **Alignment** refers to padding bytes some formats insert so multi-byte values start at convenient memory addresses (a C struct, for instance, often pads a `u8` field out to 4 or 8 bytes).
+
+     Borsh deliberately has **no alignment padding**, fields are packed back-to-back with nothing in between, which is part of why it's compact.
+     
+     This matters later: Week 14's zero-copy account parsing works directly against raw memory layout, where alignment *does* apply, so you'll see the contrast firsthand once you're there.
 
 ---
 

@@ -128,7 +128,9 @@ arr.filter(f).map(g)                     iter.filter(f).map(g)
 
 ## 5. Smart pointers: `Box`, `Rc` and `RefCell`. (Three different escapes from ownership's normal rules)
 
-Week 6's ownership model - one owner, borrow via `&`/`&mut` covers most code. But three situations come up often enough that the standard library provides purpose-built types for them:
+Week 6's ownership model - _one owner_, _borrow via_ `&`/`&mut` covers most code.
+
+But three situations come up often enough that the standard library provides purpose-built types for them:
 
 - **`Box<T>`** simply puts a value on the heap instead of the stack. You'll reach for it when a type needs a fixed, known size at compile time but logically contains something whose size can't be known ahead of time, which is exactly the situation `Box<dyn Asset>` from Concept 3 was in: a `dyn Asset` could be a `Token`, an `Nft` or any other size, so it has to live behind a pointer.
 
@@ -147,6 +149,46 @@ RefCell:        checked while the program RUNS, every time you call
 ```
 
 `Rc<RefCell<T>>`, the two combined is a common single-threaded pattern for "several independent parts of a program all need to read and mutate the same shared piece of state," and is exactly what this week's Hard assignment builds.
+
+---
+
+## 6. Concurrency and Unsafe Rust. (Two previews for later)
+
+Neither of these appears in this week's assignments, `Rc`/`RefCell` above is deliberately the single-threaded, no-`unsafe` version of these ideas.
+
+Worth knowing the shape of both now, so they're recognition rather than a surprise when they show up for real.
+
+### Concurrency: `Arc` and `Mutex`. (The thread-safe cousins of Concept 5)
+
+`Rc<T>` and `RefCell<T>` are explicitly **not** safe to share across multiple OS threads, the compiler will refuse to let you try.
+
+The standard library provides direct multi-threaded equivalents that solve the exact same two problems, with thread-safety built in:
+
+- **`Arc<T>`** (_"atomically reference counted"_) is `Rc<T>`'s thread-safe twin, multiple owners, but the reference count itself is updated atomically so concurrent threads cloning/dropping it can't corrupt the count.
+
+- **`Mutex<T>`** is `RefCell<T>`'s thread-safe twin, interior mutability, but instead of panicking on a conflicting borrow, a second thread calling `.lock()` while another thread holds the lock simply **blocks** (waits) until it's released.
+
+```
+Single-threaded (this week):    Multi-threaded (later):
+Rc<RefCell<T>>                  Arc<Mutex<T>>
+  multiple owners, one thread     multiple owners, multiple threads
+  .borrow_mut() panics on         .lock() blocks (waits) on
+  conflict                        conflict, instead of panicking
+```
+
+`std::thread::spawn` is how you'd actually create a new OS thread, given a closure to run on it, tying directly back to Concept 4's closures.
+
+This isn't needed for on-chain program code (Solana's runtime handles parallelism for you, Week 10), but it comes up in off-chain tooling, like the indexers and RPC-adjacent services Week 24 covers.
+
+### Unsafe Rust. (A small, explicit escape hatch)
+
+Everything so far in this course has leaned on one pitch, the compiler proves memory safety before your program runs.
+
+The `unsafe` keyword marks a small block or function where you're telling the compiler _"trust me, I'm upholding the rules myself here"_ for a handful of specific operations it can no longer verify for you. Most commonly dereferencing a raw pointer, or calling a function written in another language (FFI).
+
+Critically, `unsafe` doesn't turn off Rust's other rules, ordinary borrow-checking, type-checking still apply in an `unsafe` block. It only unlocks that small extra set of operations and real-world Rust code uses it sparingly and deliberately, usually wrapped in a small, carefully-reviewed function with an entirely safe API on the outside.
+
+> You won't write `unsafe` code this week or next. It resurfaces concretely in **Week 14**, where Solana's zero-copy account parsing (reading account bytes directly, without a copying/allocating step) sometimes reaches for it deliberately, for performance reasons that will make a lot more sense once you've felt Rust's normal, always-on guarantees firsthand.
 
 ---
 

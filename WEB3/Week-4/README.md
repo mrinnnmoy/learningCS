@@ -6,7 +6,9 @@ A _"wallet"_ doesn't hold coins the way a physical wallet holds cash.
 
 Every balance you'll ever see in a block explorer is really just an entry in the ledger, tied to a public key.
 
-A wallet's actual job is generating and guarding the one private key that can produce valid signatures under that public key. Everything else (the nice app, the "send" button, the balance display) is a convenience layer built on top of that one responsibility.
+A wallet's actual job is generating and guarding the one private key that can produce valid signatures under that public key.
+
+Everything else (the nice app, the "send" button, the balance display) is a convenience layer built on top of that one responsibility.
 
 ```
 What people picture a wallet holds:      What a wallet actually holds:
@@ -24,9 +26,29 @@ Losing a wallet's private key doesn't destroy any coins directly. It destroys th
 
 This is also why Week 3's `signed-log` project explicitly flagged "storing a private key as plain JSON is not how real wallets work": this week builds the parts that were missing.
 
+### From public key to address. (one more derivation step)
+
+The public key itself is rarely what you see displayed as _"your wallet address."_
+
+Chains apply one more derivation step on top of it and the exact step differs by chain:
+
+- **Solana:** The address _is_ the public key, just base58-encoded for readability. No extra hashing step.
+
+- **Ethereum:** The address is the last 20 bytes of `Keccak256(publicKey)`, then hex-encoded with a `0x` prefix. The public key itself is longer and rarely shown directly.
+
+Both are still one-way derivations, exactly the shape you've now seen three times:
+
+- private key → public key (Week 3) &
+
+- now public key → address.
+
+You can't reverse any step of that chain, only walk it forward.
+
+Week 12 and Week 32 put each chain's specific derivation into actual working code.
+
 ---
 
-## 2. Seed phrases. (Turning randomness into something a human can back up)
+## 2. Seed Phrases. (Turning randomness into something a human can back up)
 
 A raw Ed25519 private key is 32 bytes of essentially random data. Awkward to write down, and one mistyped hex character out of 64 silently produces a completely different, wrong key with no obvious sign anything went wrong.
 
@@ -48,7 +70,7 @@ Real wallets use the **BIP-39** standard specifically:
 
 ## 3. Hierarchical deterministic wallets. (One seed, Many accounts)
 
-Real wallet apps let you switch between "Account 1," "Account 2" and so on, all from a single backup phrase.
+Real wallet apps let you switch between _"Account 1,"_ _"Account 2"_ and so on, all from a single backup phrase.
 
 That only works because of one more one-way trick layered on top of the seed itself.
 
@@ -92,7 +114,7 @@ Never stored: the plaintext private key, or the password itself.
 
 ---
 
-## 5. The wallet landscape. (Hot vs. Cold, Custodial vs. Non-Custodial)
+## 5. The Wallet Landscape. (Hot vs. Cold, Custodial vs. Non-Custodial)
 
 A short vocabulary map, useful before Week 12 (Solana wallet adapters) and Week 32 (Ethereum client-side wallets) put it to practical use:
 
@@ -112,6 +134,70 @@ Trust model     "trust the company" (Week 1)    "verify the math" (Week 1)
 ```
 
 Every assignment in this course, (this week included) builds only non-custodial patterns. That's the actual mechanism behind the phrase _"your keys, your coins."_
+
+### Hardware wallets. (Cold storage you can actually use)
+
+A **hardware wallet** (Ledger, Trezor) is the most common real-world cold wallet.
+
+A small dedicated device that generates and stores the private key inside a secure chip that never exposes it, not even to the computer it's plugged into.
+
+When you sign a transaction, the _unsigned_ transaction goes to the device, the device signs it internally and only the _signature_ comes back out.
+
+The private key itself never touches your browser or OS, even if that computer is compromised.
+
+### Common wallet apps you'll actually use in this course.
+
+- **Solana:** Phantom, Backpack, Solflare are mostly hot wallets (browser extension / mobile), used from Week 12 onward.
+
+- **Ethereum / EVM:** MetaMask, Rabby are same hot-wallet category, used from Week 32 onward.
+
+These are convenience layers over exactly the mechanisms you built by hand this week:
+
+- key generation,
+- seed phrases &
+- encrypted storage at rest.
+
+### Private key storage. (A short checklist)
+
+Everything below follows directly from this week's concepts, restated as concrete habits:
+
+- Never store a raw private key in plaintext, on disk, in a screenshot, or in a chat message. Encrypt at rest (Concept 4), or use a hardware wallet.
+
+- Back up the seed phrase, not the derived keys. One phrase reproduces every account (Concept 3), so it's the single artifact that actually matters.
+
+- Never type a seed phrase into a website. A legitimate wallet only ever asks for it inside its own app, during its own recovery flow.
+
+- Treat a "wrong password" decryption failure (Medium assignment, test case 3) as informative, not as a bug to route around. It's the authenticated encryption doing its job.
+
+---
+
+## 6. Signing messages vs. Signing transactions.
+
+Week 3 established that signing proves _"the private key holder produced this exact data."_
+
+That's true regardless of _what_ the data is, but wallets deliberately treat two categories of data very differently, because the consequences of signing them are completely different:
+
+- **Signing a message:** Proves identity or intent, off-chain. Nothing moves.
+
+  **Common use:** _"log in with your wallet"_ (proving you control an address, without a password) or agreeing to a set of terms. Low stakes, easily reversible, you can sign the same message a hundred times with no effect.
+
+- **Signing a transaction:** Authorizes an actual on-chain state change, a transfer, a program call, anything with real consequences once broadcast.
+
+  High stakes and depending on the chain, potentially irreversible the moment it's confirmed (Week 2, §3).
+
+```
+Sign a MESSAGE                          Sign a TRANSACTION
+---------------                         -------------------
+"I control this address"                "Move 5 coins from me to Bob"
+Nothing broadcast anywhere              Broadcast to the network (Week 2, §6)
+Reversible: sign again, no harm done    Irreversible once confirmed
+```
+
+### Why this matters for a beginner.
+
+Every wallet app deliberately shows these two actions with very different UI, a message-signing prompt looks and feels different from a transaction-approval prompt, precisely because users need an unmistakable signal for _"this one actually costs you something."_
+
+When you build client-side wallet integrations in Week 12 and Week 32, you'll call genuinely different wallet-adapter methods for each and now you'll know why the distinction exists instead of just memorizing two function names.
 
 ---
 
@@ -254,92 +340,90 @@ Every assignment in this course, (this week included) builds only non-custodial 
 
 3. **Hard - HD Vault : Multi-Account Derivation Over an Encrypted Master Seed.**
 
-    **What you practice:**
- 
-    - Combining this week's two standalone mechanisms — seed phrases (Easy) and password-based encryption (Medium) — into a single coherent system
-    - Applying the HD derivation idea from Concept 3 to produce many independent, reproducible accounts from one encrypted secret
-    - Deriving private keys on demand, in memory, without ever persisting more than one encrypted secret to disk
-    - Confirming determinism across genuinely separate process runs, not just within a single script execution
+   **What you practice:**
+   - Combining this week's two standalone mechanisms — seed phrases (Easy) and password-based encryption (Medium) — into a single coherent system
+   - Applying the HD derivation idea from Concept 3 to produce many independent, reproducible accounts from one encrypted secret
+   - Deriving private keys on demand, in memory, without ever persisting more than one encrypted secret to disk
+   - Confirming determinism across genuinely separate process runs, not just within a single script execution
 
-    **Requirements:**
- 
-    - Running `create <password>` generates a fresh 32-byte master seed, prints it once as a recovery phrase (using Easy's word list and encoding), and immediately encrypts and saves it — the raw master seed is never written to disk in plaintext at any point.
-    - Running `create <password>` a second time, without deleting the existing vault file first, refuses to overwrite it rather than silently generating and saving a new, different master seed.
-    - Running `accounts <password> <count>` decrypts the vault and derives and prints exactly `<count>` accounts, each with a distinct public key.
-    - Running `accounts <password> <count>` again, in a completely separate process invocation, produces the exact same list of public keys as the first run, in the same order — proving the derivation is genuinely deterministic from the persisted, encrypted seed, not something regenerated randomly each run.
-    - Running `sign <password> <index> "<message>"` derives only that one account's keypair in memory, signs the given message, and verifies the signature — and the public key it reports matches the corresponding entry from an `accounts` listing exactly.
-    - Supplying an incorrect password to either `accounts` or `sign` fails cleanly, the same way Medium's `unlock` command does.
+   **Requirements:**
+   - Running `create <password>` generates a fresh 32-byte master seed, prints it once as a recovery phrase (using Easy's word list and encoding), and immediately encrypts and saves it — the raw master seed is never written to disk in plaintext at any point.
+   - Running `create <password>` a second time, without deleting the existing vault file first, refuses to overwrite it rather than silently generating and saving a new, different master seed.
+   - Running `accounts <password> <count>` decrypts the vault and derives and prints exactly `<count>` accounts, each with a distinct public key.
+   - Running `accounts <password> <count>` again, in a completely separate process invocation, produces the exact same list of public keys as the first run, in the same order — proving the derivation is genuinely deterministic from the persisted, encrypted seed, not something regenerated randomly each run.
+   - Running `sign <password> <index> "<message>"` derives only that one account's keypair in memory, signs the given message, and verifies the signature — and the public key it reports matches the corresponding entry from an `accounts` listing exactly.
+   - Supplying an incorrect password to either `accounts` or `sign` fails cleanly, the same way Medium's `unlock` command does.
 
-    *(`wordlist.ts` is copied over unchanged from the Easy assignment. It's the same 256-word encoding used for this vault's one-time backup phrase.)*
+   _(`wordlist.ts` is copied over unchanged from the Easy assignment. It's the same 256-word encoding used for this vault's one-time backup phrase.)_
 
-    [Solution](./Assignment/code3)
+   [Solution](./Assignment/code3)
 
-    **Manual Test Cases.**
+   **Manual Test Cases.**
 
-    ```
-    1. Command: npx tsx vault.ts create "correct horse battery staple"
+   ```
+   1. Command: npx tsx vault.ts create "correct horse battery staple"
 
-        Expected output: "Vault created and encrypted on disk."
-        
-        Followed by a 32-word backup phrase, followed by a note that the
-        raw seed is never stored in plaintext.
-        
-        Confirm vault.json now exists in the project folder and contains
-        exactly four hex-string fields (salt, iv, ciphertext, authTag).
-        
-        No field anywhere contains the phrase's words or anything resembling
-        readable key material.
+       Expected output: "Vault created and encrypted on disk."
 
-    2. Command: npx tsx vault.ts create "a different password"
-    
-        (Run immediately after test case 1, without deleting vault.json).
+       Followed by a 32-word backup phrase, followed by a note that the
+       raw seed is never stored in plaintext.
 
-        Expected output: "A vault already exists.
-        
-        Delete vault.json first if you want to start over."
-        
-        And re-opening vault.json confirms it is byte-for-byte unchanged from
-        test case 1, proving the existing vault was genuinely left alone rather
-        than silently overwritten.
+       Confirm vault.json now exists in the project folder and contains
+       exactly four hex-string fields (salt, iv, ciphertext, authTag).
 
-    3. Command: npx tsx vault.ts accounts "correct horse battery staple" 3
+       No field anywhere contains the phrase's words or anything resembling
+       readable key material.
 
-        Expected output: three lines, "Account #0:", "Account #1:" and
-        "Account #2:", each followed by a 64-character public key hex
-        string.
-        
-        All three hex strings must be different from each other.
+   2. Command: npx tsx vault.ts create "a different password"
 
-    4. Command: run the exact same command from test case 3 again.
-    
-        As a completely separate command (not by re-using any output from the
-        previous run).
+       (Run immediately after test case 1, without deleting vault.json).
 
-        Expected output: Identical to test case 3, the same three account
-        indices mapped to the exact same three public keys, in the same
-        order.
-        
-        This is the key difference from Easy's wallet.ts, where
-        re-running the program produces different results each time: here,
-        the master seed is persisted and decrypted fresh each run, not
-        regenerated, so the accounts derived from it are stable across
-        separate process invocations.
+       Expected output: "A vault already exists.
 
-    5. Command: npx tsx vault.ts accounts "wrong password" 3
+       Delete vault.json first if you want to start over."
 
-        Expected output: A line starting with "Failed to open vault:"
-        followed by a decryption/authentication error.
-        
-        The same category of failure Medium's unlock command demonstrated,
-        now reused inside a different command.
+       And re-opening vault.json confirms it is byte-for-byte unchanged from
+       test case 1, proving the existing vault was genuinely left alone rather
+       than silently overwritten.
 
-    6. Command: npx tsx vault.ts sign "correct horse battery staple" 1 "Hello from account 1"
+   3. Command: npx tsx vault.ts accounts "correct horse battery staple" 3
 
-        Expected output: "Signed with Account #1 (<hex>):" where <hex> is
-        exactly the same 64-character string that test case 3 printed next
-        to "Account #1:", followed by the message, a signature hex string,
-        and "verified:  true".
-        
-        Confirming sign and accounts derive identical keys for the same index, since both
-        go through the same deriveChildSeed function.
-    ```
+       Expected output: three lines, "Account #0:", "Account #1:" and
+       "Account #2:", each followed by a 64-character public key hex
+       string.
+
+       All three hex strings must be different from each other.
+
+   4. Command: run the exact same command from test case 3 again.
+
+       As a completely separate command (not by re-using any output from the
+       previous run).
+
+       Expected output: Identical to test case 3, the same three account
+       indices mapped to the exact same three public keys, in the same
+       order.
+
+       This is the key difference from Easy's wallet.ts, where
+       re-running the program produces different results each time: here,
+       the master seed is persisted and decrypted fresh each run, not
+       regenerated, so the accounts derived from it are stable across
+       separate process invocations.
+
+   5. Command: npx tsx vault.ts accounts "wrong password" 3
+
+       Expected output: A line starting with "Failed to open vault:"
+       followed by a decryption/authentication error.
+
+       The same category of failure Medium's unlock command demonstrated,
+       now reused inside a different command.
+
+   6. Command: npx tsx vault.ts sign "correct horse battery staple" 1 "Hello from account 1"
+
+       Expected output: "Signed with Account #1 (<hex>):" where <hex> is
+       exactly the same 64-character string that test case 3 printed next
+       to "Account #1:", followed by the message, a signature hex string,
+       and "verified:  true".
+
+       Confirming sign and accounts derive identical keys for the same index, since both
+       go through the same deriveChildSeed function.
+   ```

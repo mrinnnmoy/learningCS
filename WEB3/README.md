@@ -1,127 +1,586 @@
 # List of things learned.
 
-## [Week-1](./Week-1/README.md) : Orientation.
+## [Week 1](./Week-1/README.md) : Orientation.
 
 - What is WEB3 & how it differs from WEB2,
-- The Blockchain landscape,
-- Anatomy of a WEB3 developer's toolchain,
-- How this 42-week course is structured & how to use each week's README,
-- Reading fast-moving documentation & pinning versions.
+- The Blockchain Landscape,
+- Anatomy of a WEB3 developer's Toolchain,
+- How this Course is structures & How to use each week's README,
+- Reading fast-moving documentation & pinning versions,
+- Block Explorers, Networks & Faucets.
 
-## [Week-2](./Week-2/README.md) : Introduction to blockchains.
+## [Week 2](./Week-2/README.md) : Introduction to Blockchains.
 
-- What is a blockchain,
-- Hash functions,
+- What is a Blockchain, really,
+- Hash Functions,
 - From block to chain,
 - Distributed ledgers,
-- Basic Consensus.
+- Basic Consensus,
+- The Mempool, The Transaction Lifecycle & Why fees exist.
 
-## [Week-3](./Week-3/README.md) : Cryptography.
+## [Week 3](./Week-3/README.md) : Cryptography.
 
-- Symmetric vs Asymmetric cryptography,
-- Public & Private keys,
+- Symmetric vs Asymmetric Cryptography,
+- Public vs Private Keys,
 - Digital Signatures,
 - Elliptic Curves,
-- Signed Transactions.
+- Signed Transactions,
+- Merkle trees & Merkle proofs,
+- Zero-Knowledge proofs.
 
-## [Week-4](./Week-4/README.md) : Wallets & Key management. (basics)
+## [Week 4](./Week-4/README.md) : Wallets & Key Management (Basics).
 
-- What is a wallet,
-- Seed phrases,
-- Hierarchial deterministic wallets,
+- What is a Wallet,
+- Seed Phrases,
+- Hierarchical deterministic wallets,
 - Password-based Encryption,
-- The Wallet landscape.
+- The Wallet Landscape,
+- Signing messages vs Signing transactions.
 
-## [Week-5](./Week-5/README.md) : Data Serialization. (Serde/Borsh)
+## [Week 5](./Week-5/README.md) : Data Serialization. (Serde/Borsh)
 
 - What is Serialization,
 - Why JSON isn't good enough for on-chain data,
 - Borsh,
 - Serde,
-- Schema Evolution.
+- Schema evolution.
 
-## [Week-6](./Week-6/README.md) : Rust (fundamentals)
+## [Week 6](./Week-6/README.md) : Rust (Fundamentals)
 
 - Cargo & The Anatomy of a Rust Project,
 - Variables, Mutability & Basic types,
 - Ownership & Borrowing,
 - Structs & Enums,
-- Pattern Matching, Option & Result.
+- Pattern Matching, Option & Result,
+- Control flow, Slices & A preview of modules.
 
-## [Week-7](./Week-7/README.md) : Rust (advanced)
+## [Week 7](./Week-7/README.md) : Rust (Advanced)
 
 - Traits,
 - Generics,
-- Trait Objects & Dynamic dispatch,
-- Closure & Iterators,
-- Smart pointers: `Box`, `Rc` and `RefCell`.
+- Trait objects & Dynamic Dispatch,
+- Closures & Iterators,
+- Smart pointers (`Box`, `Rc` and `RefCell`),
+- Concurrency and Unsafe Rust.
 
-## [Week-8]() : Deriving macros.
+## [Week 8](./) : Deriving Macros
 
-## [Week-9]() : Lifetimes in depth.
+- What derive macros are
+- Built-in derives (`Debug`, `Clone`, `PartialEq`, `Default`)
+- Custom derive macros
+- Procedural macros overview
+- `syn` & `quote` crates (conceptual)
+- Attribute macros
+- Function-like macros
+- Macro use in Solana/Anchor context (`#[derive(Accounts)]`, `#[program]`)
 
-## [Week-10]() : Solana Architecture.
+## [Week 9](./) : Lifetimes in Depth
 
-## [Week-11]() : Solana Jargons. (accounts, authority, owner)
+- What lifetimes solve
+- Lifetime annotations syntax
+- Lifetime elision rules
+- Structs with lifetimes
+- Lifetime bounds on generics
+- `'static` lifetime
+- Lifetimes with references in functions
+- Common borrow-checker errors & fixes
 
-## [Week-12]() : Solana wallet adapter & client-side.
+## [Week 10](./) : Solana Architecture
 
-## [Week-13]() : PDAs - Program Derived Addresses.
+- Solana runtime overview
+- Sealevel (parallel transaction execution)
+- Proof of History explained
+- Tower BFT consensus
+- Validators & leader schedule
+- Clusters (devnet, testnet, mainnet-beta)
+- Turbine (block propagation)
+- Gulf Stream (mempool-less forwarding)
+- Cloudbreak (accounts database)
+- Transaction fees & rent
+- Compute units & compute budget
 
-## [Week-14]() : Solana native contracts in Rust.
+## [Week 11](./) : Solana Jargons (Accounts, Authority, Owner)
 
-## [Week-15]() : Anchor framework vs raw contracts.
+- Account model overview
+- Account structure (lamports, data, owner, executable)
+- Program-owned vs user-owned accounts
+- System accounts
+- Authority concept (update authority, mint authority, freeze authority)
+- Signer vs writable accounts
+- Rent & rent-exemption
+- Account size limits
+- Sysvar accounts
+- Cross-program invocation (CPI) intro
 
-## [Week-16]() : JS clients for smart contracts.
+## [Week 12](./) : Solana Wallet Adapter & Client-Side
 
-## [Week-17]() : SPL Tokens & Token programs.
+- `@solana/web3.js` basics
+- Connection object & RPC endpoints
+- Wallet adapter library setup
+- Connecting wallets in frontend (React)
+- Requesting signatures
+- Sending transactions from client
+- Reading account data client-side
+- Handling transaction confirmation
+- Error handling (simulation failures)
+- Devnet airdrop requests
 
-## [Week-18]() : Token extensions. (Token-2022)
+## [Week 13](./) : PDAs — Program Derived Addresses
 
-## [Week-19]() : Common contracts. (Staking & escrow)
+- What PDAs are & why they exist
+- Seeds & bump concept
+- Deterministic address derivation
+- `findProgramAddress` / `findProgramAddressSync`
+- Canonical bump
+- PDA as signer (program-controlled accounts)
+- Common PDA patterns (per-user accounts, vaults)
+- PDA collision avoidance
+- Off-curve addresses explained
 
-## [Week-20]() : Program security.
+## [Week 14](./) : Solana Native Contracts in Rust
 
-## [Week-21]() : Compressed NFTs.
+- Program entrypoint structure
+- Instruction data parsing
+- Account validation manually
+- Processing instructions
+- State management without a framework
+- CPI without Anchor
+- Error handling in native programs
+- Deploying native programs
+- Testing native programs (BankRun/solana-program-test)
 
-## [Week-22]() : DeFi. (AMM, DLMM, CLMM, Perps)
+## [Week 15](./) : Anchor Framework vs Raw Contracts
 
-## [Week-23]() : Payment infrastructure.
+- Anchor project structure
+- `#[program]` macro
+- `#[derive(Accounts)]` macro
+- Account constraints (`#[account(...)]`)
+- Anchor IDL generation
+- Anchor error handling (`#[error_code]`)
+- Anchor testing framework
+- CPI with Anchor (`CpiContext`)
+- Trade-offs: Anchor vs native (safety, boilerplate, control)
+- When to choose one over the other
 
-## [Week-24]() : Indexing.
+## [Week 16](./) : JS Clients for Smart Contracts
 
-## [Week-25]() : LSTs. (Liquid staking tokens)
+- Generating/using Anchor IDL in JS/TS
+- `@coral-xyz/anchor` client setup
+- Program instance creation
+- Calling program instructions from client
+- Fetching & deserializing account data
+- Event listening
+- Transaction building & sending
+- Error decoding from Anchor programs
 
-## [Week-26]() : Intro to Ethereum & EVM.
+## [Week 17](./) : SPL Tokens & Token Programs
 
-## [Week-27]() : Solidity (fundamentals)
+- SPL Token program overview
+- Mint accounts
+- Token accounts (associated token accounts)
+- Minting tokens
+- Transferring tokens
+- Burning tokens
+- Freezing/thawing accounts
+- Token decimals & supply
+- Multisig token authorities
+- `spl-token` CLI basics
 
-## [Week-28]() : Payable, fallback & CCIs.
+## [Week 18](./) : Token Extensions (Token-2022)
 
-## [Week-29]() : ERC-20/ERC-721/OppenZeppelin.
+- Why Token-2022 was introduced
+- Extension architecture overview
+- Transfer fees extension
+- Interest-bearing tokens
+- Non-transferable tokens
+- Confidential transfers (concept)
+- Metadata pointer extension
+- Permanent delegate extension
+- Default account state extension
+- Migrating from legacy SPL to Token-2022
 
-## [Week-30]() : Hardhat/Foundry.
+## [Week 19](./) : Common Contracts (Staking & Escrow)
 
-## [Week-31]() : Smart contract security.
+- Staking contract design
+- Reward calculation models
+- Lock-up periods & vesting
+- Escrow contract design
+- Multi-party fund holding
+- Timelocks
+- Cancel/refund logic
+- State machine design for contracts
+- Testing staking/escrow flows
 
-## [Week-32]() : ETH wallet adapter & client-side.
+## [Week 20](./) : Program Security
 
-## [Week-33]() : Upgradability in ETH.
+- Common Solana vulnerabilities
+- Missing signer checks
+- Missing owner checks
+- Account substitution attacks
+- PDA seed collisions
+- Integer overflow/underflow
+- Re-initialization attacks
+- Arbitrary CPI vulnerabilities
+- Type confusion
+- Rent-exemption bypass issues
+- Security audit checklists
+- Fuzzing programs (Trident/Honggfuzz)
 
-## [Week-34]() : Liquidity pools & impermanent loss.
+## [Week 21](./) : Compressed NFTs
 
-## [Week-35]() : Indexing. (The Graph)
+- Why NFT compression exists
+- State compression concept
+- Merkle trees for cNFTs
+- Concurrent Merkle trees
+- Bubblegum program overview
+- Minting compressed NFTs
+- Transferring compressed NFTs
+- Indexing compressed NFTs (DAS API)
+- Cost comparison vs regular NFTs
 
-## [Week-36]() : Bridges. (How they work)
+## [Week 22](./) : DeFi (AMM, DLMM, CLMM, Perps)
 
-## [Week-37]() : Building an EVM bridge.
+- AMM fundamentals (constant product formula)
+- Liquidity pools basics
+- Slippage & price impact
+- DLMM (Dynamic Liquidity Market Maker) concept
+- CLMM (Concentrated Liquidity Market Maker) concept
+- Tick-based liquidity ranges
+- Impermanent loss mechanics
+- Perpetual futures basics
+- Funding rates
+- Leverage & liquidation mechanics
+- Order books vs AMMs on-chain
 
-## [Week-38]() : MPC & Shamir's Secret Sharing.
+## [Week 23](./) : Payment Infrastructure
 
-## [Week-39]() : Partially centralized contracts.
+- On-chain payment flows
+- Payment request standards (Solana Pay)
+- QR code payment flows
+- Recurring payments/subscriptions on-chain
+- Merchant integration patterns
+- Handling refunds on-chain
+- Stablecoin payment rails
+- Fee abstraction (paying fees in SPL tokens)
 
-## [Week-40]() : On-chain data model design.
+## [Week 24](./) : Indexing
 
-## [Week-41]() : Oracles. (Chainlink/Pyth)
+- Why indexing is needed (RPC limitations)
+- Geyser plugin concept (Solana)
+- gRPC streaming (Yellowstone)
+- Building custom indexers
+- Webhooks for on-chain events
+- Third-party indexers (Helius, QuickNode)
+- Database design for indexed data
+- Real-time vs historical indexing
 
-## [Week-42]() : Multisig & governance.
+## [Week 25](./) : LSTs (Liquid Staking Tokens)
+
+- Native staking vs liquid staking
+- How LSTs work (mint on stake, burn on unstake)
+- Validator delegation strategies
+- Exchange rate mechanics (stake pool value growth)
+- Unstaking & cooldown periods
+- LST use in DeFi (as collateral)
+- Risks of liquid staking (slashing, depeg)
+- Popular LST protocols overview (Marinade, Jito)
+
+## [Week 26](./) : Intro to Ethereum & EVM
+
+- Ethereum account model (EOA vs contract accounts)
+- EVM architecture overview
+- Gas & gas price mechanics
+- EIP-1559 fee model
+- Opcodes basics
+- Bytecode & ABI
+- Nonces on Ethereum
+- Block structure on Ethereum
+- Ethereum client types (execution vs consensus layer)
+
+## [Week 27](./) : Solidity (Fundamentals)
+
+- Contract structure
+- State variables
+- Data types & visibility modifiers
+- Functions & modifiers
+- Constructors
+- Events & logging
+- Mappings & arrays
+- Structs & enums
+- `msg.sender`, `msg.value`, `msg.data`
+- Error handling (`require`, `revert`, `assert`)
+- Inheritance basics
+
+## [Week 28](./) : Payable, Fallback & CCIs
+
+- `payable` functions
+- Sending/receiving ETH
+- `receive()` function
+- `fallback()` function
+- Difference between `receive` and `fallback`
+- Low-level calls (`call`, `delegatecall`, `staticcall`)
+- Cross-contract interactions (CCIs)
+- Reentrancy risks in cross-contract calls
+- Checks-Effects-Interactions pattern
+
+## [Week 29](./) : ERC-20/ERC-721/OpenZeppelin
+
+- ERC-20 standard functions & events
+- ERC-721 standard functions & events
+- ERC-1155 overview (multi-token standard)
+- Metadata standards (tokenURI, JSON schema)
+- OpenZeppelin contracts library overview
+- Extending OZ base contracts
+- Access control (Ownable, Roles)
+- Pausable pattern
+- SafeMath (legacy context) & built-in overflow checks
+
+## [Week 30](./) : Hardhat/Foundry
+
+- Project setup (Hardhat vs Foundry)
+- Compiling contracts
+- Local test networks
+- Writing tests (JS/TS in Hardhat, Solidity in Foundry)
+- Scripting deployments
+- Forking mainnet for testing
+- Gas reporting
+- Debugging with console logs/traces
+- Verifying contracts on Etherscan
+
+## [Week 31](./) : Smart Contract Security
+
+- Reentrancy attacks
+- Integer overflow/underflow (pre-0.8 context)
+- Access control vulnerabilities
+- Front-running & MEV basics
+- Flash loan attacks
+- Oracle manipulation attacks
+- Denial of service patterns
+- Delegatecall vulnerabilities
+- Timestamp dependence
+- Audit tools (Slither, Mythril)
+- Security best-practice checklists
+
+## [Week 32](./) : ETH Wallet Adapter & Client-Side
+
+- `ethers.js` / `viem` basics
+- Provider & signer concepts
+- Connecting MetaMask/WalletConnect
+- Reading contract state
+- Sending transactions
+- Listening to contract events
+- Handling transaction receipts
+- Chain switching & network detection
+- Gas estimation client-side
+
+## [Week 33](./) : Upgradability in ETH
+
+- Why contracts need upgradability
+- Proxy pattern basics
+- Transparent proxy pattern
+- UUPS proxy pattern
+- Storage layout & collisions
+- Initializer functions vs constructors
+- Diamond pattern (multi-facet proxies) overview
+- Upgrade governance & timelocks
+- Risks of upgradable contracts
+
+## [Week 34](./) : Liquidity Pools & Impermanent Loss
+
+- Constant product AMM math (x\*y=k)
+- LP token mechanics
+- Adding/removing liquidity
+- Fee accrual to LPs
+- Impermanent loss calculation
+- Impermanent loss vs volatility correlation
+- Concentrated liquidity implications
+- Yield farming basics
+- Pool exploits (sandwich attacks on pools)
+
+## [Week 35](./) : Indexing (The Graph)
+
+- Subgraph concept
+- GraphQL basics for querying
+- Defining schema.graphql
+- Mapping handlers (AssemblyScript)
+- Event-driven indexing
+- Deploying subgraphs
+- Querying subgraphs from frontend
+- The Graph hosted service vs decentralized network
+
+## [Week 36](./) : Bridges (How They Work)
+
+- Cross-chain communication problem
+- Lock-and-mint bridge model
+- Burn-and-mint bridge model
+- Liquidity network bridges
+- Trusted vs trustless bridges
+- Light client verification bridges
+- Validator/relayer roles
+- Message-passing protocols (generic messaging)
+- Bridge risks & historical exploits
+
+## [Week 37](./) : Building an EVM Bridge
+
+- Bridge contract architecture (source & destination)
+- Locking assets on source chain
+- Emitting cross-chain events
+- Relayer/oracle service design
+- Minting wrapped assets on destination chain
+- Replay protection across chains
+- Handling finality differences between chains
+- Testing bridge flows end-to-end
+
+## [Week 38](./) : MPC & Shamir's Secret Sharing
+
+- Multi-Party Computation (MPC) concept
+- Threshold cryptography basics
+- Shamir's Secret Sharing algorithm
+- Secret reconstruction (Lagrange interpolation, conceptual)
+- MPC wallets vs multisig wallets
+- Key generation without a single point of failure
+- Use cases in custody solutions
+- Trade-offs of MPC (latency, complexity)
+
+## [Week 39](./) : Partially Centralized Contracts
+
+- Admin key patterns
+- Pausable/circuit-breaker patterns
+- Emergency withdrawal mechanisms
+- Rate limiting on-chain
+- Whitelisting/blacklisting patterns
+- Governance-gated parameters
+- Progressive decentralization strategies
+- Trust assumptions disclosure
+
+## [Week 40](./) : On-Chain Data Model Design
+
+- Designing account/state structures for scalability
+- Data normalization vs denormalization on-chain
+- Choosing PDAs vs storage contracts for relationships
+- Minimizing storage costs (rent/gas considerations)
+- Versioning on-chain schemas
+- Pagination patterns for large datasets
+- Off-chain vs on-chain data trade-offs
+
+## [Week 41](./) : Oracles (Chainlink/Pyth)
+
+- Why oracles are needed (oracle problem)
+- Price feed oracles
+- Pull vs push oracle models
+- Chainlink architecture overview
+- Pyth network architecture overview
+- Data freshness & staleness checks
+- Oracle manipulation risks
+- Aggregation & median pricing
+- VRF (verifiable random functions) overview
+
+## [Week 42](./) : Multisig & Governance
+
+- Multisig wallet mechanics
+- Threshold signatures (M-of-N)
+- Popular multisig tools (Squads, Gnosis Safe)
+- On-chain governance models
+- Proposal & voting mechanisms
+- Timelocks in governance
+- Token-weighted voting
+- Delegated voting
+- Quorum & governance attack vectors
+
+## [Week 43](./) : Layer 2s & Rollups
+
+- Why L2s exist (scalability trilemma)
+- Optimistic rollups (Arbitrum, Optimism) mechanics
+- Fraud proofs & challenge periods
+- ZK rollups (zkSync, Starknet, Polygon zkEVM) mechanics
+- Validity proofs vs fraud proofs
+- Sequencers & centralization trade-offs
+- Data availability (calldata vs blobs, EIP-4844)
+- L1-to-L2 messaging & withdrawals
+- Shared sequencing & based rollups (concept)
+- App-chains & rollup-as-a-service (concept)
+
+## [Week 44](./) : Account Abstraction (ERC-4337)
+
+- Problem with EOAs (private key single point of failure)
+- ERC-4337 architecture overview
+- UserOperations
+- Bundlers
+- EntryPoint contract
+- Paymasters (sponsored/gasless transactions)
+- Smart contract wallets (Safe, Biconomy, ZeroDev)
+- Session keys
+- Social recovery mechanisms
+- Native account abstraction (comparison with Solana's account model)
+
+## [Week 45](./) : MEV in Depth
+
+- MEV definition & sources (arbitrage, liquidations, sandwiching)
+- Mempool visibility & front-running
+- Proposer-Builder Separation (PBS)
+- Block builders & relays (MEV-Boost)
+- Private mempools / RPC (Flashbots Protect)
+- MEV protection design patterns for contracts
+- Just-in-time (JIT) liquidity
+- MEV on Solana (Jito, bundles)
+
+## [Week 46](./) : Gas Optimization & Low-Level Solidity
+
+- Storage vs memory vs calldata cost trade-offs
+- Packing storage variables
+- Custom errors vs `require` strings (gas cost)
+- Unchecked math blocks
+- Yul & inline assembly basics
+- Function selector & calldata layout
+- Loop and array optimization patterns
+- Gas profiling tools (Foundry gas reports)
+
+## [Week 47](./) : Practical Zero-Knowledge Proofs
+
+- ZK-SNARKs vs ZK-STARKs (trade-offs)
+- Trusted setup concept
+- Circuit design basics
+- Circom fundamentals
+- Noir fundamentals (alternative circuit language)
+- zkVMs overview (RISC Zero, SP1)
+- Proof generation & verification flow
+- On-chain proof verification (verifier contracts)
+- Real-world ZK use cases (private transactions, identity, scaling)
+
+## [Week 48](./) : Restaking & Shared Security
+
+- Restaking concept (EigenLayer model)
+- Actively Validated Services (AVSs)
+- Slashing conditions in restaking
+- Liquid restaking tokens (LRTs)
+- Shared security trade-offs & risks
+- Restaking on Solana (concept/emerging landscape)
+
+## [Week 49](./) : Formal Verification & Advanced Testing
+
+- Property-based / invariant testing (Foundry invariants)
+- Fuzzing strategies beyond basic fuzzing
+- Formal verification tools overview (Certora, Halmy)
+- Symbolic execution basics
+- Writing testable contract specifications
+- Differential testing between implementations
+- Continuous fuzzing in CI pipelines
+
+## [Week 50](./) : Web3 DevOps & Infrastructure
+
+- Running an RPC node (light vs full vs archive)
+- Running a validator (Solana/Ethereum basics)
+- CI/CD pipelines for contract deployment
+- Deployment verification & reproducible builds
+- Monitoring on-chain activity (alerts, dashboards)
+- Incident response planning for exploits
+- Key management in production (KMS, HSM concepts)
+- Multi-environment config management (devnet/testnet/mainnet)
+
+## [Week 51](./) : Beyond Solana & EVM (Landscape Awareness)
+
+- Move-based chains overview (Aptos, Sui) — object-centric model
+- Cosmos SDK & IBC (inter-blockchain communication) overview
+- Bitcoin L2s overview (Lightning, Stacks, Rootstock)
+- App-specific chains vs general-purpose chains
+- When to choose a non-EVM/non-Solana stack
