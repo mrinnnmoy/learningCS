@@ -1,0 +1,3 @@
+[workspace]
+members = ["describe_derive", "describe_demo"]
+resolver = "2"

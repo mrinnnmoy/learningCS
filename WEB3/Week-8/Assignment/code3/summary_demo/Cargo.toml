@@ -1,0 +1,7 @@
+[package]
+name = "summary_demo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+summary_derive = { path = "../summary_derive" }

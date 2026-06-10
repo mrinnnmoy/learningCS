@@ -63,16 +63,14 @@
 - Smart pointers (`Box`, `Rc` and `RefCell`),
 - Concurrency and Unsafe Rust.
 
-## [Week 8](./) : Deriving Macros
+## [Week 8](./Week-8/README.md) : Deriving Macros.
 
-- What derive macros are
-- Built-in derives (`Debug`, `Clone`, `PartialEq`, `Default`)
-- Custom derive macros
-- Procedural macros overview
-- `syn` & `quote` crates (conceptual)
-- Attribute macros
-- Function-like macros
-- Macro use in Solana/Anchor context (`#[derive(Accounts)]`, `#[program]`)
+- What is a derive macro,
+- A tour of the built-in derives,
+- Declarative vs. Procedural,
+- How a custom derive macro actually works,
+- Attribute macros & Function-like macros,
+- Preview.
 
 ## [Week 9](./) : Lifetimes in Depth
 
