@@ -72,16 +72,15 @@
 - Attribute macros & Function-like macros,
 - Preview.
 
-## [Week 9](./) : Lifetimes in Depth
+## [Week 9](./Week-9/README.md) : Lifetimes in Depth.
 
-- What lifetimes solve
-- Lifetime annotations syntax
-- Lifetime elision rules
-- Structs with lifetimes
-- Lifetime bounds on generics
-- `'static` lifetime
-- Lifetimes with references in functions
-- Common borrow-checker errors & fixes
+- What Lifetimes solve,
+- Function Signatures,
+- Lifetime elision rules,
+- Structs with Lifetimes,
+- Lifetime bounds on generics,
+- The `static` lifetime,
+- Common borrow-checker errors & Fixes.
 
 ## [Week 10](./) : Solana Architecture
 
