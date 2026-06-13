@@ -82,19 +82,16 @@
 - The `static` lifetime,
 - Common borrow-checker errors & Fixes.
 
-## [Week 10](./) : Solana Architecture
+## [Week 10](./Week-10/README.md) : Solana Architecture.
 
-- Solana runtime overview
-- Sealevel (parallel transaction execution)
-- Proof of History explained
-- Tower BFT consensus
-- Validators & leader schedule
-- Clusters (devnet, testnet, mainnet-beta)
-- Turbine (block propagation)
-- Gulf Stream (mempool-less forwarding)
-- Cloudbreak (accounts database)
-- Transaction fees & rent
-- Compute units & compute budget
+- The Solana Runtime,
+- Sealevel,
+- Proof of History,
+- Tower BFT,
+- Validators, The Leader schedule & Clusters,
+- Guld Stream & Turbine,
+- Cloudbreak,
+- Transaction fees, Rent & Compute units.
 
 ## [Week 11](./) : Solana Jargons (Accounts, Authority, Owner)
 
