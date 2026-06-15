@@ -93,18 +93,16 @@
 - Cloudbreak,
 - Transaction fees, Rent & Compute units.
 
-## [Week 11](./) : Solana Jargons (Accounts, Authority, Owner)
+## [Week 11](./Week-11/README.md) : Solana Jargon.
 
-- Account model overview
-- Account structure (lamports, data, owner, executable)
-- Program-owned vs user-owned accounts
-- System accounts
-- Authority concept (update authority, mint authority, freeze authority)
-- Signer vs writable accounts
-- Rent & rent-exemption
-- Account size limits
-- Sysvar accounts
-- Cross-program invocation (CPI) intro
+- The Account Model,
+- Anatomy of an Account,
+- The `owner` field,
+- System Accounts & The System Program,
+- Authority,
+- Signer vs. Writable,
+- Rent, Rent-exemption & Account size limits,
+- Sysvars & Cross-Program invocation (intro).
 
 ## [Week 12](./) : Solana Wallet Adapter & Client-Side
 
