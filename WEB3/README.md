@@ -104,18 +104,16 @@
 - Rent, Rent-exemption & Account size limits,
 - Sysvars & Cross-Program invocation (intro).
 
-## [Week 12](./) : Solana Wallet Adapter & Client-Side
+## [Week 12](./Week-12/README.md) : Solana Wallet Adapter & Client-Side.
 
-- `@solana/web3.js` basics
-- Connection object & RPC endpoints
-- Wallet adapter library setup
-- Connecting wallets in frontend (React)
-- Requesting signatures
-- Sending transactions from client
-- Reading account data client-side
-- Handling transaction confirmation
-- Error handling (simulation failures)
-- Devnet airdrop requests
+- `@solana/web3.js` Basics, consolidated,
+- Wallet Adapter Architecture,
+- Provider Setup,
+- Connecting a Wallet to UI,
+- Requesting signatures,
+- Sending transactions & Reading account data from the client,
+- Handling transaction confirmation, client-side,
+- Error Handling.
 
 ## [Week 13](./) : PDAs — Program Derived Addresses
 
