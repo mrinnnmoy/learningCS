@@ -115,17 +115,16 @@
 - Handling transaction confirmation, client-side,
 - Error Handling.
 
-## [Week 13](./) : PDAs — Program Derived Addresses
+## [Week 13](./Week-13/README.md) : PDA's (Program Derived Addresses).
 
-- What PDAs are & why they exist
-- Seeds & bump concept
-- Deterministic address derivation
-- `findProgramAddress` / `findProgramAddressSync`
-- Canonical bump
-- PDA as signer (program-controlled accounts)
-- Common PDA patterns (per-user accounts, vaults)
-- PDA collision avoidance
-- Off-curve addresses explained
+- What are PDA's & the exact problem they solve,
+- Off-Curve Addresses,
+- Seeds & The Bump,
+- Deterministic Address derivation,
+- `findProgramAddressSync` and The Canonical Bump,
+- Common PDA Patterns,
+- PDA as signer,
+- PDA Collision Avoidance & Solana's hard seed Limits.
 
 ## [Week 14](./) : Solana Native Contracts in Rust
 
