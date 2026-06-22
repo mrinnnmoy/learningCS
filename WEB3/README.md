@@ -126,17 +126,17 @@
 - PDA as signer,
 - PDA Collision Avoidance & Solana's hard seed Limits.
 
-## [Week 14](./) : Solana Native Contracts in Rust
+## [Week 14](./Week-14/README.md) : Solana Native Contracts in Rust.
 
-- Program entrypoint structure
-- Instruction data parsing
-- Account validation manually
-- Processing instructions
-- State management without a framework
-- CPI without Anchor
-- Error handling in native programs
-- Deploying native programs
-- Testing native programs (BankRun/solana-program-test)
+- Program entrypoint Structure,
+- Instruction data parsing,
+- Account Validation,
+- Processing Instructions,
+- State management without a framework,
+- Cross-program Invocation,
+- Error handling in native programs,
+- Deploying native programs,
+- Testing native programs.
 
 ## [Week 15](./) : Anchor Framework vs Raw Contracts
 
