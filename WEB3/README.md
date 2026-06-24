@@ -138,18 +138,17 @@
 - Deploying native programs,
 - Testing native programs.
 
-## [Week 15](./) : Anchor Framework vs Raw Contracts
+## [Week 15](./Week-15/README.md) : Anchor Framework vs Raw Contracts.
 
-- Anchor project structure
-- `#[program]` macro
-- `#[derive(Accounts)]` macro
-- Account constraints (`#[account(...)]`)
-- Anchor IDL generation
-- Anchor error handling (`#[error_code]`)
-- Anchor testing framework
-- CPI with Anchor (`CpiContext`)
-- Trade-offs: Anchor vs native (safety, boilerplate, control)
-- When to choose one over the other
+- Anchor project structure,
+- The `#[program]` macro,
+- `#[derive(Accounts)]` & Account constraints,
+- Anchor's typed account wrappers,
+- Anchor IDL generation,
+- Anchor error handling,
+- CPI with Anchor,
+- Anchor's testing framework,
+- Trade-offs.
 
 ## [Week 16](./) : JS Clients for Smart Contracts
 
