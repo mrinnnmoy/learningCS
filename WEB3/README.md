@@ -150,16 +150,16 @@
 - Anchor's testing framework,
 - Trade-offs.
 
-## [Week 16](./) : JS Clients for Smart Contracts
+## [Week 16](./) : JS Clients for Smart Contracts.
 
-- Generating/using Anchor IDL in JS/TS
-- `@coral-xyz/anchor` client setup
-- Program instance creation
-- Calling program instructions from client
-- Fetching & deserializing account data
-- Event listening
-- Transaction building & sending
-- Error decoding from Anchor programs
+- The Anchor IDL (in full),
+- `@coral-xyz/anchor` client setup (formalized),
+- Program instance creation & Program ID's origin,
+- 3 ways to call an Instruction,
+- Fetching & Deserializing account data,
+- Event Listening,
+- Transaction building & Sending,
+- Error decoding from Anchor programs.
 
 ## [Week 17](./) : SPL Tokens & Token Programs
 
