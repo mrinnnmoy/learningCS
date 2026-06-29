@@ -150,7 +150,7 @@
 - Anchor's testing framework,
 - Trade-offs.
 
-## [Week 16](./) : JS Clients for Smart Contracts.
+## [Week 16](./Week-16/README.md) : JS Clients for Smart Contracts.
 
 - The Anchor IDL (in full),
 - `@coral-xyz/anchor` client setup (formalized),
@@ -161,18 +161,17 @@
 - Transaction building & Sending,
 - Error decoding from Anchor programs.
 
-## [Week 17](./) : SPL Tokens & Token Programs
+## [Week 17](./Week-17/README.md) : SPL Tokens & Token Program.
 
-- SPL Token program overview
-- Mint accounts
-- Token accounts (associated token accounts)
-- Minting tokens
-- Transferring tokens
-- Burning tokens
-- Freezing/thawing accounts
-- Token decimals & supply
-- Multisig token authorities
-- `spl-token` CLI basics
+- The SPL Token Program,
+- Mint Accounts,
+- Token Accounts & Associated Token Accounts,
+- Minting tokens,
+- Transferring tokens,
+- Burning tokens,
+- Freezing & Thawing Accounts,
+- Decimals & Supply,
+- Multisig token Authorities & The `spl-token` CLI.
 
 ## [Week 18](./) : Token Extensions (Token-2022)
 
