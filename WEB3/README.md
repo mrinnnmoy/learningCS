@@ -173,18 +173,17 @@
 - Decimals & Supply,
 - Multisig token Authorities & The `spl-token` CLI.
 
-## [Week 18](./) : Token Extensions (Token-2022)
+## [Week 18](./Week-18/README.md) : Token Extensions. (Token-2022)
 
-- Why Token-2022 was introduced
-- Extension architecture overview
-- Transfer fees extension
-- Interest-bearing tokens
-- Non-transferable tokens
-- Confidential transfers (concept)
-- Metadata pointer extension
-- Permanent delegate extension
-- Default account state extension
-- Migrating from legacy SPL to Token-2022
+- Why Token-2022 was introduced,
+- Extension architecture,
+- Transfer fees Extension,
+- Interest-bearing Tokens,
+- Non-transferable Tokens,
+- Confidential transfers,
+- Metadata pointer Extension,
+- Permanent delegate Extension,
+- Default Account State & What "migrating" to Token-2022 actually means.
 
 ## [Week 19](./) : Common Contracts (Staking & Escrow)
 
