@@ -185,17 +185,17 @@
 - Permanent delegate Extension,
 - Default Account State & What "migrating" to Token-2022 actually means.
 
-## [Week 19](./) : Common Contracts (Staking & Escrow)
+## [Week 19](./Week-19/README.md) : Common Contracts. (Staking & Escrow)
 
-- Staking contract design
-- Reward calculation models
-- Lock-up periods & vesting
-- Escrow contract design
-- Multi-party fund holding
-- Timelocks
-- Cancel/refund logic
-- State machine design for contracts
-- Testing staking/escrow flows
+- Staking contract Design,
+- Rewards calculation Models,
+- Lock-up Periods & Vesting,
+- Escrow contract Design,
+- Multi-party Fund Holding,
+- Timelocks,
+- Cancel/Refund Logic,
+- State machine design for Contracts,
+- Testing Staking/Escrow Flows.
 
 ## [Week 20](./) : Program Security
 
