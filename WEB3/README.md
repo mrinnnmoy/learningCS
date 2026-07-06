@@ -197,20 +197,20 @@
 - State machine design for Contracts,
 - Testing Staking/Escrow Flows.
 
-## [Week 20](./) : Program Security
+## [Week 20](./Week-20/README.md) : Program Security.
 
-- Common Solana vulnerabilities
-- Missing signer checks
-- Missing owner checks
-- Account substitution attacks
-- PDA seed collisions
-- Integer overflow/underflow
-- Re-initialization attacks
-- Arbitrary CPI vulnerabilities
-- Type confusion
-- Rent-exemption bypass issues
-- Security audit checklists
-- Fuzzing programs (Trident/Honggfuzz)
+- Common Solana vulnerabilities,
+- Missing signer checks,
+- Missing owner checks,
+- Account substitution atacks,
+- PDA seed collisions,
+- Integer overflow/underflow,
+- Re-initialization checks,
+- Arbitrary CPI vulnerabilities,
+- Type confusion,
+- Rent-exemption bypass issues,
+- Security audit checklists,
+- Fuzzing programs.
 
 ## [Week 21](./) : Compressed NFTs
 
