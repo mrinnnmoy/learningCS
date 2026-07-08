@@ -212,17 +212,22 @@
 - Security audit checklists,
 - Fuzzing programs.
 
-## [Week 21](./) : Compressed NFTs
+## [Week 21](./Week-21/README.md) : Compressed NFTs.
 
-- Why NFT compression exists
-- State compression concept
-- Merkle trees for cNFTs
-- Concurrent Merkle trees
-- Bubblegum program overview
-- Minting compressed NFTs
-- Transferring compressed NFTs
-- Indexing compressed NFTs (DAS API)
-- Cost comparison vs regular NFTs
+- Why NFT compression exists,
+- State compression concept,
+- Merkle trees for cNFTs,
+- Concurrent Merkle trees,
+- Bubblegum program overview,
+- Minting compressed NFTs,
+- Transferring compressed NFTs,
+- Indexing compressed NFTs,
+- Cost comparison vs Regular NFTs,
+- Canopy depth,
+- Tree authority, delegates & public vs private trees,
+- Verified collections on cNFTs,
+- Burning compressed NFTs,
+- Bubblegum V2.
 
 ## [Week 22](./) : DeFi (AMM, DLMM, CLMM, Perps)
 
