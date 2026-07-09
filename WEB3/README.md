@@ -229,19 +229,23 @@
 - Burning compressed NFTs,
 - Bubblegum V2.
 
-## [Week 22](./) : DeFi (AMM, DLMM, CLMM, Perps)
+## [Week 22](./Week-22/README.md) : DeFi (AMM, DLMM, CLMM, Perps)
 
-- AMM fundamentals (constant product formula)
-- Liquidity pools basics
-- Slippage & price impact
-- DLMM (Dynamic Liquidity Market Maker) concept
-- CLMM (Concentrated Liquidity Market Maker) concept
-- Tick-based liquidity ranges
-- Impermanent loss mechanics
-- Perpetual futures basics
-- Funding rates
-- Leverage & liquidation mechanics
-- Order books vs AMMs on-chain
+- AMM Fundamentals,
+- Liquidity Pool basics,
+- Slippage & Price Impact,
+- DLMM (Dynamic Liquidity Market Maker),
+- CLMM (Concentrated Liquidity Market Maker),
+- Ticket-based Liquidity ranges,
+- Impermanent loss mechanics,
+- Perpetual Future basics,
+- Funding rates,
+- Leverage & Liquidation mechanics,
+- Order books vs AMMs on-chain,
+- Swap fees & LP fees accural,
+- LP shares as an Accounting mechanism,
+- Mark price vs Index price & Funding settlement mechanics,
+- Liquidation engines & Insurance funds.
 
 ## [Week 23](./) : Payment Infrastructure
 
