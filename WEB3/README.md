@@ -247,16 +247,20 @@
 - Mark price vs Index price & Funding settlement mechanics,
 - Liquidation engines & Insurance funds.
 
-## [Week 23](./) : Payment Infrastructure
+## [Week 23](./Week-23/README.md) : Payment Infrastructure.
 
-- On-chain payment flows
-- Payment request standards (Solana Pay)
-- QR code payment flows
-- Recurring payments/subscriptions on-chain
-- Merchant integration patterns
-- Handling refunds on-chain
-- Stablecoin payment rails
-- Fee abstraction (paying fees in SPL tokens)
+- On-chain Payment flows,
+- Solana Pay (Payment request standards),
+- QR code payment flows,
+- Recurring payments/subscriptions on-chain,
+- Merchant integration patterns,
+- Handling refunds on-chain,
+- Stablecoin payment rails,
+- Fee abstraction,
+- Solana Pay's 2 request types,
+- Reference keys & Payment detection,
+- Idempotency & Double-payment prevention,
+- How fee abstraction actually works on Solana.
 
 ## [Week 24](./) : Indexing
 
