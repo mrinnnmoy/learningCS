@@ -229,7 +229,7 @@
 - Burning compressed NFTs,
 - Bubblegum V2.
 
-## [Week 22](./Week-22/README.md) : DeFi (AMM, DLMM, CLMM, Perps)
+## [Week 22](./Week-22/README.md) : DeFi. (AMM, DLMM, CLMM, Perps)
 
 - AMM Fundamentals,
 - Liquidity Pool basics,
@@ -262,16 +262,20 @@
 - Idempotency & Double-payment prevention,
 - How fee abstraction actually works on Solana.
 
-## [Week 24](./) : Indexing
+## [Week 24](./Week-24/README.md) : Indexing.
 
-- Why indexing is needed (RPC limitations)
-- Geyser plugin concept (Solana)
-- gRPC streaming (Yellowstone)
-- Building custom indexers
-- Webhooks for on-chain events
-- Third-party indexers (Helius, QuickNode)
-- Database design for indexed data
-- Real-time vs historical indexing
+- Need for Indexing,
+- Geyser plugin concept,
+- gRPC streaming (Yellowstone),
+- Building custom Indexers,
+- Webhooks for on-chain events,
+- Third-party Indexers (Helius, Quicknode),
+- Database design for Indexed data,
+- Real-time vs Historical Indexing,
+- Polling vs. Push-based Indexing,
+- Checkpointing and Resumable Indexing,
+- Idempotent event processing,
+- Webhook payload verification.
 
 ## [Week 25](./) : LSTs (Liquid Staking Tokens)
 

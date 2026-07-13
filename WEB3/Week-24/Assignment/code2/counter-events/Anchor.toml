@@ -1,0 +1,19 @@
+skip_local_validator = false
+
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+counter_events = "9C18a5FF8qcPZKG1aTnprVdC82trq4Wa4ppGhhW2GxJi"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "NODE_OPTIONS='--import tsx' npx mocha -t 1000000 tests/counter-events.ts"
+
+[hooks]
