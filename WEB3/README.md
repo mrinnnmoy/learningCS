@@ -277,16 +277,20 @@
 - Idempotent event processing,
 - Webhook payload verification.
 
-## [Week 25](./) : LSTs (Liquid Staking Tokens)
+## [Week 25](./Week-25/README.md) : LSTs. (Liquid Staking Tokens)
 
-- Native staking vs liquid staking
-- How LSTs work (mint on stake, burn on unstake)
-- Validator delegation strategies
-- Exchange rate mechanics (stake pool value growth)
-- Unstaking & cooldown periods
-- LST use in DeFi (as collateral)
-- Risks of liquid staking (slashing, depeg)
-- Popular LST protocols overview (Marinade, Jito)
+- Native staking vs Liquid staking,
+- How LSTs work,
+- Validator delegation strategies,
+- Exchange rate mechaincs,
+- Unstaking & Cooldown periods,
+- LST use in DeFi,
+- Risks of Liquid staking,
+- Popular LST protocols overview,
+- Native Solana staking mechanics,
+- Stake pool Architecture,
+- Reward compounding & Exchange-rate growth Mechanics,
+- Instant unstake via a secondary Liquidity pool.
 
 ## [Week 26](./) : Intro to Ethereum & EVM
 
