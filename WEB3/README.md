@@ -292,17 +292,20 @@
 - Reward compounding & Exchange-rate growth Mechanics,
 - Instant unstake via a secondary Liquidity pool.
 
-## [Week 26](./) : Intro to Ethereum & EVM
+## [Week 26](./Week-26/README.md) : Intro to Ethereum & EVM.
 
-- Ethereum account model (EOA vs contract accounts)
-- EVM architecture overview
-- Gas & gas price mechanics
-- EIP-1559 fee model
-- Opcodes basics
-- Bytecode & ABI
-- Nonces on Ethereum
-- Block structure on Ethereum
-- Ethereum client types (execution vs consensus layer)
+- Ethereum Account model,
+- EVM Architecture overview,
+- Gas & Gas Price mechanics,
+- EIP-1559 Fee model,
+- Opcodes basics,
+- Bytecode & ABI,
+- Nonce on Ethereum,
+- Block structure on Ethereum,
+- Ethereum client types,
+- Wei, Gwei & ETH,
+- JSON-RPC,
+- Comparing Ethereum's account model to Solana's.
 
 ## [Week 27](./) : Solidity (Fundamentals)
 
