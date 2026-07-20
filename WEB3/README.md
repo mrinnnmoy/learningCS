@@ -307,19 +307,22 @@
 - JSON-RPC,
 - Comparing Ethereum's account model to Solana's.
 
-## [Week 27](./) : Solidity (Fundamentals)
+## [Week 27](./Week-27/README.md) : Solidity. (Fundamentals)
 
-- Contract structure
-- State variables
-- Data types & visibility modifiers
-- Functions & modifiers
-- Constructors
-- Events & logging
-- Mappings & arrays
-- Structs & enums
-- `msg.sender`, `msg.value`, `msg.data`
-- Error handling (`require`, `revert`, `assert`)
-- Inheritance basics
+- Contract structure,
+- State variables,
+- Data types & Visibility modifiers,
+- Functions & Modifiers,
+- Constructors,
+- Events & Logging,
+- Mapping & Arrays,
+- Structus & Enums,
+- `msg.sender`, `msg.value`, `msg.data`,
+- Error Handling,
+- Inheritance basics,
+- Function state mutability,
+- Custom errors,
+- Foundry project anatomy & The compile/test/deploy lifecycle.
 
 ## [Week 28](./) : Payable, Fallback & CCIs
 
