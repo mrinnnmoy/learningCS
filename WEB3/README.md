@@ -324,17 +324,19 @@
 - Custom errors,
 - Foundry project anatomy & The compile/test/deploy lifecycle.
 
-## [Week 28](./) : Payable, Fallback & CCIs
+## [Week 28](./Week-28/README.md) : Payable, Fallback & CCIs.
 
-- `payable` functions
-- Sending/receiving ETH
-- `receive()` function
-- `fallback()` function
-- Difference between `receive` and `fallback`
-- Low-level calls (`call`, `delegatecall`, `staticcall`)
-- Cross-contract interactions (CCIs)
-- Reentrancy risks in cross-contract calls
-- Checks-Effects-Interactions pattern
+- `payable` functions,
+- Sending & receiving ETH,
+- The `receive()` function,
+- The `fallback()` function,
+- `receive` vs `fallback`,
+- Low-level calls,
+- Cross-contract interactions (CCIs),
+- Reentrancy risks in cross-contract calls,
+- The Checks-Effects-Interactions pattern,
+- Interface-based external calls,
+- Reentrancy guards.
 
 ## [Week 29](./) : ERC-20/ERC-721/OpenZeppelin
 

@@ -399,7 +399,7 @@ That's what `cast` (this week's own assignments) and `ethers`/`viem` (Week 26's 
 
 
        cast send <ADDRESS> "increment()" --rpc-url http://127.0.0.1:8545 \
-       --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690
+       --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
 
        cast call <ADDRESS> "getCount()(uint256)" --rpc-url http://127.0.0.1:8545
 
@@ -409,7 +409,7 @@ That's what `cast` (this week's own assignments) and `ethers`/`viem` (Week 26's 
 
    2. Command:
        cast send <ADDRESS> "incrementBy(uint256)" 5 --rpc-url http://127.0.0.1:8545 \
-       --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690
+       --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
 
         Expected output: the transaction reverts. Running it with
         `cast call` instead of `cast send` first (a free, read-only
@@ -424,11 +424,15 @@ That's what `cast` (this week's own assignments) and `ethers`/`viem` (Week 26's 
         modifier from `incrementBy` (change `external onlyOwner` to just
         `external`), then rebuild and redeploy fresh:
             forge build
+
             forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 \
             --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 --broadcast
+
             (note the NEW address this prints, call it <ADDRESS2>)
+
             cast send <ADDRESS2> "incrementBy(uint256)" 5 --rpc-url http://127.0.0.1:8545 \
-            --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690
+            --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
+
             cast call <ADDRESS2> "getCount()(uint256)" --rpc-url http://127.0.0.1:8545
 
         Expected output: the stranger's `incrementBy` call now SUCCEEDS and
@@ -441,8 +445,10 @@ That's what `cast` (this week's own assignments) and `ethers`/`viem` (Week 26's 
    4. Command: in src/Counter.sol, temporarily change `if (count == 0)` to
         `if (count == 999999)` inside decrement(), rebuild, redeploy fresh
         the same way as Test Case 3, then:
+
             cast send <ADDRESS3> "decrement()" --rpc-url http://127.0.0.1:8545 \
             --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
             cast call <ADDRESS3> "getCount()(uint256)" --rpc-url http://127.0.0.1:8545
 
         Expected output: the `cast send` still reverts — Solidity 0.8.x's
@@ -495,9 +501,11 @@ That's what `cast` (this week's own assignments) and `ethers`/`viem` (Week 26's 
        cast send <ADDRESS> "assignTask(uint256,address)" 0 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 \
        --rpc-url http://127.0.0.1:8545 \
        --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
        cast send <ADDRESS> "updateStatus(uint256,uint8)" 0 1 \
        --rpc-url http://127.0.0.1:8545 \
-       --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690
+       --private-key 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
+
        cast call <ADDRESS> "getTask(uint256)((uint256,string,address,uint8))" 0 \
        --rpc-url http://127.0.0.1:8545
 
@@ -525,6 +533,7 @@ That's what `cast` (this week's own assignments) and `ethers`/`viem` (Week 26's 
        address, <ADDRESS2>), then:
            cast send <ADDRESS2> "createTask(string)" "test task" --rpc-url http://127.0.0.1:8545 \
            --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
            cast send <ADDRESS2> "updateStatus(uint256,uint8)" 0 2 \
            --rpc-url http://127.0.0.1:8545 \
            --private-key 0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365
