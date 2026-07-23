@@ -338,17 +338,19 @@
 - Interface-based external calls,
 - Reentrancy guards.
 
-## [Week 29](./) : ERC-20/ERC-721/OpenZeppelin
+## [Week 29](./Week-29/README.md) : ERC-20/ERC-721/OpenZeppelin.
 
-- ERC-20 standard functions & events
-- ERC-721 standard functions & events
-- ERC-1155 overview (multi-token standard)
-- Metadata standards (tokenURI, JSON schema)
-- OpenZeppelin contracts library overview
-- Extending OZ base contracts
-- Access control (Ownable, Roles)
-- Pausable pattern
-- SafeMath (legacy context) & built-in overflow checks
+- ERC-20 standard functions & events,
+- ERC-721 standard functions & events,
+- ERC-1155 overview (multi-token standard),
+- Metadata standards,
+- OpenZeppelin contracts library overview,
+- Extending OpenZeppelin base contracts,
+- Access control,
+- The Pausable pattern,
+- SafeMath & built-in overflow checks,
+- Choosing the right standard,
+- Multiple inheritance overrides in practice.
 
 ## [Week 30](./) : Hardhat/Foundry
 
