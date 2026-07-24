@@ -352,17 +352,18 @@
 - Choosing the right standard,
 - Multiple inheritance overrides in practice.
 
-## [Week 30](./) : Hardhat/Foundry
+## [Week 30](./Week-30/README.md) : Hardhat/Foundry.
 
-- Project setup (Hardhat vs Foundry)
-- Compiling contracts
-- Local test networks
-- Writing tests (JS/TS in Hardhat, Solidity in Foundry)
-- Scripting deployments
-- Forking mainnet for testing
-- Gas reporting
-- Debugging with console logs/traces
-- Verifying contracts on Etherscan
+- Project setup,
+- Compiling contracts,
+- Local test networks,
+- Writing tests, (JS/TS in Hardhat & Solidity in Foundry)
+- Scripting deployments,
+- Forking mainnet for testing,
+- Gas reporting,
+- Debugging with console logs/traces,
+- Verifying contracts on Etherscan,
+- Choosing between both.
 
 ## [Week 31](./) : Smart Contract Security
 
