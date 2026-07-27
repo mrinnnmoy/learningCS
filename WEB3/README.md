@@ -365,19 +365,20 @@
 - Verifying contracts on Etherscan,
 - Choosing between both.
 
-## [Week 31](./) : Smart Contract Security
+## [Week 31](./Week-31/README.md) : Smart Contract Security.
 
-- Reentrancy attacks
-- Integer overflow/underflow (pre-0.8 context)
-- Access control vulnerabilities
-- Front-running & MEV basics
-- Flash loan attacks
-- Oracle manipulation attacks
-- Denial of service patterns
-- Delegatecall vulnerabilities
-- Timestamp dependence
-- Audit tools (Slither, Mythril)
-- Security best-practice checklists
+- Reentrancy attacks,
+- Integer overflow/underflow,
+- Access control vulnerabilities,
+- Front-running & MEV basics,
+- Flash loan attacks,
+- Oracle manipulation attacks,
+- Denial of service patterns,
+- Delegatecall vulnerabilities,
+- Timestamp dependence,
+- Audit tools (Slither/Mythril),
+- Security best-practice checklists,
+- Composing vulnerabilities.
 
 ## [Week 32](./) : ETH Wallet Adapter & Client-Side
 
