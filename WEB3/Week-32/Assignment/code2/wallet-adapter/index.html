@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Week 32 — Counter Wallet Adapter</title>
+</head>
+
+<body>
+  <h1>Counter</h1>
+  <p>Current count: <span id="count">loading…</span></p>
+  <p>Connected address: <span id="address">not connected</span></p>
+  <input id="amountInput" type="number" value="5" />
+  <button id="incrementByBtn" disabled>Increment By (owner only)</button>
+  <p id="gasEstimate"></p>
+
+  <button id="connectBtn">Connect Wallet</button>
+  <button id="incrementBtn" disabled>Increment</button>
+  <p id="status"></p>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

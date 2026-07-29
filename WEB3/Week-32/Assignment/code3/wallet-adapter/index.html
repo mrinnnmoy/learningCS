@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Week 32 — Counter Wallet Adapter</title>
+</head>
+
+<body>
+  <h1>Counter</h1>
+
+  <p>
+    Current count:
+    <span id="count">loading…</span>
+  </p>
+
+  <p>
+    Connected address:
+    <span id="address">not connected</span>
+  </p>
+
+  <p id="networkStatus"></p>
+
+  <button id="connectBtn">
+    Connect Wallet
+  </button>
+
+  <button id="switchBtn" style="display: none">
+    Switch to Sepolia
+  </button>
+
+  <button id="incrementBtn" disabled>
+    Increment
+  </button>
+
+  <p id="status"></p>
+
+  <p>
+    <a id="etherscanLink" href="#" target="_blank" style="display: none">
+      View on Etherscan
+    </a>
+  </p>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

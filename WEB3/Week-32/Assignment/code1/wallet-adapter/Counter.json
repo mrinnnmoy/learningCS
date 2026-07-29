@@ -1,0 +1,231 @@
+{
+  "abi": [
+    { "type": "constructor", "inputs": [], "stateMutability": "nonpayable" },
+    {
+      "type": "function",
+      "name": "decrement",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "getCount",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "increment",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "incrementBy",
+      "inputs": [
+        { "name": "amount", "type": "uint256", "internalType": "uint256" }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "inputs": [],
+      "outputs": [{ "name": "", "type": "address", "internalType": "address" }],
+      "stateMutability": "view"
+    },
+    {
+      "type": "event",
+      "name": "CountDecreased",
+      "inputs": [
+        {
+          "name": "by",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "newCount",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "CountIncreased",
+      "inputs": [
+        {
+          "name": "by",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "newCount",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "anonymous": false
+    },
+    { "type": "error", "name": "CountUnderflow", "inputs": [] },
+    {
+      "type": "error",
+      "name": "NotOwner",
+      "inputs": [
+        { "name": "caller", "type": "address", "internalType": "address" }
+      ]
+    }
+  ],
+  "bytecode": {
+    "object": "0x60a0604052348015600e575f5ffd5b503373ffffffffffffffffffffffffffffffffffffffff1660808173ffffffffffffffffffffffffffffffffffffffff16815250506080516104a16100615f395f818160c7015261026301526104a15ff3fe608060405234801561000f575f5ffd5b5060043610610055575f3560e01c806303df179c146100595780632baeceb7146100755780638da5cb5b1461007f578063a87d942c1461009d578063d09de08a146100bb575b5f5ffd5b610073600480360381019061006e919061032d565b6100c5565b005b61007d6101be565b005b610087610261565b6040516100949190610397565b60405180910390f35b6100a5610285565b6040516100b291906103bf565b60405180910390f35b6100c361028d565b005b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461015557336040517f245aecd300000000000000000000000000000000000000000000000000000000815260040161014c9190610397565b60405180910390fd5b805f5f8282546101659190610405565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167fe0f448a944ad156cccd5f27c087eb07776cb4d0d63ddaa317967069a485c83035f546040516101b391906103bf565b60405180910390a250565b5f5f54036101f8576040517f685bba7400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60015f5f8282546102099190610438565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167f68c7b2dad060a7c97d3b71bddd3d61e4bebcf6404520fc11823800b8bec73c695f5460405161025791906103bf565b60405180910390a2565b7f000000000000000000000000000000000000000000000000000000000000000081565b5f5f54905090565b60015f5f82825461029e9190610405565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167fe0f448a944ad156cccd5f27c087eb07776cb4d0d63ddaa317967069a485c83035f546040516102ec91906103bf565b60405180910390a2565b5f5ffd5b5f819050919050565b61030c816102fa565b8114610316575f5ffd5b50565b5f8135905061032781610303565b92915050565b5f60208284031215610342576103416102f6565b5b5f61034f84828501610319565b91505092915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61038182610358565b9050919050565b61039181610377565b82525050565b5f6020820190506103aa5f830184610388565b92915050565b6103b9816102fa565b82525050565b5f6020820190506103d25f8301846103b0565b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f61040f826102fa565b915061041a836102fa565b9250828201905080821115610432576104316103d8565b5b92915050565b5f610442826102fa565b915061044d836102fa565b9250828203905081811115610465576104646103d8565b5b9291505056fea2646970667358221220d0b979ef47a5d71a5d4fed14e33d586ef3a564117eeef25c10b6a08815524fd464736f6c63430008240033",
+    "sourceMap": "57:939:16:-:0;;;445:49;;;;;;;;;;477:10;469:18;;;;;;;;;;57:939;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561000f575f5ffd5b5060043610610055575f3560e01c806303df179c146100595780632baeceb7146100755780638da5cb5b1461007f578063a87d942c1461009d578063d09de08a146100bb575b5f5ffd5b610073600480360381019061006e919061032d565b6100c5565b005b61007d6101be565b005b610087610261565b6040516100949190610397565b60405180910390f35b6100a5610285565b6040516100b291906103bf565b60405180910390f35b6100c361028d565b005b7f000000000000000000000000000000000000000000000000000000000000000073ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461015557336040517f245aecd300000000000000000000000000000000000000000000000000000000815260040161014c9190610397565b60405180910390fd5b805f5f8282546101659190610405565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167fe0f448a944ad156cccd5f27c087eb07776cb4d0d63ddaa317967069a485c83035f546040516101b391906103bf565b60405180910390a250565b5f5f54036101f8576040517f685bba7400000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b60015f5f8282546102099190610438565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167f68c7b2dad060a7c97d3b71bddd3d61e4bebcf6404520fc11823800b8bec73c695f5460405161025791906103bf565b60405180910390a2565b7f000000000000000000000000000000000000000000000000000000000000000081565b5f5f54905090565b60015f5f82825461029e9190610405565b925050819055503373ffffffffffffffffffffffffffffffffffffffff167fe0f448a944ad156cccd5f27c087eb07776cb4d0d63ddaa317967069a485c83035f546040516102ec91906103bf565b60405180910390a2565b5f5ffd5b5f819050919050565b61030c816102fa565b8114610316575f5ffd5b50565b5f8135905061032781610303565b92915050565b5f60208284031215610342576103416102f6565b5b5f61034f84828501610319565b91505092915050565b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61038182610358565b9050919050565b61039181610377565b82525050565b5f6020820190506103aa5f830184610388565b92915050565b6103b9816102fa565b82525050565b5f6020820190506103d25f8301846103b0565b92915050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52601160045260245ffd5b5f61040f826102fa565b915061041a836102fa565b9250828201905080821115610432576104316103d8565b5b92915050565b5f610442826102fa565b915061044d836102fa565b9250828203905081811115610465576104646103d8565b5b9291505056fea2646970667358221220d0b979ef47a5d71a5d4fed14e33d586ef3a564117eeef25c10b6a08815524fd464736f6c63430008240033",
+    "sourceMap": "57:939:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;611:136;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;753:154;;;:::i;:::-;;80:30;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;913:81;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;500:105;;;:::i;:::-;;611:136;387:5;373:19;;:10;:19;;;369:52;;410:10;401:20;;;;;;;;;;;:::i;:::-;;;;;;;;369:52;686:6:::1;677:5;;:15;;;;;;;:::i;:::-;;;;;;;;722:10;707:33;;;734:5;;707:33;;;;;;:::i;:::-;;;;;;;;611:136:::0;:::o;753:154::-;806:1;797:5;;:10;793:39;;816:16;;;;;;;;;;;;;;793:39;851:1;842:5;;:10;;;;;;;:::i;:::-;;;;;;;;882;867:33;;;894:5;;867:33;;;;;;:::i;:::-;;;;;;;;753:154::o;80:30::-;;;:::o;913:81::-;956:7;982:5;;975:12;;913:81;:::o;500:105::-;549:1;540:5;;:10;;;;;;;:::i;:::-;;;;;;;;580;565:33;;;592:5;;565:33;;;;;;:::i;:::-;;;;;;;;500:105::o;88:117:17:-;197:1;194;187:12;334:77;371:7;400:5;389:16;;334:77;;;:::o;417:122::-;490:24;508:5;490:24;:::i;:::-;483:5;480:35;470:63;;529:1;526;519:12;470:63;417:122;:::o;545:139::-;591:5;629:6;616:20;607:29;;645:33;672:5;645:33;:::i;:::-;545:139;;;;:::o;690:329::-;749:6;798:2;786:9;777:7;773:23;769:32;766:119;;;804:79;;:::i;:::-;766:119;924:1;949:53;994:7;985:6;974:9;970:22;949:53;:::i;:::-;939:63;;895:117;690:329;;;;:::o;1025:126::-;1062:7;1102:42;1095:5;1091:54;1080:65;;1025:126;;;:::o;1157:96::-;1194:7;1223:24;1241:5;1223:24;:::i;:::-;1212:35;;1157:96;;;:::o;1259:118::-;1346:24;1364:5;1346:24;:::i;:::-;1341:3;1334:37;1259:118;;:::o;1383:222::-;1476:4;1514:2;1503:9;1499:18;1491:26;;1527:71;1595:1;1584:9;1580:17;1571:6;1527:71;:::i;:::-;1383:222;;;;:::o;1611:118::-;1698:24;1716:5;1698:24;:::i;:::-;1693:3;1686:37;1611:118;;:::o;1735:222::-;1828:4;1866:2;1855:9;1851:18;1843:26;;1879:71;1947:1;1936:9;1932:17;1923:6;1879:71;:::i;:::-;1735:222;;;;:::o;1963:180::-;2011:77;2008:1;2001:88;2108:4;2105:1;2098:15;2132:4;2129:1;2122:15;2149:191;2189:3;2208:20;2226:1;2208:20;:::i;:::-;2203:25;;2242:20;2260:1;2242:20;:::i;:::-;2237:25;;2285:1;2282;2278:9;2271:16;;2306:3;2303:1;2300:10;2297:36;;;2313:18;;:::i;:::-;2297:36;2149:191;;;;:::o;2346:194::-;2386:4;2406:20;2424:1;2406:20;:::i;:::-;2401:25;;2440:20;2458:1;2440:20;:::i;:::-;2435:25;;2484:1;2481;2477:9;2469:17;;2508:1;2502:4;2499:11;2496:37;;;2513:18;;:::i;:::-;2496:37;2346:194;;;;:::o",
+    "linkReferences": {},
+    "immutableReferences": {
+      "36942": [
+        { "start": 199, "length": 32 },
+        { "start": 611, "length": 32 }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "decrement()": "2baeceb7",
+    "getCount()": "a87d942c",
+    "increment()": "d09de08a",
+    "incrementBy(uint256)": "03df179c",
+    "owner()": "8da5cb5b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.36+commit.8a079791\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"CountUnderflow\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"NotOwner\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"by\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newCount\",\"type\":\"uint256\"}],\"name\":\"CountDecreased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"by\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newCount\",\"type\":\"uint256\"}],\"name\":\"CountIncreased\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"decrement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"increment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"incrementBy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/Counter.sol\":\"Counter\"},\"evmVersion\":\"osaka\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/Counter.sol\":{\"keccak256\":\"0xbdf84e6a6cd0f36b2cee718199206b21acf89180725366f6cf24fd5d98fbc259\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d5de5e06a3055150bf5b9d8500c9f27b250d75cacd6427a33aed9b43cba91c9b\",\"dweb:/ipfs/QmPu5AfrU31wtayPP97Htm1viU54tgJ64TsQjjUBsxbbmF\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": { "version": "0.8.36+commit.8a079791" },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        { "inputs": [], "type": "error", "name": "CountUnderflow" },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "caller", "type": "address" }
+          ],
+          "type": "error",
+          "name": "NotOwner"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "by",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newCount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "CountDecreased",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "by",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "newCount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "CountIncreased",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "decrement"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getCount",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "increment"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "amount", "type": "uint256" }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "incrementBy"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ]
+        }
+      ],
+      "devdoc": { "kind": "dev", "methods": {}, "version": 1 },
+      "userdoc": { "kind": "user", "methods": {}, "version": 1 }
+    },
+    "settings": {
+      "remappings": ["forge-std/=lib/forge-std/src/"],
+      "optimizer": { "enabled": false, "runs": 200 },
+      "metadata": { "bytecodeHash": "ipfs" },
+      "compilationTarget": { "src/Counter.sol": "Counter" },
+      "evmVersion": "osaka",
+      "libraries": {}
+    },
+    "sources": {
+      "src/Counter.sol": {
+        "keccak256": "0xbdf84e6a6cd0f36b2cee718199206b21acf89180725366f6cf24fd5d98fbc259",
+        "urls": [
+          "bzz-raw://d5de5e06a3055150bf5b9d8500c9f27b250d75cacd6427a33aed9b43cba91c9b",
+          "dweb:/ipfs/QmPu5AfrU31wtayPP97Htm1viU54tgJ64TsQjjUBsxbbmF"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "id": 16
+}

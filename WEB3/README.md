@@ -380,17 +380,19 @@
 - Security best-practice checklists,
 - Composing vulnerabilities.
 
-## [Week 32](./) : ETH Wallet Adapter & Client-Side
+## [Week 32](./Week-32/README.md) : ETH Wallet Adapter & Client-Side.
 
-- `ethers.js` / `viem` basics
-- Provider & signer concepts
-- Connecting MetaMask/WalletConnect
-- Reading contract state
-- Sending transactions
-- Listening to contract events
-- Handling transaction receipts
-- Chain switching & network detection
-- Gas estimation client-side
+- Basics of `ethers.js` vs `viem`,
+- Provider & signer concepts,
+- Connecting MetaMask & WalletConnect,
+- Reading contract state,
+- Sending transactions,
+- Listening to contract events,
+- Handling transaction receipts,
+- Chain switching & Network detection,
+- Gas estimation client-side,
+- The EIP-1193 provider interface,
+- Client-side key safety.
 
 ## [Week 33](./) : Upgradability in ETH
 
