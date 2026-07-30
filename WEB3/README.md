@@ -394,17 +394,18 @@
 - The EIP-1193 provider interface,
 - Client-side key safety.
 
-## [Week 33](./) : Upgradability in ETH
+## [Week 33](./Week-33/README.md) : Upgradability in ETH.
 
-- Why contracts need upgradability
-- Proxy pattern basics
-- Transparent proxy pattern
-- UUPS proxy pattern
-- Storage layout & collisions
-- Initializer functions vs constructors
-- Diamond pattern (multi-facet proxies) overview
-- Upgrade governance & timelocks
-- Risks of upgradable contracts
+- Why contracts need upgradability,
+- Proxy pattern basics,
+- Transparent proxy pattern,
+- UUPS proxy pattern,
+- Storage layout & collisions,
+- Initializer functions vs constructors,
+- The Diamond pattern (multi-facet proxies) overview,
+- Upgrade governance & Timelocks,
+- Risks of upgradable contracts,
+- Choosing a pattern for a real project.
 
 ## [Week 34](./) : Liquidity Pools & Impermanent Loss
 
