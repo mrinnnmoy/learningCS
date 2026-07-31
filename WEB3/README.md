@@ -407,17 +407,18 @@
 - Risks of upgradable contracts,
 - Choosing a pattern for a real project.
 
-## [Week 34](./) : Liquidity Pools & Impermanent Loss
+## [Week 34](./Week-34/README.md) : Liquidity Pools & Impermanent Loss.
 
-- Constant product AMM math (x\*y=k)
-- LP token mechanics
-- Adding/removing liquidity
-- Fee accrual to LPs
-- Impermanent loss calculation
-- Impermanent loss vs volatility correlation
-- Concentrated liquidity implications
-- Yield farming basics
-- Pool exploits (sandwich attacks on pools)
+- Constant product AMM math (x\*y=k),
+- LP token mechanics,
+- Adding & Removing liquidity,
+- Fee accrual to LPs,
+- Impermanent loss calculation,
+- Impermanent loss vs Volatility correlation,
+- Concentrated liquidity basics,
+- Yield farming basics,
+- Pool exploits (sandwich attacks),
+- Slippage protection.
 
 ## [Week 35](./) : Indexing (The Graph)
 
