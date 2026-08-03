@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "TaskRegistry": {
+      "address": "0xef7EC7E600A1e8486915C8E0A87184A36073357c",
+      "startBlock": 11422139
+    }
+  }
+}

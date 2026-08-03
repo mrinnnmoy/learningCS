@@ -1,0 +1,9 @@
+type Task @entity(immutable: false) {
+  id: String!
+  taskId: BigInt!
+  description: String!
+  assignedTo: Bytes
+  status: String!
+  createdAtBlock: BigInt!
+  updatedAtBlock: BigInt!
+}

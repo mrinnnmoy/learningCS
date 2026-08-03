@@ -1,0 +1,30 @@
+specVersion: 1.3.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TaskRegistry
+    network: sepolia
+    source:
+      address: "0xef7EC7E600A1e8486915C8E0A87184A36073357c"
+      abi: TaskRegistry
+      startBlock: 11422139
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript      
+      entities:
+        - Task
+      abis:
+        - name: TaskRegistry
+          file: ./abis/TaskRegistry.json
+      eventHandlers:
+        - event: StatusUpdated(indexed uint256,uint8)
+          handler: handleStatusUpdated
+        - event: TaskAssigned(indexed uint256,indexed address)
+          handler: handleTaskAssigned
+        - event: TaskCreated(indexed uint256,string)
+          handler: handleTaskCreated
+      file: ./src/task-registry.ts

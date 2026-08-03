@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "GameToken": {
+      "address": "0x340Ac35821b9F6D1321E013A1C353B8ECac9f7fF",
+      "startBlock": 11487401
+    }
+  }
+}

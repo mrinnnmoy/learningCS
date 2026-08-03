@@ -1,0 +1,8 @@
+type CountChangeEvent @entity(immutable: true) {
+  id: Bytes!
+  changedBy: Bytes!
+  newCount: BigInt!
+  eventType: String!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}

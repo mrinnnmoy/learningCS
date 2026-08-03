@@ -420,16 +420,17 @@
 - Pool exploits (sandwich attacks),
 - Slippage protection.
 
-## [Week 35](./) : Indexing (The Graph)
+## [Week 35](./Week-35/README.md) : Indexing (The Graph).
 
-- Subgraph concept
-- GraphQL basics for querying
-- Defining schema.graphql
-- Mapping handlers (AssemblyScript)
-- Event-driven indexing
-- Deploying subgraphs
-- Querying subgraphs from frontend
-- The Graph hosted service vs decentralized network
+- The Subgraph concept,
+- GraphQL basics for querying,
+- Defining `schema.graphql`,
+- Mapping handlers (AssemblyScript),
+- Event-driven indexing,
+- Deploying subgraphs,
+- Querying subgraphs from a frontend,
+- The Graph's hosted service vs The decentralized network,
+- Subgraphs vs A custom indexer vs A live listener.
 
 ## [Week 36](./) : Bridges (How They Work)
 

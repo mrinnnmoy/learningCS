@@ -1,0 +1,28 @@
+specVersion: 1.3.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Counter
+    network: sepolia
+    source:
+      address: "0xe22F630A1AB30a145EAf7B2fA92d49687e796268"
+      abi: Counter
+      startBlock: 11444545
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - CountChangeEvent
+      abis:
+        - name: Counter
+          file: ./abis/Counter.json
+      eventHandlers:
+        - event: CountDecreased(indexed address,uint256)
+          handler: handleCountDecreased
+        - event: CountIncreased(indexed address,uint256)
+          handler: handleCountIncreased
+      file: ./src/counter.ts
