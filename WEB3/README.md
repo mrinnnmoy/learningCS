@@ -432,17 +432,18 @@
 - The Graph's hosted service vs The decentralized network,
 - Subgraphs vs A custom indexer vs A live listener.
 
-## [Week 36](./) : Bridges (How They Work)
+## [Week 36](./Week-36/README.md) : Bridges (How They Work).
 
-- Cross-chain communication problem
-- Lock-and-mint bridge model
-- Burn-and-mint bridge model
-- Liquidity network bridges
-- Trusted vs trustless bridges
-- Light client verification bridges
-- Validator/relayer roles
-- Message-passing protocols (generic messaging)
-- Bridge risks & historical exploits
+- The cross-chain communication problem,
+- Lock-and-mint bridge model,
+- Burn-and-mint bridge model,
+- Liquidity network bridges,
+- Trusted vs Trustless bridges,
+- Light client verification bridges,
+- Validator/relayer roles,
+- Message-passing protocols (generic messaging),
+- Bridge risks & Historical exploits,
+- Choosing a bridge model.
 
 ## [Week 37](./) : Building an EVM Bridge
 
