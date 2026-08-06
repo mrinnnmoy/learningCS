@@ -445,16 +445,17 @@
 - Bridge risks & Historical exploits,
 - Choosing a bridge model.
 
-## [Week 37](./) : Building an EVM Bridge
+## [Week 37](./Week-37/README.md) : Building an EVM Bridge.
 
-- Bridge contract architecture (source & destination)
-- Locking assets on source chain
-- Emitting cross-chain events
-- Relayer/oracle service design
-- Minting wrapped assets on destination chain
-- Replay protection across chains
-- Handling finality differences between chains
-- Testing bridge flows end-to-end
+- Bridge contract architecture,
+- Locking assets on source chain,
+- Emitting cross-chain events,
+- Relayer/oracle service design,
+- Minting wrapped assets on destination chain,
+- Replay protection across chains,
+- Handling finality differences between chains,
+- Testing bridge flows end-to-end,
+- The full lifecycle of one cross-chain transfer.
 
 ## [Week 38](./) : MPC & Shamir's Secret Sharing
 
