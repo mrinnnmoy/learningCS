@@ -457,16 +457,17 @@
 - Testing bridge flows end-to-end,
 - The full lifecycle of one cross-chain transfer.
 
-## [Week 38](./) : MPC & Shamir's Secret Sharing
+## [Week 38](./Week-38/README.md) : MPC & Shamir's Secret Sharing.
 
-- Multi-Party Computation (MPC) concept
-- Threshold cryptography basics
-- Shamir's Secret Sharing algorithm
-- Secret reconstruction (Lagrange interpolation, conceptual)
-- MPC wallets vs multisig wallets
-- Key generation without a single point of failure
-- Use cases in custody solutions
-- Trade-offs of MPC (latency, complexity)
+- Multi-Party Computation (concept),
+- Threshold cryptography basics,
+- Shamir's Secret Sharing algorithm,
+- Secret reconstruction (Lagrange interpolation, conceptual),
+- MPC wallets vs multisig wallets,
+- Key generation without a single point of failure,
+- Use cases in custody solutions,
+- Trade-offs of MPC (latency, complexity),
+- Details on this week's hands-on demo.
 
 ## [Week 39](./) : Partially Centralized Contracts
 
