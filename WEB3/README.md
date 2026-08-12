@@ -469,16 +469,17 @@
 - Trade-offs of MPC (latency, complexity),
 - Details on this week's hands-on demo.
 
-## [Week 39](./) : Partially Centralized Contracts
+## [Week 39](./Week-39/README.md) : Partially Centralized Contracts.
 
-- Admin key patterns
-- Pausable/circuit-breaker patterns
-- Emergency withdrawal mechanisms
-- Rate limiting on-chain
-- Whitelisting/blacklisting patterns
-- Governance-gated parameters
-- Progressive decentralization strategies
-- Trust assumptions disclosure
+- Admin key patterns,
+- Pausable & Circuit-breaker patterns,
+- Emergency withdrawal mechanisms,
+- Rate limiting on-chain,
+- Whitelisting & Blacklisting patterns,
+- Governance-gated parameters,
+- Progressive decentralization strategies,
+- Trust assumptions disclosure,
+- Designing one contract's admin surface deliberately.
 
 ## [Week 40](./) : On-Chain Data Model Design
 
