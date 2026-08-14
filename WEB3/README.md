@@ -481,15 +481,16 @@
 - Trust assumptions disclosure,
 - Designing one contract's admin surface deliberately.
 
-## [Week 40](./) : On-Chain Data Model Design
+## [Week 40](./Week-40/README.md) : On-Chain Data Model Design.
 
-- Designing account/state structures for scalability
-- Data normalization vs denormalization on-chain
-- Choosing PDAs vs storage contracts for relationships
-- Minimizing storage costs (rent/gas considerations)
-- Versioning on-chain schemas
-- Pagination patterns for large datasets
-- Off-chain vs on-chain data trade-offs
+- Designing account/state structures for scalability,
+- Data normalization vs Denormalization on-chain,
+- Choosing PDAs vs Storage contracts for relationships,
+- Minimizing storage costs (rent/gas considerations),
+- Versioning on-chain schemas,
+- Pagination patterns for large datasets,
+- Off-chain vs On-chain data trade-offs,
+- Designing one real data model end to end.
 
 ## [Week 41](./) : Oracles (Chainlink/Pyth)
 
