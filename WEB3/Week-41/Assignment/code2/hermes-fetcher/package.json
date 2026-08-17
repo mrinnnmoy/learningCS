@@ -1,0 +1,21 @@
+{
+  "name": "hermes-fetcher",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "tsx src/fetchAndUpdate.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@pythnetwork/hermes-client": "^3.1.0",
+    "ethers": "^6.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}

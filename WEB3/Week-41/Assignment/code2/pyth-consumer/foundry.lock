@@ -1,0 +1,11 @@
+{
+  "../../code1/oracle-easy/lib/chainlink-brownie-contracts": {
+    "rev": "5cb41fbc9b525338b6098da5ea7dd0b7e92f89e4"
+  },
+  "lib/pyth-sdk-solidity": {
+    "tag": {
+      "name": "v2.2.0",
+      "rev": "11d6bcfc2e56885535a9a8e3c8417847cb20be14"
+    }
+  }
+}

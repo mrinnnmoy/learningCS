@@ -492,17 +492,18 @@
 - Off-chain vs On-chain data trade-offs,
 - Designing one real data model end to end.
 
-## [Week 41](./) : Oracles (Chainlink/Pyth)
+## [Week 41](./Week-41/README.md) : Oracles (Chainlink/Pyth).
 
-- Why oracles are needed (oracle problem)
-- Price feed oracles
-- Pull vs push oracle models
-- Chainlink architecture overview
-- Pyth network architecture overview
-- Data freshness & staleness checks
-- Oracle manipulation risks
-- Aggregation & median pricing
-- VRF (verifiable random functions) overview
+- The oracle problem,
+- Price feed oracles,
+- Pull vs Push oracle models,
+- Chainlink architecture overview,
+- Pyth network architecture overview,
+- Data freshness & staleness checks,
+- Oracle manipulation risks,
+- Aggregation & median pricing,
+- VRF (verifiable random functions) overview,
+- Choosing Chainlink, Pyth or neither.
 
 ## [Week 42](./) : Multisig & Governance
 
