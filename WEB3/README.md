@@ -505,17 +505,18 @@
 - VRF (verifiable random functions) overview,
 - Choosing Chainlink, Pyth or neither.
 
-## [Week 42](./) : Multisig & Governance
+## [Week 42](./Week-42/README.md) : Multisig & Governance.
 
-- Multisig wallet mechanics
-- Threshold signatures (M-of-N)
-- Popular multisig tools (Squads, Gnosis Safe)
-- On-chain governance models
-- Proposal & voting mechanisms
-- Timelocks in governance
-- Token-weighted voting
-- Delegated voting
-- Quorum & governance attack vectors
+- Multisig wallet mechanics,
+- Threshold signatures (M-of-N),
+- Popular multisig tools (Squads & Gnosis Safe),
+- On-chain governance models,
+- Proposal & Voting mechanisms,
+- Timelocks in governance,
+- Token-weighted voting,
+- Delegated voting,
+- Quorum & Governance attack vectors,
+- Full lifecycle of one real governance proposal.
 
 ## [Week 43](./) : Layer 2s & Rollups
 
