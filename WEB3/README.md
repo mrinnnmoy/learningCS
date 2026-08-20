@@ -518,18 +518,19 @@
 - Quorum & Governance attack vectors,
 - Full lifecycle of one real governance proposal.
 
-## [Week 43](./) : Layer 2s & Rollups
+## [Week 43](./Week-43/README.md) : Layer 2's & Rollups.
 
-- Why L2s exist (scalability trilemma)
-- Optimistic rollups (Arbitrum, Optimism) mechanics
-- Fraud proofs & challenge periods
-- ZK rollups (zkSync, Starknet, Polygon zkEVM) mechanics
-- Validity proofs vs fraud proofs
-- Sequencers & centralization trade-offs
-- Data availability (calldata vs blobs, EIP-4844)
-- L1-to-L2 messaging & withdrawals
-- Shared sequencing & based rollups (concept)
-- App-chains & rollup-as-a-service (concept)
+- The scalability trilemma (Why L2s exist),
+- Optimistic rollup mechanics(Arbitrum, Optimism),
+- Fraud proofs & Challenge periods,
+- ZK rollup mechanics(zkSync, Starknet, Polygon zkEVM),
+- Validity proofs vs Fraud proofs,
+- Sequencers & Centralization trade-offs,
+- Data availability (calldata vs blobs, EIP-4844),
+- L1-to-L2 messaging & withdrawals,
+- Shared sequencing & Based rollups (concept),
+- App-chains & Rollup-as-a-service (concept),
+- The full deposit-execute-withdraw lifecycle.
 
 ## [Week 44](./) : Account Abstraction (ERC-4337)
 
