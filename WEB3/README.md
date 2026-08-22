@@ -532,18 +532,19 @@
 - App-chains & Rollup-as-a-service (concept),
 - The full deposit-execute-withdraw lifecycle.
 
-## [Week 44](./) : Account Abstraction (ERC-4337)
+## [Week 44](./Week-44/README.md) : Account Abstraction (ERC-4337).
 
-- Problem with EOAs (private key single point of failure)
-- ERC-4337 architecture overview
-- UserOperations
-- Bundlers
-- EntryPoint contract
-- Paymasters (sponsored/gasless transactions)
-- Smart contract wallets (Safe, Biconomy, ZeroDev)
-- Session keys
-- Social recovery mechanisms
-- Native account abstraction (comparison with Solana's account model)
+- Problem with EOAs (private key single point of failure),
+- ERC-4337 architecture overview,
+- UserOperations,
+- Bundlers,
+- EntryPoint contract,
+- Paymasters (sponsored/gasless transactions),
+- Smart contract wallets (Safe, Biconomy, ZeroDev),
+- Session keys,
+- Social recovery mechanisms,
+- Native account abstraction (comparison with Solana's account model),
+- The full UserOperation lifecycle.
 
 ## [Week 45](./) : MEV in Depth
 
