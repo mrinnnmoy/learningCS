@@ -546,16 +546,20 @@
 - Native account abstraction (comparison with Solana's account model),
 - The full UserOperation lifecycle.
 
-## [Week 45](./) : MEV in Depth
+## [Week 45](./Week-45/README.md) : MEV in Depth.
 
-- MEV definition & sources (arbitrage, liquidations, sandwiching)
-- Mempool visibility & front-running
-- Proposer-Builder Separation (PBS)
-- Block builders & relays (MEV-Boost)
-- Private mempools / RPC (Flashbots Protect)
-- MEV protection design patterns for contracts
-- Just-in-time (JIT) liquidity
-- MEV on Solana (Jito, bundles)
+- MEV definition & sources,
+- Arbitrage as MEV,
+- Liquidations as MEV,
+- Sandwiching, placed correctly in the taxonomy,
+- Mempool visibility & front-running,
+- Proposer-Builder Separation (PBS),
+- Block builders & relays (MEV-Boost),
+- Private mempools / RPC (Flashbots Protect),
+- MEV protection design patterns for contracts,
+- Just-in-time (JIT) liquidity,
+- MEV on Solana (Jito, bundles),
+- The full anatomy of one block.
 
 ## [Week 46](./) : Gas Optimization & Low-Level Solidity
 
