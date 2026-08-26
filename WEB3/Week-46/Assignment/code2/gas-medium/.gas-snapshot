@@ -1,0 +1,3 @@
+CalldataVsMemoryTest:testFix_CalldataCostsLessThanMemoryForReadOnlyArrays() (gas: 405372)
+YulBasicsTest:testFix_EfficientHashMatchesAbiEncodePacked() (gas: 7245)
+YulBasicsTest:testFix_YulAndSolidityIncrementCostNearlyIdenticalGas() (gas: 62951)

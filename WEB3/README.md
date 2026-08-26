@@ -561,16 +561,17 @@
 - MEV on Solana (Jito, bundles),
 - The full anatomy of one block.
 
-## [Week 46](./) : Gas Optimization & Low-Level Solidity
+## [Week 46](./Week-46/README.md) : Gas Optimization & Low-Level Solidity.
 
-- Storage vs memory vs calldata cost trade-offs
-- Packing storage variables
-- Custom errors vs `require` strings (gas cost)
-- Unchecked math blocks
-- Yul & inline assembly basics
-- Function selector & calldata layout
-- Loop and array optimization patterns
-- Gas profiling tools (Foundry gas reports)
+- Storage vs memory vs calldata cost trade-offs,
+- Packing storage variables,
+- Custom errors vs `require` strings (gas cost),
+- Unchecked math blocks,
+- Yul & inline assembly basics,
+- Function selector & calldata layout,
+- Loop and array optimization patterns,
+- Gas profiling tools (Foundry gas reports),
+- Optimizing one real contract.
 
 ## [Week 47](./) : Practical Zero-Knowledge Proofs
 

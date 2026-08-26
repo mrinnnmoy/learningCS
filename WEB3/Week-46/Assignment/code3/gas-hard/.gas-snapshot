@@ -1,0 +1,4 @@
+VaultOptimizationTest:testFix_BatchCheckActiveCostsLessOnOptimizedVault() (gas: 239434)
+VaultOptimizationTest:testFix_BothVaultsProduceIdenticalResults() (gas: 419073)
+VaultOptimizationTest:testFix_DepositCostsLessOnOptimizedVault() (gas: 215957)
+VaultOptimizationTest:testFix_TotalDepositedCostsLessOnOptimizedVault() (gas: 835589)
