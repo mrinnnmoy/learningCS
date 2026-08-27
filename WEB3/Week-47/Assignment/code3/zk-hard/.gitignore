@@ -1,0 +1,65 @@
+# Dependencies
+
+node_modules/
+
+# Node.js
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Circom build artifacts
+
+*.r1cs
+*.sym
+*_js/
+
+# Witness files
+
+*.wtns
+
+# Groth16 proving keys
+
+*.zkey
+
+# Powers of Tau ceremony files
+
+*.ptau
+
+# Generated Solidity verifier
+
+verifier.sol
+
+# Generated proofs and public signals
+
+proof.json
+public.json
+
+# Generated verification key
+
+verification_key.json
+
+# Environment files
+
+.env
+.env.*
+
+# Foundry build artifacts
+
+zk-hard-contracts/out/
+zk-hard-contracts/cache/
+zk-hard-contracts/broadcast/
+
+# Foundry dependencies
+
+zk-hard-contracts/lib/
+
+# IDE and OS files
+
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

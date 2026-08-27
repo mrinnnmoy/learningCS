@@ -573,17 +573,18 @@
 - Gas profiling tools (Foundry gas reports),
 - Optimizing one real contract.
 
-## [Week 47](./) : Practical Zero-Knowledge Proofs
+## [Week 47](./Week-47/README.md) : Practical Zero-Knowledge Proofs.
 
-- ZK-SNARKs vs ZK-STARKs (trade-offs)
-- Trusted setup concept
-- Circuit design basics
-- Circom fundamentals
-- Noir fundamentals (alternative circuit language)
-- zkVMs overview (RISC Zero, SP1)
-- Proof generation & verification flow
-- On-chain proof verification (verifier contracts)
-- Real-world ZK use cases (private transactions, identity, scaling)
+- ZK-SNARKs vs ZK-STARKs (trade-offs),
+- Trusted setup concept,
+- Circuit design basics.
+- Circom fundamentals,
+- Noir fundamentals (alternative circuit language),
+- zkVMs overview (RISC Zero, SP1),
+- Proof generation & verification flow,
+- On-chain proof verification (verifier contracts),
+- Real-world ZK use cases (private transactions, identity, scaling),
+- The full pipeline.
 
 ## [Week 48](./) : Restaking & Shared Security
 

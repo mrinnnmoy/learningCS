@@ -1,0 +1,33 @@
+# Circom compiler outputs
+
+*.r1cs
+*.sym
+*_js/
+
+# Groth16 proving artifacts
+
+*.zkey
+verification_key.json
+*_verification_key.json
+
+# Witness files
+
+*.wtns
+
+# Generated proofs and public signals
+
+proof.json
+public.json
+broken_proof.json
+broken_public.json
+
+# Powers of Tau ceremony files
+
+*.ptau
+
+# Optional OS/editor files
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
