@@ -586,14 +586,15 @@
 - Real-world ZK use cases (private transactions, identity, scaling),
 - The full pipeline.
 
-## [Week 48](./) : Restaking & Shared Security
+## [Week 48](./Week-48/README.md) : Restaking & Shared Security.
 
-- Restaking concept (EigenLayer model)
-- Actively Validated Services (AVSs)
-- Slashing conditions in restaking
-- Liquid restaking tokens (LRTs)
-- Shared security trade-offs & risks
-- Restaking on Solana (concept/emerging landscape)
+- Restaking concept (EigenLayer model),
+- Actively Validated Services (AVSs),
+- Slashing conditions in restaking,
+- Liquid restaking tokens (LRTs),
+- Shared security trade-offs & risks,
+- Restaking on Solana (concept/emerging landscape),
+- The full restaking lifecycle.
 
 ## [Week 49](./) : Formal Verification & Advanced Testing
 
