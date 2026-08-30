@@ -596,15 +596,16 @@
 - Restaking on Solana (concept/emerging landscape),
 - The full restaking lifecycle.
 
-## [Week 49](./) : Formal Verification & Advanced Testing
+## [Week 49](./Week-49/README.md) : Formal Verification & Advanced Testing.
 
-- Property-based / invariant testing (Foundry invariants)
-- Fuzzing strategies beyond basic fuzzing
-- Formal verification tools overview (Certora, Halmy)
-- Symbolic execution basics
-- Writing testable contract specifications
-- Differential testing between implementations
-- Continuous fuzzing in CI pipelines
+- Property-based / invariant testing (Foundry invariants),
+- Fuzzing strategies beyond basic fuzzing,
+- Formal verification tools overview (Certora, Halmy),
+- Symbolic execution basics,
+- Writing testable contract specifications,
+- Differential testing between implementations,
+- Continuous fuzzing in CI pipelines,
+- Writing a specification first, then catching a real bug it predicts.
 
 ## [Week 50](./) : Web3 DevOps & Infrastructure
 
