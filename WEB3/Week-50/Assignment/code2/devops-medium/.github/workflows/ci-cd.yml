@@ -1,0 +1,52 @@
+name: Foundry CI/CD
+
+# GitHub repository settings needed before the deploy job can run for real:
+
+# Settings -> Secrets and variables -> Actions -> New repository secret:
+
+# SEPOLIA_RPC_URL       — the Sepolia RPC endpoint used for deployment
+
+# DEPLOYER_PRIVATE_KEY  — the funded deployer private key used for deployment
+
+#
+
+# These values must be configured as GitHub Actions secrets.
+
+# Never put the actual RPC URL or private key directly in this file.
+
+on:
+push:
+branches: [main]
+tags: ["v*"]
+
+jobs:
+test:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+
+  - uses: foundry-rs/foundry-toolchain@v1
+
+  - name: Run full test suite
+    run: forge test -vvv
+
+deploy:
+# Concept 3: Deployment never runs on an ordinary push to main.
+if: startsWith(github.ref, 'refs/tags/v')
+
+# Deployment only runs after the test job successfully passes.
+needs: test
+
+runs-on: ubuntu-latest
+
+steps:
+  - uses: actions/checkout@v4
+
+  - uses: foundry-rs/foundry-toolchain@v1
+
+  - name: Deploy to Sepolia
+    run: |
+      forge script script/Deploy.s.sol \
+        --rpc-url ${{ secrets.SEPOLIA_RPC_URL }} \
+        --private-key ${{ secrets.DEPLOYER_PRIVATE_KEY }} \
+        --broadcast

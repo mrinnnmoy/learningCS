@@ -607,16 +607,17 @@
 - Continuous fuzzing in CI pipelines,
 - Writing a specification first, then catching a real bug it predicts.
 
-## [Week 50](./) : Web3 DevOps & Infrastructure
+## [Week 50](./Week-50/README.md) : Web3 DevOps & Infrastructure.
 
-- Running an RPC node (light vs full vs archive)
-- Running a validator (Solana/Ethereum basics)
-- CI/CD pipelines for contract deployment
-- Deployment verification & reproducible builds
-- Monitoring on-chain activity (alerts, dashboards)
-- Incident response planning for exploits
-- Key management in production (KMS, HSM concepts)
-- Multi-environment config management (devnet/testnet/mainnet)
+- Running an RPC node (light vs full vs archive),
+- Running a validator (Solana/Ethereum basics),
+- CI/CD pipelines for contract deployment,
+- Deployment verification & reproducible builds,
+- Monitoring on-chain activity (alerts, dashboards),
+- Incident response planning for exploits,
+- Key management in production (KMS, HSM concepts),
+- Multi-environment config management (devnet/testnet/mainnet),
+- The full path from a merged pull request to a monitored, incident-ready deployment.
 
 ## [Week 51](./) : Beyond Solana & EVM (Landscape Awareness)
 
