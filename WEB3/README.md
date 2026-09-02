@@ -619,10 +619,12 @@
 - Multi-environment config management (devnet/testnet/mainnet),
 - The full path from a merged pull request to a monitored, incident-ready deployment.
 
-## [Week 51](./) : Beyond Solana & EVM (Landscape Awareness)
+## [Week 51](./Week-51/README.md) : Beyond Solana & EVM. (Landscape Awareness)
 
-- Move-based chains overview (Aptos, Sui) — object-centric model
-- Cosmos SDK & IBC (inter-blockchain communication) overview
-- Bitcoin L2s overview (Lightning, Stacks, Rootstock)
-- App-specific chains vs general-purpose chains
-- When to choose a non-EVM/non-Solana stack
+- Move-based chains overview (Aptos, Sui),
+- Cosmos SDK & IBC (inter-blockchain communication) overview,
+- Bitcoin L2s overview (Lightning, Stacks, Rootstock),
+- App-specific chains vs General-purpose chains,
+- When to choose a non-EVM/non-Solana stack,
+- The Full landscape comparison,
+- Closing the loop.
